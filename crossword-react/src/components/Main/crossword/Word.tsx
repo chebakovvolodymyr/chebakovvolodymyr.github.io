@@ -10,14 +10,13 @@ const isOpened = (status: Status) => status === Status.CORRECT_OPEN || status ==
 
 export const Word = ({word, status}: WordProps) => {
     const [openClassIndex, setOpenClassIndex] = useState(0)
-    console.log('openClassIndex', openClassIndex)
 
     const increaseOpenClassIndex = () => {
         if (openClassIndex >= word.length) {
             return
         }
 
-        setTimeout(() => setOpenClassIndex(openClassIndex => openClassIndex + 1), 200)
+        setTimeout(() => setOpenClassIndex(openClassIndex => openClassIndex + 1), 150)
     }
 
     useEffect(() => {
