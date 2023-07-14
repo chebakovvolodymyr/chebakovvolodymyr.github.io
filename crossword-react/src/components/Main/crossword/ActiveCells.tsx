@@ -1,7 +1,6 @@
 interface ActiveCellsProps {
-    word: string
+  word: string;
 }
 
-export const ActiveCells = ({word}: ActiveCellsProps) => (
-    Array.from(word).map((_, index) => <td key={index} className="active"></td>)
-)
+export const ActiveCells = ({ word }: ActiveCellsProps) =>
+  Array.from(word).map((_, index) => <td key={index} className="active"></td>);

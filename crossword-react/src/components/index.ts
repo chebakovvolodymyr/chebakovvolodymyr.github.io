@@ -1,5 +1,5 @@
-export {Header} from './Header'
+export { Header } from "./Header";
 
-export {Footer} from './Footer'
+export { Footer } from "./Footer";
 
-export {Main} from './Main/Main'
+export { Main } from "./Main/Main";

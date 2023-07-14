@@ -45,6 +45,10 @@ table td {
     &.orange {
       background-color: orange;
     }
+
+    &.red {
+      background-color: red;
+    }
   }
 }
 
@@ -66,10 +70,37 @@ table td {
 }
 
 @keyframes spinner {
-  0% { box-shadow: 0 0 black; transform: rotateY(180deg); font-size: 0;}
-  25% { box-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; font-size: 0;}
-  49% { font-size: 0;}
-  50% { box-shadow: 0 0 black; font-size: 12px;}
-  75% { box-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
-  100% { box-shadow: 0 0 black; transform: rotateY(0);}
+  0% {
+    box-shadow: 0 0 black;
+    transform: rotateY(180deg);
+    font-size: 0;
+  }
+  25% {
+    box-shadow:
+      1px 0 black,
+      2px 0 black,
+      3px 0 black,
+      4px 0 black,
+      5px 0 black;
+    font-size: 0;
+  }
+  49% {
+    font-size: 0;
+  }
+  50% {
+    box-shadow: 0 0 black;
+    font-size: 12px;
+  }
+  75% {
+    box-shadow:
+      -1px 0 black,
+      -2px 0 black,
+      -3px 0 black,
+      -4px 0 black,
+      -5px 0 black;
+  }
+  100% {
+    box-shadow: 0 0 black;
+    transform: rotateY(0);
+  }
 }

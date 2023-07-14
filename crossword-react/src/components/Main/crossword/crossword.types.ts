@@ -1,6 +1,6 @@
 export enum Status {
-    PENDING,
-    SELECTED,
-    CORRECT_OPEN,
-    ICORRECT_OPEN,
+  PENDING,
+  SELECTED,
+  CORRECT_OPEN,
+  ICORRECT_OPEN,
 }

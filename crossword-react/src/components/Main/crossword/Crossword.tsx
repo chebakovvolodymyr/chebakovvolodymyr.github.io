@@ -1,17 +1,20 @@
-import { useMemo } from "react"
+import { useContext } from "react";
 
-import { placeQuestions } from "../../../utils/placeQuestions"
-import { CrosswordRow } from "./CrosswordRow"
+import { ActiveQuestionContext } from "../../../context/ActiveQuestion";
+import { CrosswordRow } from "./CrosswordRow";
 
 export const Crossword = () => {
-    const questions = useMemo(placeQuestions, [])
-    return (
-        <div className="crossword">
-            <table>
-                <tbody>
-                    {questions.map(question => <CrosswordRow key={question.id} {...question}/>)}
-                </tbody>
-            </table>
-        </div>
-    )
-}
+  const { questions } = useContext(ActiveQuestionContext);
+
+  return (
+    <div className="crossword">
+      <table>
+        <tbody>
+          {questions.map((question) => (
+            <CrosswordRow key={question.id} {...question} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
