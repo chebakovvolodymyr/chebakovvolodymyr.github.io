@@ -1,5 +1,5 @@
 export const FinalWordDescription = () => (
-  <div>
+  <div className="hints-wrapper">
     <div>
       Klimatosauga – klimato sauga taikant visuomenės, verslo ar politinių
       sprendimų švietimo bei įtraukimo strategijas, siekiant stabilizuoti

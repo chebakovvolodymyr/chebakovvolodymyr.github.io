@@ -27,11 +27,10 @@ export const Footer = () => {
   return (
     <footer>
       {isFinished && <h3>Valio – kryžiažodis išspręstas!</h3>}
-      <button className="btn-orange" onClick={onEndClick}>
-        Baigti
+      <button className="btn btn-orange" onClick={onEndClick}>
       </button>
       {selectedAnswer && (
-        <button onClick={onContinueClick}>
+        <button className="btn btn-green" onClick={onContinueClick}>
           {isFinished
             ? `Teisingų atsakymų: ${correctedAnswersAmount} iš ${questions.length}.`
             : "Tęsti"}

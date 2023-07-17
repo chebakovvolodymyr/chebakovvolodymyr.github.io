@@ -6,8 +6,8 @@ export const NoActiveQuestionTitle = () => {
   const { answeredQuestionsAmount } = useContext(ActiveQuestionContext);
 
   if (answeredQuestionsAmount) {
-    return <h4>Pasirinkite kitą klausimą</h4>;
+    return <div className="hints-wrapper"><h4>Pasirinkite kitą klausimą</h4></div>;
   }
 
-  return <h4>Norint pradėti, spausk ant bet kurio paslėpto žodžio</h4>;
+  return <div className="hints-wrapper"><h4>Norint pradėti, spausk ant bet kurio paslėpto žodžio</h4></div>;
 };

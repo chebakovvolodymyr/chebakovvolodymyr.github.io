@@ -41,7 +41,7 @@ export const Word = ({ word, status, letterPosition }: WordProps) => {
   return Array.from(word).map((c, index) => (
     <td
       key={index}
-      className={classNames("active", {
+      className={classNames("crossword-table_cell active", {
         green: status === Status.SELECTED || status === Status.CORRECT_OPEN,
         orange: status === Status.ICORRECT_OPEN,
         red: isFinished && index === letterPosition,

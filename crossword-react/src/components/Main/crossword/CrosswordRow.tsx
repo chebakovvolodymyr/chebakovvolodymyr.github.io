@@ -45,9 +45,9 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
   };
 
   return (
-    <tr onClick={onRowClick}>
+    <tr className="crossword-table_row" onClick={onRowClick}>
       <EmptyCells amount={leftShift} />
-      <td>{id}.</td>
+      <td className="crossword-table_row--number">{id}.</td>
       <Word word={word} status={status} letterPosition={letterPosition} />
       <EmptyCells amount={rightShift} />
     </tr>

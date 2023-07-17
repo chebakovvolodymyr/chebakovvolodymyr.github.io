@@ -1,6 +1,6 @@
-import { Header, Footer, Main } from "./components";
+import { Main } from "./components";
 
-import "./App.css";
+import "./App.scss";
 
 import { ActiveQuestionContextProvider } from "./context/ActiveQuestion";
 
@@ -8,9 +8,7 @@ function App() {
   return (
     <ActiveQuestionContextProvider>
       <section>
-        <Header />
         <Main />
-        <Footer />
       </section>
     </ActiveQuestionContextProvider>
   );

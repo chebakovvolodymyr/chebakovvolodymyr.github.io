@@ -37,8 +37,3 @@ button:hover {
 button:active {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-button.btn-orange {
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ed7d31;
-}
