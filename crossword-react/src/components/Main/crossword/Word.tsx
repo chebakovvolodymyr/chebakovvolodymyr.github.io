@@ -42,10 +42,12 @@ export const Word = ({ word, status, letterPosition }: WordProps) => {
     <td
       key={index}
       className={classNames("crossword-table_cell active", {
-        green: status === Status.SELECTED || status === Status.CORRECT_OPEN,
-        orange: status === Status.ICORRECT_OPEN,
-        red: isFinished && index === letterPosition,
-        open: isOpened(status) && index <= openClassIndex,
+        selected: status !== Status.PENDING,
+        correct: status === Status.CORRECT_OPEN,
+        incorrect: status === Status.ICORRECT_OPEN,
+        final: isFinished && index !== letterPosition,
+        guessed: isFinished && index === letterPosition,
+        open: isOpened(status) && index <= openClassIndex && !isFinished,
       })}
     >
       {isOpened(status) && index <= openClassIndex && c}

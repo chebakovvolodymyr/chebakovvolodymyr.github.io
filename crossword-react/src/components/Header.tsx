@@ -6,7 +6,9 @@ export const Header = () => {
   const { isFinished } = useContext(ActiveQuestionContext);
   return (
     <header>
-      {!isFinished && <h3>Išspręsk kryžiažodį ir atrask pasislėpusį žodį!</h3>}
+      <h3>
+        {isFinished ? 'Valio – kryžiažodis išspręstas!' : 'Išspręsk kryžiažodį ir atrask pasislėpusį žodį!'}
+      </h3>
     </header>
   );
 };

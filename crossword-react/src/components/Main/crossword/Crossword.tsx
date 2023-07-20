@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ActiveQuestionContext } from "../../../context/ActiveQuestion";
 import { CrosswordRow } from "./CrosswordRow";
 import { Header } from "../../Header";
-import { Footer } from "../../Footer";
+import { Footer } from "../../footer/Footer";
 
 export const Crossword = () => {
   const { questions } = useContext(ActiveQuestionContext);

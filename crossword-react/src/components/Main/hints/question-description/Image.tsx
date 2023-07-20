@@ -6,7 +6,7 @@ interface ImageProps {
 }
 
 export const Image = ({ picture: { url, author } }: ImageProps) => (
-  <div style={{ display: "flex", flexDirection: "column" }}>
+  <div className="question_image">
     <img src={url} width={200} alt={author} />
     {author}
   </div>

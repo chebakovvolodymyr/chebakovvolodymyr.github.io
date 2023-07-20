@@ -19,10 +19,10 @@ export const QuestionDescription = () => {
     description: { short, long, picture },
   } = activeQuestion;
   return (
-    <div>
-      <div>{id}</div>
-      <div>{question}</div>
-      <div style={{ display: "flex" }}>
+    <div className="hints_wrapper">
+      <div className="number_of_question">{id}</div>
+      <div className="text_question">{question}</div>
+      <div className="answers_wrapper">
         <Answers answers={answers} correctAnswer={correctAnswer} />
         <Image picture={picture} />
       </div>

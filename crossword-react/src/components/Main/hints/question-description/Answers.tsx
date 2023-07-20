@@ -22,13 +22,13 @@ export const Answers = ({ answers, correctAnswer }: AnswersProps) => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div className="answers">
       {answers.map((answer) => (
         <Answer
           key={answer}
           answer={answer}
+          correctAnswer={correctAnswer}
           onAnswerClick={onAnswerClick}
-          isCorrected={answer === correctAnswer}
         />
       ))}
     </div>

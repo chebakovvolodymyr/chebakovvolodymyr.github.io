@@ -11,10 +11,10 @@ export const Description = ({ long, short }: DescriptionProps) => {
   const openExpended = () => setIsExpended(true);
 
   return (
-    <div>
-      <div>{isExpended ? long : short}</div>
+    <div className="description">
+      <div className="description_text">{isExpended ? long : short}</div>
       <div>
-        {!isExpended && <button onClick={openExpended}>Daugiau</button>}
+        {!isExpended && <button onClick={openExpended} className="description_expended_button">Daugiau</button>}
       </div>
     </div>
   );
