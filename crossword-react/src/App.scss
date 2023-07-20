@@ -260,21 +260,10 @@ header {
         background-color: #ffa300;
         border-radius: 8px;
         border: 4px solid #acf3fe;
-        border-top: none;
-        border-bottom: none;
       }
     }
     &.final_word {
       padding: 40px 30px;
-      &--image {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        margin: auto;
-        img {
-          width: 100%;
-        }
-      }
     }
   }
 
@@ -282,6 +271,16 @@ header {
     .hints_wrapper {
       margin-top: 145px;
     }
+  }
+}
+
+.final_word--image {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  img {
+    width: 100%;
   }
 }
 
@@ -304,6 +303,12 @@ footer {
     &-green {
       background-image: url("./assets/buttons/button-green-squared.png");
     }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .hints .description_text {
+      height: 130px;
   }
 }
 
