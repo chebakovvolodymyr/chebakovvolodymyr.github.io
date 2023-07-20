@@ -39,6 +39,7 @@ export const Letter = memo<LetterProps>(
         correct: status === Status.CORRECT_OPEN,
         incorrect: status === Status.ICORRECT_OPEN,
         final: isFinished && index !== letterPosition,
+        gelatine_letter: isFinished && index === letterPosition,
         guessed: isFinished && index === letterPosition,
         open: isOpened(status) && index <= openClassIndex && !isFinished,
       })}

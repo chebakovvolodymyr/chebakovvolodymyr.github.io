@@ -7,8 +7,13 @@ import { Word } from "./Word";
 import { Status } from "./crossword.types";
 
 export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
-  const { activeQuestion, setActiveQuestion, selectedAnswer, isFinished } =
-    useContext(ActiveQuestionContext);
+  const {
+    activeQuestion,
+    setActiveQuestion,
+    selectedAnswer,
+    isFinished,
+    onAnimationFinished,
+  } = useContext(ActiveQuestionContext);
 
   const [status, setStatus] = useState(Status.PENDING);
 
@@ -52,6 +57,7 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
         status={status}
         letterPosition={letterPosition}
         isFinished={isFinished}
+        onAnimationFinished={onAnimationFinished}
       />
       <EmptyCells amount={rightShift} />
     </tr>
