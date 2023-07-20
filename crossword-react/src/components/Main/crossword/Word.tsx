@@ -8,18 +8,21 @@ interface WordProps {
   status: Status;
   letterPosition: number;
   isFinished: boolean;
+
+  onAnimationFinished: () => void;
 }
 
 const isOpened = (status: Status) =>
   status === Status.CORRECT_OPEN || status === Status.ICORRECT_OPEN;
 
 export const Word = memo<WordProps>(
-  ({ word, status, letterPosition, isFinished }) => {
+  ({ word, status, letterPosition, isFinished, onAnimationFinished }) => {
     const [openClassIndex, setOpenClassIndex] = useState(0);
 
     const increaseOpenClassIndex = useCallback(
       (openClassIndex: number) => {
         if (openClassIndex >= word.length) {
+          onAnimationFinished();
           return;
         }
 
@@ -28,7 +31,7 @@ export const Word = memo<WordProps>(
           150,
         );
       },
-      [word.length],
+      [onAnimationFinished, word.length],
     );
 
     useEffect(() => {
