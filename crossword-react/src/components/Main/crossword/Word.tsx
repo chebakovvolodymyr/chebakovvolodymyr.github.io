@@ -1,56 +1,52 @@
-import { useCallback, useContext, useEffect, useState } from "react";
-import classNames from "classnames";
+import { useCallback, useEffect, useState, memo } from "react";
 
-import { ActiveQuestionContext } from "../../../context/ActiveQuestion";
 import { Status } from "./crossword.types";
+import { Letter } from "./Letter";
 
 interface WordProps {
   word: string;
   status: Status;
   letterPosition: number;
+  isFinished: boolean;
 }
 
 const isOpened = (status: Status) =>
   status === Status.CORRECT_OPEN || status === Status.ICORRECT_OPEN;
 
-export const Word = ({ word, status, letterPosition }: WordProps) => {
-  const { isFinished } = useContext(ActiveQuestionContext);
+export const Word = memo<WordProps>(
+  ({ word, status, letterPosition, isFinished }) => {
+    const [openClassIndex, setOpenClassIndex] = useState(0);
 
-  const [openClassIndex, setOpenClassIndex] = useState(0);
+    const increaseOpenClassIndex = useCallback(
+      (openClassIndex: number) => {
+        if (openClassIndex >= word.length) {
+          return;
+        }
 
-  const increaseOpenClassIndex = useCallback(
-    (openClassIndex: number) => {
-      if (openClassIndex >= word.length) {
-        return;
+        setTimeout(
+          () => setOpenClassIndex((openClassIndex) => openClassIndex + 1),
+          150,
+        );
+      },
+      [word.length],
+    );
+
+    useEffect(() => {
+      if (isOpened(status)) {
+        increaseOpenClassIndex(openClassIndex);
       }
+    }, [increaseOpenClassIndex, status, openClassIndex]);
 
-      setTimeout(
-        () => setOpenClassIndex((openClassIndex) => openClassIndex + 1),
-        150,
-      );
-    },
-    [word.length],
-  );
-
-  useEffect(() => {
-    if (isOpened(status)) {
-      increaseOpenClassIndex(openClassIndex);
-    }
-  }, [increaseOpenClassIndex, status, openClassIndex]);
-
-  return Array.from(word).map((c, index) => (
-    <td
-      key={index}
-      className={classNames("crossword-table_cell active", {
-        selected: status !== Status.PENDING,
-        correct: status === Status.CORRECT_OPEN,
-        incorrect: status === Status.ICORRECT_OPEN,
-        final: isFinished && index !== letterPosition,
-        guessed: isFinished && index === letterPosition,
-        open: isOpened(status) && index <= openClassIndex && !isFinished,
-      })}
-    >
-      {isOpened(status) && index <= openClassIndex && c}
-    </td>
-  ));
-};
+    return Array.from(word).map((c, index) => (
+      <Letter
+        key={index}
+        status={status}
+        isFinished={isFinished}
+        index={index}
+        letterPosition={letterPosition}
+        openClassIndex={openClassIndex}
+        letter={c}
+      />
+    ));
+  },
+);

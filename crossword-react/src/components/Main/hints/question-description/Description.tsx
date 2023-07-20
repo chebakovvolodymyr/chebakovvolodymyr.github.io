@@ -14,7 +14,14 @@ export const Description = ({ long, short }: DescriptionProps) => {
     <div className="description">
       <div className="description_text">{isExpended ? long : short}</div>
       <div>
-        {!isExpended && <button onClick={openExpended} className="description_expended_button">Daugiau</button>}
+        {!isExpended && (
+          <button
+            onClick={openExpended}
+            className="description_expended_button"
+          >
+            Daugiau
+          </button>
+        )}
       </div>
     </div>
   );

@@ -3,56 +3,60 @@ import { useContext, useEffect } from "react";
 import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 
 export const ContinueButton = () => {
-    const {
-        setActiveQuestion,
-        setSelectedAnswer,
-        correctedAnswersAmount,
-        questions,
-        isFinished,
-      } = useContext(ActiveQuestionContext);
-    
-      const onContinueClick = () => {
-        if (isFinished) {
-          location.reload();
-          return;
-        }
-        setActiveQuestion(null);
-        setSelectedAnswer("");
-      };
+  const {
+    setActiveQuestion,
+    setSelectedAnswer,
+    correctedAnswersAmount,
+    questions,
+    isFinished,
+  } = useContext(ActiveQuestionContext);
 
-      useEffect(() => {
-        const continueButton = document.querySelector(".btn-continue");
-        const onAnimationEnd = () => {
-            continueButton?.classList.remove('gelatine');
-        };
+  const onContinueClick = () => {
+    if (isFinished) {
+      location.reload();
+      return;
+    }
+    setActiveQuestion(null);
+    setSelectedAnswer("");
+  };
 
-            const onDocumentClick = (evt: MouseEvent) => {
-                const target = evt.target as HTMLElement;
-                if (target.classList.contains("btn-continue")) {
-                    return;
-                }
+  useEffect(() => {
+    const continueButton = document.querySelector(".btn-continue");
+    const onAnimationEnd = () => {
+      continueButton?.classList.remove("gelatine");
+    };
 
-                if (target.classList.contains("description_expended_button")) {
-                    return;
-                }
+    const onDocumentClick = (evt: MouseEvent) => {
+      const target = evt.target as HTMLElement;
+      if (target.classList.contains("btn-continue")) {
+        return;
+      }
 
-                continueButton?.classList.add('gelatine');
-            }
-            
-            document.addEventListener("click", onDocumentClick);
-            continueButton?.addEventListener("animationend", onAnimationEnd);
+      if (target.classList.contains("description_expended_button")) {
+        return;
+      }
 
-            return () => {
-                document.removeEventListener("click", onDocumentClick);
-                continueButton?.removeEventListener("animationend", onAnimationEnd);
-            }
-        }, []);
+      if (target.classList.contains("answer")) {
+        return;
+      }
 
-    return (
-        <button className="btn btn-green btn-continue" onClick={onContinueClick}>
-            {isFinished
-            ? `Teisingų atsakymų: ${correctedAnswersAmount} iš ${questions.length}.`
-            : "Tęsti"}
-        </button>
-    )
-}
+      continueButton?.classList.add("gelatine");
+    };
+
+    document.addEventListener("click", onDocumentClick);
+    continueButton?.addEventListener("animationend", onAnimationEnd);
+
+    return () => {
+      document.removeEventListener("click", onDocumentClick);
+      continueButton?.removeEventListener("animationend", onAnimationEnd);
+    };
+  }, []);
+
+  return (
+    <button className="btn btn-green btn-continue" onClick={onContinueClick}>
+      {isFinished
+        ? `Teisingų atsakymų: ${correctedAnswersAmount} iš ${questions.length}.`
+        : "Tęsti"}
+    </button>
+  );
+};

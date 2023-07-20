@@ -1,25 +1,28 @@
 @font-face {
-  font-family: 'Asap';
-  src: url('./assets/fonts/asap/Asap-Medium.woff2') format('woff2'),
-      url('./assets/fonts/asap/Asap-Medium.woff') format('woff');
+  font-family: "Asap";
+  src:
+    url("./assets/fonts/asap/Asap-Medium.woff2") format("woff2"),
+    url("./assets/fonts/asap/Asap-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Asap';
-  src: url('./assets/fonts/asap/Asap-Bold.woff2') format('woff2'),
-      url('./assets/fonts/asap/Asap-Bold.woff') format('woff');
+  font-family: "Asap";
+  src:
+    url("./assets/fonts/asap/Asap-Bold.woff2") format("woff2"),
+    url("./assets/fonts/asap/Asap-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Asap';
-  src: url('./assets/fonts/asap/Asap-Regular.woff2') format('woff2'),
-      url('./assets/fonts/asap/Asap-Regular.woff') format('woff');
+  font-family: "Asap";
+  src:
+    url("./assets/fonts/asap/Asap-Regular.woff2") format("woff2"),
+    url("./assets/fonts/asap/Asap-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -54,12 +57,12 @@ header {
     min-height: 80px;
     line-height: 70px;
   }
-} 
+}
 
 .crossword {
   flex-basis: 55%;
   &-table {
-    font-family: 'Asap';
+    font-family: "Asap";
     font-weight: bold;
     font-size: 24px;
     margin: auto;
@@ -69,7 +72,7 @@ header {
       width: 50px;
       height: 50px;
     }
-    &_row{
+    &_row {
       &--number {
         background-image: url("./assets/backgrounds/green_circle.svg");
         background-repeat: no-repeat;
@@ -116,7 +119,7 @@ header {
     }
   }
 }
-  
+
 .hints {
   background-image: url("./assets/backgrounds/right_bg.png");
   font-weight: 700;
@@ -125,21 +128,21 @@ header {
   background-repeat: no-repeat;
   background-position: top center;
   &_wrapper {
-      max-width: 95%;
-      margin: 50px auto;
-      h4 {
-        width: 94%;
-        padding: 25px;
-        background-color: #e9f2f3;
-        box-sizing: border-box;
-        border-radius: 60px;
-        color: #000;
-        margin: auto;
-        text-align: center;
-        font-size: 20px;
-      }
+    max-width: 95%;
+    margin: 50px auto;
+    h4 {
+      width: 94%;
+      padding: 25px;
+      background-color: #e9f2f3;
+      box-sizing: border-box;
+      border-radius: 60px;
+      color: #000;
+      margin: auto;
+      text-align: center;
+      font-size: 20px;
+    }
   }
-  .number_of_question { 
+  .number_of_question {
     font-size: 24px;
     text-align: center;
     background-image: url("./assets/backgrounds/btn_num_question.png");
@@ -175,35 +178,35 @@ header {
     margin: 16px 32px;
 
     .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 40%;
+
+      .answer {
+        background-image: url("./assets/buttons/button-grey-squared.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 80px;
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-        width: 40%;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-size: 24px;
+        cursor: pointer;
+      }
 
-        .answer {
-          background-image: url("./assets/buttons/button-grey-squared.png");
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          width: 100%;
-          height: 80px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #000;
-          font-size: 24px;
-          cursor: pointer;
+      .btn {
+        background-color: transparent;
+        &-orange {
+          background-image: url("./assets/buttons/button-orange-squared.png");
         }
-
-        .btn {
-          background-color: transparent;
-          &-orange {
-            background-image: url("./assets/buttons/button-orange-squared.png");
-          }
-          &-green {
-            background-image: url("./assets/buttons/button-green-squared.png");
-          }
+        &-green {
+          background-image: url("./assets/buttons/button-green-squared.png");
         }
+      }
     }
 
     .question_image {
@@ -345,8 +348,17 @@ footer {
 }
 
 @keyframes gelatine {
-  from, to { transform: scale(1, 1); }
-  25% { transform: scale(0.9, 1.1); }
-  50% { transform: scale(1.1, 0.9); }
-  75% { transform: scale(0.95, 1.05); }
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
 }

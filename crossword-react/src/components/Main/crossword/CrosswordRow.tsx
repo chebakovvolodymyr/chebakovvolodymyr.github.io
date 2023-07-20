@@ -7,9 +7,8 @@ import { Word } from "./Word";
 import { Status } from "./crossword.types";
 
 export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
-  const { activeQuestion, setActiveQuestion, selectedAnswer } = useContext(
-    ActiveQuestionContext,
-  );
+  const { activeQuestion, setActiveQuestion, selectedAnswer, isFinished } =
+    useContext(ActiveQuestionContext);
 
   const [status, setStatus] = useState(Status.PENDING);
 
@@ -48,7 +47,12 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
     <tr className="crossword-table_row" onClick={onRowClick}>
       <EmptyCells amount={leftShift} />
       <td className="crossword-table_row--number">{id}</td>
-      <Word word={word} status={status} letterPosition={letterPosition} />
+      <Word
+        word={word}
+        status={status}
+        letterPosition={letterPosition}
+        isFinished={isFinished}
+      />
       <EmptyCells amount={rightShift} />
     </tr>
   );

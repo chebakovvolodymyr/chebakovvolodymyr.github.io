@@ -64,7 +64,7 @@ export const ActiveQuestionContextProvider: FC<PropsWithChildren> = ({
     [activeQuestion],
   );
 
-  const isFinished = 
+  const isFinished =
     answeredQuestionsAmount === questions.length && !!selectedAnswer;
 
   return (

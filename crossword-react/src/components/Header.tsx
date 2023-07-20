@@ -7,7 +7,9 @@ export const Header = () => {
   return (
     <header>
       <h3>
-        {isFinished ? 'Valio – kryžiažodis išspręstas!' : 'Išspręsk kryžiažodį ir atrask pasislėpusį žodį!'}
+        {isFinished
+          ? "Valio – kryžiažodis išspręstas!"
+          : "Išspręsk kryžiažodį ir atrask pasislėpusį žodį!"}
       </h3>
     </header>
   );

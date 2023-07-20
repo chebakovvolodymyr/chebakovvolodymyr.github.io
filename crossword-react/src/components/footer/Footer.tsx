@@ -3,8 +3,7 @@ import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 import { ContinueButton } from "./ContinueButton";
 
 export const Footer = () => {
-  const {selectedAnswer} = useContext(ActiveQuestionContext);
-
+  const { selectedAnswer } = useContext(ActiveQuestionContext);
 
   const onEndClick = () => {
     location.reload();
@@ -15,9 +14,7 @@ export const Footer = () => {
       <button className="btn btn-orange" onClick={onEndClick}>
         Baigti
       </button>
-      {selectedAnswer && (
-        <ContinueButton/>
-      )}
+      {selectedAnswer && <ContinueButton />}
     </footer>
   );
 };

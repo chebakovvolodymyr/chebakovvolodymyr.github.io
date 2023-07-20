@@ -10,9 +10,11 @@ export const Hints = () => {
   const { activeQuestion, isFinished } = useContext(ActiveQuestionContext);
 
   return (
-    <div className={classNames("hints", {
-      ["hints--just-title"]: !isFinished && !activeQuestion,
-    })}>
+    <div
+      className={classNames("hints", {
+        ["hints--just-title"]: !isFinished && !activeQuestion,
+      })}
+    >
       {isFinished && <FinalWordDescription />}
       {!isFinished && !!activeQuestion && <QuestionDescription />}
       {!isFinished && !activeQuestion && <NoActiveQuestionTitle />}
