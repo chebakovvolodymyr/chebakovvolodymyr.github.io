@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, memo } from "react";
+import { useCallback, useEffect, useState, memo, ReactElement } from "react";
 
 import { Status } from "./crossword.types";
 import { Letter } from "./Letter";
@@ -16,7 +16,7 @@ const isOpened = (status: Status) =>
   status === Status.CORRECT_OPEN || status === Status.ICORRECT_OPEN;
 
 export const Word = memo<WordProps>(
-  ({ word, status, letterPosition, isFinished, onAnimationFinished }) => {
+  ({ word, status, letterPosition, isFinished, onAnimationFinished }): ReactElement[] => {
     const [openClassIndex, setOpenClassIndex] = useState(0);
 
     const increaseOpenClassIndex = useCallback(
