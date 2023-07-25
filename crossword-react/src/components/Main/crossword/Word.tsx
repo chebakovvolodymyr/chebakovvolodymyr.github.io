@@ -40,16 +40,20 @@ export const Word = memo<WordProps>(
       }
     }, [increaseOpenClassIndex, status, openClassIndex]);
 
-    return Array.from(word).map((c, index) => (
-      <Letter
-        key={index}
-        status={status}
-        isFinished={isFinished}
-        index={index}
-        letterPosition={letterPosition}
-        openClassIndex={openClassIndex}
-        letter={c}
-      />
-    ));
+    return (
+      <>
+        {Array.from(word).map((c, index) => (
+          <Letter
+            key={index}
+            status={status}
+            isFinished={isFinished}
+            index={index}
+            letterPosition={letterPosition}
+            openClassIndex={openClassIndex}
+            letter={c}
+          />
+        ))}
+      </>
+    );
   },
 );

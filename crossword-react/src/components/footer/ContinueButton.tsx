@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import classNames from "classnames";
 
 import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 
@@ -8,14 +9,14 @@ export const ContinueButton = () => {
     setSelectedAnswer,
     correctedAnswersAmount,
     questions,
-    isFinished,
+    answeredQuestionsAmount,
   } = useContext(ActiveQuestionContext);
 
   const onContinueClick = () => {
-    if (isFinished) {
-      location.reload();
+    if (answeredQuestionsAmount === questions.length) {
       return;
     }
+
     setActiveQuestion(null);
     setSelectedAnswer("");
   };
@@ -27,6 +28,10 @@ export const ContinueButton = () => {
     };
 
     const onDocumentClick = (evt: MouseEvent) => {
+      if (continueButton?.classList.contains("btn-final")) {
+        return;
+      }
+
       const target = evt.target as HTMLElement;
       if (target.classList.contains("btn-continue")) {
         return;
@@ -53,8 +58,13 @@ export const ContinueButton = () => {
   }, []);
 
   return (
-    <button className="btn btn-green btn-continue" onClick={onContinueClick}>
-      {isFinished
+    <button
+      className={classNames("btn btn-green btn-continue", {
+        ["btn-final"]: answeredQuestionsAmount === questions.length,
+      })}
+      onClick={onContinueClick}
+    >
+      {answeredQuestionsAmount === questions.length
         ? `Teisingų atsakymų: ${correctedAnswersAmount} iš ${questions.length}.`
         : "Tęsti"}
     </button>
