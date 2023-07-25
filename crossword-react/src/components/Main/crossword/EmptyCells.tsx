@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 interface EmptyCellsProps {
   amount: number;
 }
