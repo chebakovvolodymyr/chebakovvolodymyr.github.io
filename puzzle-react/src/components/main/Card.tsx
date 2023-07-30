@@ -31,6 +31,7 @@ export const Card: FC<CardProps> = (({isFlipped, card, onCardClick}) => {
                 <div className="card-back">
                     <img 
                         src={card.image} 
+                        alt={card.alt}
                     />
                 </div>
             </div>

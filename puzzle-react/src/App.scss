@@ -89,6 +89,21 @@
     width: 100vw;
     animation: fadeIn 0.5s ease-out; 
     background: linear-gradient(#C2E8FF, #1D65AD);
+
+    .rain {
+      .pictures {
+        display: flex;
+      }
+
+      .titles {
+        height: 500px;
+        position: relative;
+
+        .title {
+          position: absolute;
+        }
+      }
+    }
   }
 }
 
@@ -100,4 +115,11 @@
   to {  
       opacity:1;  
   }  
+}
+
+.picture-checkbox {
+  img {
+    width: 370px;
+    height: 300px;
+  }
 }

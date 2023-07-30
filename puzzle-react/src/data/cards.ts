@@ -1,3 +1,5 @@
+import { shuffle } from "../utils/shuffle"
+
 export enum CardName {
     RAIN = 'rain',
     SNOWFLAKE = 'snowflake',
@@ -14,74 +16,65 @@ export type Card = {
     id: string | number,
     name: CardName,
     image: string,
+    alt: string,
 }
 
 export const cards = [
     {
         id: 1,
         name: CardName.RAIN,
-        image: './src/assets/cards/rain.svg',
+        image: './src/assets/cards/1.png',
+        alt: 'Lietaus iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 2,
         name: CardName.SNOWFLAKE,
-        image: './src/assets/cards/snowflake.svg',
+        image: './src/assets/cards/2.png',
+        alt: 'Sniego iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 3,
         name: CardName.RAINBOW,
-        image: './src/assets/cards/rainbow.svg',
+        image: './src/assets/cards/3.png',
+        alt: 'Vaivorykštės iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 4,
         name: CardName.THUNDER,
-        image: './src/assets/cards/thunder.svg',
+        image: './src/assets/cards/4.png',
+        alt: 'Perkūnijos iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 5,
-        name: CardName.MELTING_ICE,
-        image: './src/assets/cards/melting-ice.svg',
+        name: CardName.WIND,
+        image: './src/assets/cards/5.png',
+        alt: 'Vėjo iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 6,
-        name: CardName.EARTH,
-        image: 'https://picsum.photos/200/300',
+        name: CardName.FLOOD,
+        image: './src/assets/cards/6.png',
+        alt: 'Potvynio iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 7,
-        name: CardName.SOUND,
-        image: 'https://picsum.photos/200/300',
+        name: CardName.MELTING_ICE,
+        image: './src/assets/cards/7.png',
+        alt: 'Ledonešio iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 8,
-        name: CardName.WIND,
-        image: 'https://picsum.photos/200/300',
+        name: CardName.SOUND,
+        image: './src/assets/cards/8.png',
+        alt: 'Garsinis iššūkis (Iš flaticon.com, aut. Freepic)',
     },
     {
         id: 9,
-        name: CardName.FLOOD,
-        image: 'https://picsum.photos/200/300',
+        name: CardName.EARTH,
+        image: './src/assets/cards/9.png',
+        alt: 'Klimatosaugos iššūkis (Iš flaticon.com, aut. Freepic)',
     },
 ]
-
-const shuffle = (array: Card[]) => {
-    let currentIndex = array.length
-    let randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
-}
 
 const doubledCards = (cards: Card[]) => [
     ...cards.map(card => ({...card, id: card.id + '_0'})), 
