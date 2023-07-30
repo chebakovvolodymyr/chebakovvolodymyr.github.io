@@ -127,6 +127,12 @@
     .rain {
       .pictures {
         display: flex;
+
+        .picture {
+          &--highlight {
+            outline: 3px solid #1AA7EC;
+          }
+        }
       }
 
       .titles {
@@ -135,6 +141,14 @@
 
         .title {
           position: absolute;
+
+          &--hidden {
+            display: none;
+          }
+
+          &--dragging {
+            opacity: 0.2;
+          }
         }
       }
     }

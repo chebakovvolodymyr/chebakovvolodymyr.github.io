@@ -24,7 +24,7 @@ export const getRandomPositions = (count: number) => {
         count += 1;
 
         if (count >= 10) {
-          return
+          break
         }
       } while (overlap);
 
