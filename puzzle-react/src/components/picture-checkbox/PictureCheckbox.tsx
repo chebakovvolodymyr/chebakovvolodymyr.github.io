@@ -13,7 +13,9 @@ export const PictureCheckbox: FC<PictureCheckboxProps> = ({url, alt, checked, on
     return (
         <div className="picture-checkbox">
             <img src={url} alt={alt} />
-            <input type="checkbox" checked={checked} onChange={onChange}/>
+            <label className="picture-checkbox_label">
+                <input type="checkbox" checked={checked} onChange={onChange}/>
+            </label>
         </div>
     )
 }

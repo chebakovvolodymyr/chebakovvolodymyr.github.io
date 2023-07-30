@@ -7,9 +7,13 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = ({closeGame}) => {
     return (
         <header>
-            <span>Lietaus iššūkis. Priskirk debesims jų tipų pavadinimus, pažymėk, iš kurių galima tikėtis lietaus ir spausk „Pateikti“.</span>
+            <div className="question_title">
+                <span>
+                    Lietaus iššūkis. Priskirk debesims jų tipų pavadinimus, pažymėk, iš kurių galima tikėtis lietaus ir spausk „Pateikti“.
+                </span>
+            </div>
             <button>Pateikti</button>
-            <button onClick={closeGame}>X</button>
+            <button className="question_close" onClick={closeGame}></button>
         </header>
     )
 }
