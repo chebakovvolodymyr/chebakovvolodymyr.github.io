@@ -1,4 +1,35 @@
+@font-face {
+  font-family: "Asap";
+  src:
+    url("./assets/fonts/asap/Asap-Medium.woff2") format("woff2"),
+    url("./assets/fonts/asap/Asap-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asap";
+  src:
+    url("./assets/fonts/asap/Asap-Bold.woff2") format("woff2"),
+    url("./assets/fonts/asap/Asap-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asap";
+  src:
+    url("./assets/fonts/asap/Asap-Regular.woff2") format("woff2"),
+    url("./assets/fonts/asap/Asap-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 #root {
+  font-family: "Asap";
   width: 100%;
 }
 
@@ -11,10 +42,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px;
+    padding: 24px 4%;
 
     h1 {
-      font-size: 20px;
+      font-size: 24px;
+      width: 60%;
     }
 
     button {
@@ -26,6 +58,7 @@
   
       background-image: url("./assets/buttons/button-orange-rounded.png");
       color: #fff;
+      padding: 10px 50px;
   
       .title {
         filter: drop-shadow(2px 4px 4px #000);
@@ -37,6 +70,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     padding: 24px;
+    row-gap: 5%;
 
     .card {
       margin: auto;
