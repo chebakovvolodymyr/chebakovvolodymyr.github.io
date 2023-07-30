@@ -1,0 +1,103 @@
+#root {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#004993, #021F3D);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    button {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      font-weight: 900;
+  
+      background-image: url("./assets/buttons/button-orange-rounded.png");
+      color: #fff;
+  
+      .title {
+        filter: drop-shadow(2px 4px 4px #000);
+      }
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 24px;
+
+    .card {
+      margin: auto;
+      width: 223px;
+      height: 223px;
+      background-color: transparent;
+      perspective: 1000px;
+
+      &.open .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      img {
+        width: 223px;
+        height: 223px;
+        filter: drop-shadow(2px 4px 2px #000);
+        cursor: pointer;
+        border-radius: 12px;
+      }
+
+      &-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      }
+      
+      &-front, &-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      
+      &-back {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  .game {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    animation: fadeIn 0.5s ease-out; 
+    background: linear-gradient(#C2E8FF, #1D65AD);
+  }
+}
+
+@keyframes fadeIn {  
+  from {  
+      opacity:0;  
+  }  
+
+  to {  
+      opacity:1;  
+  }  
+}
