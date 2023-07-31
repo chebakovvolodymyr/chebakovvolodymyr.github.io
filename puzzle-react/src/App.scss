@@ -124,6 +124,10 @@
     animation: fadeIn 0.5s ease-out; 
     background: linear-gradient(#C2E8FF, #1D65AD);
 
+    &--over {
+      background: linear-gradient(#DDFFCF, #006633);
+    }
+
     .rain {
       .question_title {
         font-size: 24px;
@@ -136,6 +140,12 @@
         }
       }
 
+      .question_result {
+        color: #3F6D09;
+        font-weight: 900;
+        font-size: 24px;
+      }
+
       .question_close {
         background-image: url("./assets/buttons/button_cross.png");
         width: 40px;
@@ -143,6 +153,19 @@
         padding: 0;
         margin-left: 30px;
         flex-grow: 0;
+      }
+
+      .question_check {
+        &[disabled] {
+          outline: none;
+          border: none;
+          background-image: url("./assets/buttons/button-transparent-squared.png");
+          
+          .title {
+            filter: none;
+            color: #DADADA;
+          }
+        }
       }
 
       .pictures {

@@ -10,6 +10,7 @@ interface PictureProps {
     cloud: Cloud
 
     checked: boolean
+    isGameOver: boolean
     title?: string
 
     toogleCheckbox: (cloudId: number) => void
@@ -17,7 +18,7 @@ interface PictureProps {
 
 }
 
-export const Picture: FC<PictureProps> = ({cloud, checked, toogleCheckbox, setDroppedTitle, title}) => {
+export const Picture: FC<PictureProps> = ({cloud, checked, toogleCheckbox, setDroppedTitle, title, isGameOver}) => {
     const [{isOver}, drop] = useDrop(() => ({
         drop: (item: {id: number, title: string}) => {
             if (title) {
@@ -30,17 +31,30 @@ export const Picture: FC<PictureProps> = ({cloud, checked, toogleCheckbox, setDr
         collect: monitor => ({
             isOver: !!monitor.isOver(),
           }),
-      }))
+      }), [title])
     
     const onChange = () => {
         toogleCheckbox(cloud.id)
     }
     return (
         <div ref={drop} className={classNames('picture', {
-            'picture--highlight': isOver,
+            'picture--highlight': isOver && !title,
         })}>
-            <PictureCheckbox url={cloud.picture} alt={cloud.alt} checked={checked} onChange={onChange}/>
-            {!!title && (
+            <PictureCheckbox 
+                url={cloud.picture} 
+                alt={cloud.alt} 
+                checked={isGameOver ? cloud.isCorrect : checked} 
+                onChange={onChange}
+            />
+            {isGameOver && (
+                <>
+                    <span>{cloud.title}</span>
+                    <div>
+                        {cloud.description}
+                    </div>
+                </>
+            )}
+            {!!title && !isGameOver && (
                 <span>{title}</span>
             )}
         </div>

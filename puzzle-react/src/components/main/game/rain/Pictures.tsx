@@ -5,6 +5,7 @@ import { Picture } from "./Picture"
 import { DroppedTitle } from "./Rain.types"
 
 interface PicturesProps {
+    isGameOver: boolean
     clouds: Cloud[]
     droppedTitles: DroppedTitle[]
     checkedCheckboxes: number[]
@@ -13,7 +14,7 @@ interface PicturesProps {
     toogleCheckbox: (cloudId: number) => void
 }
 
-export const Pictures: FC<PicturesProps> = ({clouds, setDroppedTitle, droppedTitles, toogleCheckbox, checkedCheckboxes}) => {
+export const Pictures: FC<PicturesProps> = ({clouds, setDroppedTitle, droppedTitles, toogleCheckbox, checkedCheckboxes, isGameOver}) => {
 
     return (
         <div className="pictures">
@@ -25,6 +26,7 @@ export const Pictures: FC<PicturesProps> = ({clouds, setDroppedTitle, droppedTit
                     checked={checkedCheckboxes.includes(cloud.id)}
                     setDroppedTitle={setDroppedTitle}
                     title={droppedTitles.find(title => title.attachedCloudId === cloud.id)?.title}
+                    isGameOver={isGameOver}
                 />
             ))}
         </div>

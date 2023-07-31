@@ -10,6 +10,7 @@ interface GameProps {
 
 export const Game: FC<GameProps> = ({correctFlippedCards}) => {
     const [lastGame, setLastGame] = useState<Card | null>(cards[0])
+    const [isGameOver, setIsGameOver] = useState(false)
     
     useEffect(() => {
         if (!correctFlippedCards.length) {
@@ -28,6 +29,11 @@ export const Game: FC<GameProps> = ({correctFlippedCards}) => {
 
     const closeGame = useCallback(() => {
         setLastGame(null)
+        setIsGameOver(false)
+    }, [])
+
+    const finishGame = useCallback(() => {
+        setIsGameOver(true)
     }, [])
 
     if (!lastGame) {
@@ -35,8 +41,10 @@ export const Game: FC<GameProps> = ({correctFlippedCards}) => {
     }
 
     return (
-        <div className={classNames("game", lastGame.name)}>
-            <ActiveGame game={lastGame} closeGame={closeGame}/>
+        <div className={classNames("game", lastGame.name, {
+            'game--over': isGameOver
+        })}>
+            <ActiveGame game={lastGame} closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
         </div>
     )
 

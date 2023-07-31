@@ -1,22 +1,50 @@
-import classNames from "classnames"
 import { FC } from "react"
 
 interface HeaderProps {
     isContinueButtonDisabled: boolean
+    isGameOver: boolean
+    score: number
+
     closeGame: () => void
+    finishGame: () => void
+    calculateResult: () => void
 }
 
-export const Header: FC<HeaderProps> = ({closeGame, isContinueButtonDisabled}) => {
+export const Header: FC<HeaderProps> = ({
+    closeGame, 
+    isGameOver, 
+    isContinueButtonDisabled, 
+    finishGame, 
+    calculateResult,
+    score,
+}) => {
+    const onContinueClick = () => {
+        if (isGameOver) {
+            closeGame()
+            return
+        }
+        calculateResult()
+        finishGame()
+    }
+
     return (
         <header>
-            <div className="question_title">
-                <span>
-                    Lietaus iššūkis. Priskirk debesims jų tipų pavadinimus, pažymėk, iš kurių galima tikėtis lietaus ir spausk „Pateikti“.
+            {isGameOver ? (
+                <div className="question_result">
+                    Iššūkis įveiktas! Taškai: {score} iš 2
+                </div>
+            ) : (
+                <div className="question_title">
+                    <span>
+                        Lietaus iššūkis. Priskirk debesims jų tipų pavadinimus, pažymėk, iš kurių galima tikėtis lietaus ir spausk „Pateikti“.
+                    </span>
+                </div>
+            )}
+            <button className="question_check" disabled={isContinueButtonDisabled} onClick={onContinueClick}>
+                <span className="title">
+                    {isGameOver ? 'Grįžti į žaidimą' : 'Pateikti'}
                 </span>
-            </div>
-            <button className={classNames({
-                'continue-button--disabled': isContinueButtonDisabled,
-            })}>Pateikti</button>
+            </button>
             <button className="question_close" onClick={closeGame}></button>
         </header>
     )
