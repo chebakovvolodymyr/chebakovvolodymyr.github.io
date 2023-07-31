@@ -9,7 +9,7 @@ interface GameProps {
 }
 
 export const Game: FC<GameProps> = ({correctFlippedCards}) => {
-    const [lastGame, setLastGame] = useState<Card | null>(cards[1])
+    const [lastGame, setLastGame] = useState<Card | null>(cards[2])
     const [isGameOver, setIsGameOver] = useState(false)
     
     useEffect(() => {
@@ -41,7 +41,7 @@ export const Game: FC<GameProps> = ({correctFlippedCards}) => {
     }
 
     return (
-        <div className={classNames("game", lastGame.name, {
+        <div className={classNames("game", `game--slide-${lastGame.name}`, {
             'game--over': isGameOver
         })}>
             <ActiveGame game={lastGame} closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>

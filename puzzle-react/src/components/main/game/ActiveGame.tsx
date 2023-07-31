@@ -3,6 +3,7 @@ import { FC } from "react"
 import { Card, CardName } from "../../../data/cards"
 import { Rain } from "./rain/Rain"
 import { Snowflake } from "./snowflake/Snowflake"
+import { Rainbow } from "./rainbow/Rainbow"
 
 interface ActiveGameProps {
     game: Card
@@ -18,6 +19,8 @@ export const ActiveGame: FC<ActiveGameProps> = ({game, closeGame, finishGame, is
             return <Rain closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
         case CardName.SNOWFLAKE: 
             return <Snowflake closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
+        case CardName.RAINBOW: 
+            return <Rainbow closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
     }
     return null
 }

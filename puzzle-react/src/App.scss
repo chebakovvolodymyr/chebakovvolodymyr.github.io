@@ -124,6 +124,59 @@
     animation: fadeIn 0.5s ease-out; 
     background: linear-gradient(#C2E8FF, #1D65AD);
 
+    &--slide-rainbow {
+      background-image: url("./assets/games/rainbow/Nuotrauka iš Pexels, aut. Moritz Boing.jpg");
+      background-size: cover;
+
+      .rainbow {
+        width: 200px;
+        height: 100px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .stripe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-origin: bottom center;
+      }
+      
+      .red {
+        background: red;
+      }
+      
+      .orange {
+        background: linear-gradient(to top, orange 50%, transparent 50%);
+        transform: rotate(51.4deg);
+      }
+      
+      .yellow {
+        background: linear-gradient(to top, yellow 50%, transparent 50%);
+        transform: rotate(102.8deg);
+      }
+      
+      .green {
+        background: linear-gradient(to top, green 50%, transparent 50%);
+        transform: rotate(154.2deg);
+      }
+      
+      .blue {
+        background: linear-gradient(to top, blue 50%, transparent 50%);
+        transform: rotate(205.6deg);
+      }
+      
+      .indigo {
+        background: linear-gradient(to top, indigo 50%, transparent 50%);
+        transform: rotate(257deg);
+      }
+      
+      .violet {
+        background: linear-gradient(to top, violet 50%, transparent 50%);
+        transform: rotate(308.6deg);
+      }
+    }
+
     &--over {
       background: linear-gradient(#DDFFCF, #006633);
     }
