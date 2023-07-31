@@ -1,22 +1,24 @@
 import { FC, useCallback, useState } from "react"
 
 import { games } from "../../../../data/games"
-import { Pictures } from "./Pictures"
+
 import { Header } from "./Header"
 import { DroppedTitle } from "../../titles/Titles.types"
 import { Titles } from "../../titles/Titles"
+import { Pictures } from "./Pictures"
+import { ResultDescription } from "./ResultDescription"
 
-interface RainProps {
+interface SnowflakeProps {
     isGameOver: boolean
 
     closeGame: () => void
     finishGame: () => void
 }
 
-export const Rain: FC<RainProps> = ({isGameOver, closeGame, finishGame}) => {
+export const Snowflake: FC<SnowflakeProps> = ({isGameOver, closeGame, finishGame}) => {
     const {
-        rain: {
-            clouds,
+        snowflake: {
+            snowflakes,
         }
     } = games
 
@@ -28,6 +30,7 @@ export const Rain: FC<RainProps> = ({isGameOver, closeGame, finishGame}) => {
     }, [])
 
     const [checkedCheckboxes, setCheckedCheckboxes] = useState<number[]>([])
+    
     const toogleCheckbox = useCallback((cloudId: number) => {
         if (isGameOver) {
             return
@@ -40,9 +43,9 @@ export const Rain: FC<RainProps> = ({isGameOver, closeGame, finishGame}) => {
     }, [isGameOver])
 
     const calculateResult = useCallback(() => {
-        const checkboxesScore = clouds.reduce((acc, cloud) => {
+        const checkboxesScore = snowflakes.reduce((acc, cloud) => {
             if (cloud.isCorrect && checkedCheckboxes.includes(cloud.id)) {
-                return acc + 0.5
+                return acc + 1
             }
 
             return acc
@@ -57,13 +60,13 @@ export const Rain: FC<RainProps> = ({isGameOver, closeGame, finishGame}) => {
         }, 0)
 
         setScore(checkboxesScore + titlesScore)
-    }, [clouds, droppedTitles, checkedCheckboxes])
+    }, [snowflakes, droppedTitles, checkedCheckboxes])
 
-    const isContinueButtonDisabled = droppedTitles.length !== clouds.length || !checkedCheckboxes.length
-    
+    const isContinueButtonDisabled = droppedTitles.length !== snowflakes.length || !checkedCheckboxes.length
+
     return (
-        <div className="rain">
-            <Header 
+        <div  className="snowflake">
+            <Header
                 closeGame={closeGame} 
                 isContinueButtonDisabled={isContinueButtonDisabled} 
                 finishGame={finishGame} 
@@ -72,14 +75,17 @@ export const Rain: FC<RainProps> = ({isGameOver, closeGame, finishGame}) => {
                 score={score}
             />
             <Pictures 
-                clouds={clouds} 
+                snowflakes={snowflakes} 
                 setDroppedTitle={setDroppedTitle} 
                 droppedTitles={droppedTitles} 
                 checkedCheckboxes={checkedCheckboxes} 
                 toogleCheckbox={toogleCheckbox} 
                 isGameOver={isGameOver}
             />
-            {!isGameOver && <Titles items={clouds} droppedTitles={droppedTitles}/>}
+            {!isGameOver && <Titles items={snowflakes} droppedTitles={droppedTitles}/>}
+            {isGameOver && (
+                <ResultDescription/>
+            )}
         </div>
     )
 }

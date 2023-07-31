@@ -1,12 +1,3 @@
-export interface Cloud {
-    id: number
-    picture: string
-    alt: string
-    isCorrect: boolean
-    title: string
-    description: string
-}
-
 export const games = {
     rain: {
         clouds: [
@@ -41,6 +32,38 @@ export const games = {
                 isCorrect: false,
                 title: 'Plunksniniai',
                 description: 'Plunksniniai debesys (lot. Cirrus) – viršutinio aukšto (7–16 km), ploni, pavieniai, balti debesys, turintys plunksnų išvaizdą. Šie debesys yra skaidrūs ir sudaryti iš ledo kristalų, todėl puikiai praleidžia saulės šviesą, taip formuodami įvairius optinius meteorologinius reiškinius (halas, saulės stulpai ir t. t.). Plunksniniai debesys pranašauja artėjantį šiltąjį atmosferos frontą, tačiau iš šių debesų krituliai žemės paviršiaus nepasiekia, nes išgaruoja ore.',
+            },
+        ],
+    },
+    snowflake: {
+        snowflakes: [
+            {
+                id: 1,
+                picture: './src/assets/games/snowflake/1.Plokštelės.jpg.webp.jpeg',
+                alt: 'Plokštelės',
+                isCorrect: false,
+                title: 'Plokštelės',
+            },
+            {
+                id: 2,
+                picture: './src/assets/games/snowflake/2.Karpytos plokštelės.jpg',
+                alt: 'Karpytos plokštelės',
+                isCorrect: false,
+                title: 'Karpytos plokštelės',
+            },
+            {
+                id: 3,
+                picture: './src/assets/games/snowflake/3.Adatos.jpg.webp.jpeg',
+                alt: 'Adatos',
+                isCorrect: true,
+                title: 'Adatos',
+            },
+            {
+                id: 4,
+                picture: './src/assets/games/snowflake/4.Dendritai.jpg.webp.jpeg',
+                alt: 'Dendritai',
+                isCorrect: false,
+                title: 'Dendritai',
             },
         ]
     }
