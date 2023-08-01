@@ -120,6 +120,7 @@
     top: 0;
     left: 0;
     height: 100vh;
+    overflow-y: scroll;
     width: 100vw;
     animation: fadeIn 0.5s ease-out; 
     background: linear-gradient(#C2E8FF, #1D65AD);
@@ -197,6 +198,11 @@
         color: #3F6D09;
         font-weight: 900;
         font-size: 24px;
+        flex-grow: 1;
+        span {
+          display: inline-block;
+          width: 60%;
+        }
       }
 
       .question_close {
@@ -209,6 +215,7 @@
       }
 
       .question_check {
+        padding: 17px 25px;
         &[disabled] {
           outline: none;
           border: none;
@@ -240,13 +247,17 @@
 
         .title {
           position: absolute;
-          background-image: url("./assets/buttons/button-grey-squared.png");
+          background-image: url("./assets/buttons/button-grey-squared-long.png");
           background-repeat: no-repeat;
+          background-size: cover;
+          background-position: top center;
           font-size: 24px;
           font-weight: bold;
           color: #000;
-          background-size: cover;
-          padding: 9px 17px;
+          height: 60px;
+          width: 315px;
+          text-align: center;
+          line-height: 50px;
 
           &--hidden {
             display: none;
@@ -261,6 +272,51 @@
   }
 }
 
+.snowflake-caption {
+  background-image: url("./assets/buttons/button-grey-squared-long.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  height: 60px;
+  width: 315px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.cloud-description-result {
+  position: absolute;
+  
+
+  .snowflake-caption {
+    position: static;
+    width: 100%;
+    display: inline-block;
+    line-height: 60px;
+    height: 75px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 100;
+  }
+}
+
+.cloud-description {
+  background-image: url("./assets/buttons/blue-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  height: 500px;
+  padding: 25px 20px;
+  position: relative;
+  top: -20px;
+  left: -20px;
+}
+
 @keyframes fadeIn {  
   from {  
       opacity:0;  
@@ -273,6 +329,7 @@
 
 .picture {
   width: 22%;
+  position: relative;
 }
 
 .picture-checkbox {
@@ -281,13 +338,13 @@
   img {
     width: 100%;
     height: 100%;
+    border-radius: 10px;
   }
   .picture-checkbox_customized {
     position: absolute;
     bottom: 5px;
     right: 5px;
     border-radius: 3px;
-    background: #fff;
     width: 35px;
     height: 35px;
     input {
@@ -296,16 +353,36 @@
       position: relative;
       height: 100%;
       z-index: 100;
-      &:checked~.picture-checkbox_label::before {
-        content: '';
-        background-image: url("./assets/buttons/button_checkbox.png");
-        width: 100%;
-        height: 100%;
-        background-size: contain;
-        position: absolute;
-        top: 0px;
-        bottom: 0;
+      ~ .picture-checkbox_label {
+          background: #fff;
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          border-radius: 3px;
+          width: 35px;
+          height: 35px;
+      }
+      &:checked~.picture-checkbox_label {
+        background: transparent;
+
+        &::before {
+          content: '';
+          background-image: url("./assets/buttons/button_checkbox.png");
+          width: 100%;
+          height: 100%;
+          background-size: contain;
+          position: absolute;
+          top: 0px;
+          bottom: 0;
+        }
+      }
     }
-    }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .cloud-description-result .snowflake-caption {
+    height: 60px;
+    line-height: 50px;
   }
 }

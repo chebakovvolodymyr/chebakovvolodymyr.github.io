@@ -2,9 +2,9 @@ import { FC } from "react"
 import { useDrop } from "react-dnd"
 import classNames from "classnames"
 
-import { Cloud } from "../../../../data/games"
 import { PictureCheckbox } from "../../../picture-checkbox/PictureCheckbox"
-import { DroppedTitle } from "./Rain.types"
+import { DroppedTitle } from "../../titles/Titles.types"
+import { Cloud } from "../../../../data/games.types"
 
 interface PictureProps {
     cloud: Cloud
@@ -47,15 +47,15 @@ export const Picture: FC<PictureProps> = ({cloud, checked, toogleCheckbox, setDr
                 onChange={onChange}
             />
             {isGameOver && (
-                <>
-                    <span>{cloud.title}</span>
-                    <div>
+                <div className="cloud-description-result">
+                    <span className="snowflake-caption">{cloud.title}</span>
+                    <div className="cloud-description">
                         {cloud.description}
                     </div>
-                </>
+                </div>
             )}
             {!!title && !isGameOver && (
-                <span>{title}</span>
+                <span className="snowflake-caption">{title}</span>
             )}
         </div>
     )
