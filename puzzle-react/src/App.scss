@@ -124,6 +124,11 @@
     animation: fadeIn 0.5s ease-out; 
     background: linear-gradient(#C2E8FF, #1D65AD);
 
+    &--over {
+      background: linear-gradient(#DDFFCF, #006633);
+    }
+
+
     &--slide-rainbow {
       background-image: url("./assets/games/rainbow/Nuotrauka iš Pexels, aut. Moritz Boing.jpg");
       background-size: cover;
@@ -177,11 +182,41 @@
       }
     }
 
-    &--over {
-      background: linear-gradient(#DDFFCF, #006633);
+    &--slide-thunder {
+      background-image: url("./assets/games/thunder/FONAS. Nuotrauka iš Unsplash, aut. Tasos Mansour.jpg");
+      background-size: cover;
+
+      .thunder-pictures {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 50%;
+
+        .thunder-detections {
+          display: flex;
+          flex-direction: column;
+
+          button {
+            background-image: url("./assets/buttons/button-grey-squared.png");
+            background-size: cover;
+
+            &.active {
+              background-image: url("./assets/buttons/button-green-squared.png");
+            }
+          }
+        }
+      }
     }
 
-    .rain, .snowflake {
+    &--slide-wind {
+      background-image: url("./assets/games/wind/FONAS. Nuotrauka iš Unsplash, aut. Bruno Martins.jpg");
+      background-size: cover;
+
+      .wind-pictures {
+        width: 50%;
+      }
+    }
+
+    .rain, .snowflake, .thunder {
       .question_title {
         font-size: 24px;
         font-weight: bold;

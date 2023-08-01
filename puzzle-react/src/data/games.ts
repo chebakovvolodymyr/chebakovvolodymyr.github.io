@@ -65,6 +65,65 @@ export const games = {
                 isCorrect: false,
                 title: 'Dendritai',
             },
+        ],
+    },
+    thunder: {
+        places: [
+            {
+                id: 1,
+                picture: './src/assets/games/thunder/1. Nuotrauka iš Unsplash, aut. Gilly Stewart.jpg',
+                alt: 'Nuotrauka iš Unsplash, aut. Gilly Stewart',
+                isCorrect: false,
+            },
+            {
+                id: 2,
+                picture: './src/assets/games/thunder/2. Nuotrauka iš Unsplash, aut. Ben White.jpg',
+                alt: 'Nuotrauka iš Unsplash, aut. Ben White',
+                isCorrect: true,
+            },
+            {
+                id: 3,
+                picture: './src/assets/games/thunder/3. Nuotrauka iš Unsplash, aut. Kelly Sikkema.jpg',
+                alt: 'Nuotrauka iš Unsplash, aut. Kelly Sikkema',
+                isCorrect: false,
+            },
+        ],
+        detections: [
+            {
+                id: 1,
+                title: 'Pamatome',
+                isCorrect: false,
+            },
+            {
+                id: 2,
+                title: 'Išgirstame',
+                isCorrect: true,
+            },
+        ],
+    },
+    wind: {
+        winds: [
+            {
+                id: 1,
+                picture: './src/assets/games/wind/1. Nuotrauka iš Unsplash, aut. Zugr.jpg',
+                alt: '1. Nuotrauka iš Unsplash, aut. Zugr',
+                isCorrect: false,
+                speed: '5–10 m/s',
+            },
+            {
+                id: 2,
+                picture: './src/assets/games/wind/2. Nuotrauka iš Unsplash, aut. Cristobal Baeza.jpg',
+                alt: '2. Nuotrauka iš Unsplash, aut. Cristobal Baeza',
+                isCorrect: true,
+                speed: '8–13 m/s',
+            },
+            {
+                id: 3,
+                picture: './src/assets/games/wind/3. Nuotrauka iš Unsplash, aut. Marek Studzinski.jpg',
+                alt: '3. Nuotrauka iš Unsplash, aut. Marek Studzinski',
+                isCorrect: false,
+                speed: '28–32 m/s',
+            },
         ]
     }
 }
