@@ -3,7 +3,7 @@ export const questions = [
     id: 1,
     word: "ELEKTRĄ",
     letter: "K",
-    question: "Ką taupydami namuose galime <wbr>sumažinti klimato kaitos poveikį?",
+    question: "Ką taupydami namuose galime <br>sumažinti klimato kaitos poveikį?",
     answers: ["Pinigus", "Vandenį", "Elektrą"],
     correctAnswer: "Elektrą",
     description: {
@@ -21,7 +21,7 @@ export const questions = [
     word: "GRENLANDIJOUS",
     letter: "L",
     question:
-      "Kokios salos ledo skydo tirpimas šiuo metu yra pagrindinis veiksnys, lemiantis Žemės vandenyno plėtimąsi?",
+      "Kokios salos ledo skydo tirpimas šiuo metu yra pagrindinis<br> veiksnys, lemiantis Žemės vandenyno plėtimąsi?",
     answers: ["Grenlandijous", "Jutlandijos", "Indonezijos"],
     correctAnswer: "Grenlandijous",
     description: {
@@ -56,7 +56,7 @@ export const questions = [
     word: "KLIMATAS",
     letter: "M",
     question:
-      "Kaip vadinamos vidutinės daugiametės vyraujančios orų sąlygos (temperatūra, krituliai, vėjas ir t. t.) tam tikroje vietovėje?",
+      "Kaip vadinamos vidutinės daugiametės vyraujančios orų<br> sąlygos (temperatūra, krituliai, vėjas ir t. t.) tam tikroje vietovėje?",
     answers: ["Klimatas", "Oramatis", "Prognozė"],
     correctAnswer: "Klimatas",
     description: {
@@ -74,7 +74,7 @@ export const questions = [
     word: "ŠILTNAMIO",
     letter: "A",
     question:
-      "CO<sub>2</sub>, CH<sub>4</sub>, N<sub>2</sub>O yra pagrindinės dujos, kurios lemia klimato kaitą. Kokį efektą jos sukelia Žemėje?",
+      "CO<sub>2</sub>, CH<sub>4</sub>, N<sub>2</sub>O yra pagrindinės dujos, kurios lemia<br> klimato kaitą. Kokį efektą jos sukelia Žemėje?",
     answers: ["Šiltnamio", "Šaltnamio", "Snaudulio"],
     correctAnswer: "Šiltnamio",
     description: {
@@ -92,7 +92,7 @@ export const questions = [
     word: "PLASTIKAS",
     letter: "T",
     question:
-      "Sintetinė medžiaga, kurią perdirbus galima naudoti kitų daiktų gamyboje.",
+      "Sintetinė medžiaga, kurią perdirbus<br> galima naudoti kitų daiktų gamyboje.",
     answers: ["Elastanas", "Plastikas", "Neoprenas"],
     correctAnswer: "Plastikas",
     description: {
@@ -113,7 +113,7 @@ export const questions = [
     word: "OZONO",
     letter: "O",
     question:
-      "Koks sluoksnis atmosferoje saugo gyvybę Žemėje nuo pavojingų Saulės ultravioletinių spindulių?",
+      "Koks sluoksnis atmosferoje saugo gyvybę Žemėje<br> nuo pavojingų Saulės ultravioletinių spindulių?",
     answers: ["Azoto", "Urano", "Ozono"],
     correctAnswer: "Ozono",
     description: {
@@ -135,7 +135,7 @@ export const questions = [
     word: "ATMOSFERA",
     letter: "S",
     question:
-      "Kaip vadinamas melsvas dujų apvalkalas, gaubiantis ir saugantis mūsų planetą?",
+      "Kaip vadinamas melsvas dujų apvalkalas,<br> gaubiantis ir saugantis mūsų planetą?",
     answers: ["Matosfera", "Atmosfera", "Litosfera"],
     correctAnswer: "Atmosfera",
     description: {
@@ -156,7 +156,7 @@ export const questions = [
     id: 9,
     word: "RŪŠIAVIMAS",
     letter: "A",
-    question: "Koks paprastas Jūsų veiksmas gali sumažinti klimato pokyčius?",
+    question: "Koks paprastas Jūsų veiksmas gali<br> sumažinti klimato pokyčius?",
     answers: ["Bėgiojimas", "Rūšiavimas", "Grybavimas"],
     correctAnswer: "Rūšiavimas",
     description: {
@@ -178,7 +178,7 @@ export const questions = [
     word: "SAUSRA",
     letter: "U",
     question:
-      "Viena iš dažniausių klimato kaitos pasekmių, kuri sumažina derlių.",
+      "Viena iš dažniausių klimato kaitos<br> pasekmių, kuri sumažina derlių.",
     answers: ["Šalnos", "Sausra", "Liūtys"],
     correctAnswer: "Sausra",
     description: {
@@ -221,7 +221,7 @@ export const questions = [
     word: "GAISRUS",
     letter: "A",
     question:
-      "Viena iš klimato kaitos pasekmių – dažnėjančios karščio bangos, kurios sukelia sausras ir viską niokojančius ...?",
+      "Viena iš klimato kaitos pasekmių – dažnėjančios karščio<br> bangos, kurios sukelia sausras ir viską niokojančius ...?",
     answers: ["Gaisrus", "Šalčius", "Snygius"],
     correctAnswer: "Gaisrus",
     description: {
