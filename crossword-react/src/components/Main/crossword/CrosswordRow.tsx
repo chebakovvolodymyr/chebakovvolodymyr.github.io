@@ -13,12 +13,17 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
     selectedAnswer,
     isFinished,
     onAnimationFinished,
+    setSelectedAnswer,
   } = useContext(ActiveQuestionContext);
 
   const [status, setStatus] = useState(Status.PENDING);
 
   useEffect(() => {
     if (question.id !== activeQuestion?.id) {
+      if (status !== Status.CORRECT_OPEN && status !== Status.ICORRECT_OPEN) {
+        setStatus(Status.PENDING);      
+      }
+
       return;
     }
 
@@ -31,7 +36,7 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
         ? Status.CORRECT_OPEN
         : Status.ICORRECT_OPEN,
     );
-  }, [activeQuestion, selectedAnswer, question]);
+  }, [activeQuestion, selectedAnswer, question, status]);
 
   const { id, word, leftShift, rightShift, letterPosition } = question;
 
@@ -40,10 +45,7 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
       return;
     }
 
-    if (activeQuestion) {
-      return;
-    }
-
+    setSelectedAnswer('')
     setActiveQuestion(question);
     setStatus(Status.SELECTED);
   };

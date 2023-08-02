@@ -7,10 +7,6 @@ export const Footer = () => {
     ActiveQuestionContext,
   );
 
-  const onEndClick = () => {
-    location.reload();
-  };
-
   return (
     <footer
       className={
@@ -19,10 +15,7 @@ export const Footer = () => {
           : ""
       }
     >
-      <button className="btn btn-orange" onClick={onEndClick}>
-        <span className="title">Baigti</span>
-      </button>
-      {selectedAnswer && <ContinueButton />}
+      <ContinueButton isHidden={!selectedAnswer}/>
     </footer>
   );
 };

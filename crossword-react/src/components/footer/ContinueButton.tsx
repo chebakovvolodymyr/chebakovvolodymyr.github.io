@@ -1,9 +1,13 @@
-import { useContext, useEffect } from "react";
+import { FC, useContext, useEffect } from "react";
 import classNames from "classnames";
 
 import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 
-export const ContinueButton = () => {
+interface ContinueButtonProps {
+  isHidden: boolean;
+}
+
+export const ContinueButton: FC<ContinueButtonProps> = ({isHidden}) => {
   const {
     setActiveQuestion,
     setSelectedAnswer,
@@ -21,46 +25,11 @@ export const ContinueButton = () => {
     setSelectedAnswer("");
   };
 
-  useEffect(() => {
-    const continueButton = document.querySelector(".btn-continue");
-    const onAnimationEnd = () => {
-      continueButton?.classList.remove("gelatine");
-    };
-
-    const onDocumentClick = (evt: MouseEvent) => {
-      if (continueButton?.classList.contains("btn-final")) {
-        return;
-      }
-
-      const target = evt.target as HTMLElement;
-      if (target.classList.contains("btn-continue")) {
-        return;
-      }
-
-      if (target.classList.contains("description_expended_button")) {
-        return;
-      }
-
-      if (target.classList.contains("answer")) {
-        return;
-      }
-
-      continueButton?.classList.add("gelatine");
-    };
-
-    document.addEventListener("click", onDocumentClick);
-    continueButton?.addEventListener("animationend", onAnimationEnd);
-
-    return () => {
-      document.removeEventListener("click", onDocumentClick);
-      continueButton?.removeEventListener("animationend", onAnimationEnd);
-    };
-  }, []);
-
   return (
     <button
       className={classNames("btn btn-green btn-continue", {
-        ["btn-final"]: answeredQuestionsAmount === questions.length,
+        "btn-final": answeredQuestionsAmount === questions.length,
+        "btn-hidden": isHidden,
       })}
       onClick={onContinueClick}
     >

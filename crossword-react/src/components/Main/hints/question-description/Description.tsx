@@ -12,7 +12,9 @@ export const Description = ({ long, short }: DescriptionProps) => {
 
   return (
     <div className="description">
-      <div className="description_text">{isExpended ? long : short}</div>
+      <div className="description_text" dangerouslySetInnerHTML={{
+        __html: isExpended ? long : short
+      }}/>
       <div>
         {!isExpended && (
           <button

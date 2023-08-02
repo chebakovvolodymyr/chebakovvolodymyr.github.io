@@ -15,7 +15,7 @@ export const NoActiveQuestionTitle = () => {
 
   return (
     <div className="hints_wrapper">
-      <h4>Norint pradėti, spausk ant bet kurio paslėpto žodžio</h4>
+      <h4>Norint pradėti, spausk ant bet kurio paslėpto žodžio.</h4>
     </div>
   );
 };

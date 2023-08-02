@@ -71,7 +71,7 @@ export const ActiveQuestionContextProvider: FC<PropsWithChildren> = ({
     setIsAnimationFinished(true);
   }, []);
 
-  const isFinished =
+  const isFinished = 
     answeredQuestionsAmount === questions.length &&
     !!selectedAnswer &&
     isAnimationFinished;
