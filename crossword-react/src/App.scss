@@ -200,6 +200,7 @@ header {
         background-color: transparent;
         font-weight: 900;
         background-position: bottom center;
+        padding-top: 0;
 
         &-orange {
           background-image: url("./assets/buttons/button-orange-squared.png");
@@ -294,6 +295,7 @@ footer {
   gap: 32px;
   width: 55%;
   margin: auto;
+  text-align: center;
 
   .btn {
     background-size: contain;

@@ -1,21 +1,28 @@
 import { useContext } from "react";
+import classNames from "classnames";
+
 import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 import { ContinueButton } from "./ContinueButton";
 
 export const Footer = () => {
-  const { selectedAnswer, answeredQuestionsAmount, questions } = useContext(
+  const { selectedAnswer, answeredQuestionsAmount, questions, isFinished } = useContext(
     ActiveQuestionContext,
   );
 
+  const onEndClick = () => {
+    location.reload();
+  };
+
   return (
     <footer
-      className={
-        selectedAnswer && answeredQuestionsAmount === questions.length
-          ? "footer--long"
-          : ""
-      }
+      className={classNames({
+          "footer--long": selectedAnswer && answeredQuestionsAmount === questions.length
+      })}
     >
-      <ContinueButton isHidden={!selectedAnswer} />
+       <button className="btn btn-orange" onClick={onEndClick}>
+        <span className="title">Baigti</span>
+      </button>
+      {isFinished && <ContinueButton />}
     </footer>
   );
 };
