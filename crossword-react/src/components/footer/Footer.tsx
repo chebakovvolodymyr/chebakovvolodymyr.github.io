@@ -15,7 +15,7 @@ export const Footer = () => {
           : ""
       }
     >
-      <ContinueButton isHidden={!selectedAnswer}/>
+      <ContinueButton isHidden={!selectedAnswer} />
     </footer>
   );
 };

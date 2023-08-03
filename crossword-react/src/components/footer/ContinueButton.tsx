@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect } from "react";
+import { FC, useContext } from "react";
 import classNames from "classnames";
 
 import { ActiveQuestionContext } from "../../context/ActiveQuestion";
@@ -7,7 +7,7 @@ interface ContinueButtonProps {
   isHidden: boolean;
 }
 
-export const ContinueButton: FC<ContinueButtonProps> = ({isHidden}) => {
+export const ContinueButton: FC<ContinueButtonProps> = ({ isHidden }) => {
   const {
     setActiveQuestion,
     setSelectedAnswer,

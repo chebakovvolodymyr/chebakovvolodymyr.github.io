@@ -3,7 +3,8 @@ export const questions = [
     id: 1,
     word: "ELEKTRĄ",
     letter: "K",
-    question: "Ką taupydami namuose galime <br>sumažinti klimato kaitos poveikį?",
+    question:
+      "Ką taupydami namuose galime <br>sumažinti klimato kaitos poveikį?",
     answers: ["Pinigus", "Vandenį", "Elektrą"],
     correctAnswer: "Elektrą",
     description: {
@@ -156,7 +157,8 @@ export const questions = [
     id: 9,
     word: "RŪŠIAVIMAS",
     letter: "A",
-    question: "Koks paprastas Jūsų veiksmas gali<br> sumažinti klimato pokyčius?",
+    question:
+      "Koks paprastas Jūsų veiksmas gali<br> sumažinti klimato pokyčius?",
     answers: ["Bėgiojimas", "Rūšiavimas", "Grybavimas"],
     correctAnswer: "Rūšiavimas",
     description: {

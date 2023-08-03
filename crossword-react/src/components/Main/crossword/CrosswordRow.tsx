@@ -21,7 +21,7 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
   useEffect(() => {
     if (question.id !== activeQuestion?.id) {
       if (status !== Status.CORRECT_OPEN && status !== Status.ICORRECT_OPEN) {
-        setStatus(Status.PENDING);      
+        setStatus(Status.PENDING);
       }
 
       return;
@@ -45,7 +45,7 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
       return;
     }
 
-    setSelectedAnswer('')
+    setSelectedAnswer("");
     setActiveQuestion(question);
     setStatus(Status.SELECTED);
   };

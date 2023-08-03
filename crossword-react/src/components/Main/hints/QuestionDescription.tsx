@@ -21,9 +21,12 @@ export const QuestionDescription = () => {
   return (
     <div className="hints_wrapper">
       <div className="number_of_question">{id}</div>
-      <div className="text_question" dangerouslySetInnerHTML={{
-        __html: question
-      }}/>
+      <div
+        className="text_question"
+        dangerouslySetInnerHTML={{
+          __html: question,
+        }}
+      />
       <div className="answers_wrapper">
         <Answers answers={answers} correctAnswer={correctAnswer} />
         <Image picture={picture} />
