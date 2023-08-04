@@ -19,6 +19,7 @@ export const Pictures: FC<PicturesProps> = ({places, isGameOver, checkedCheckbox
         <div className="thunder-pictures">
             {places.map(place => (
                 <PictureCheckbox 
+                    key={place.id}
                     url={place.picture} 
                     alt={place.alt} 
                     checked={isGameOver ? place.isCorrect : checkedCheckboxes.includes(place.id)} 
@@ -26,11 +27,15 @@ export const Pictures: FC<PicturesProps> = ({places, isGameOver, checkedCheckbox
                 />
             ))}
             <div className="thunder-detections">
-                <span>Perkūniją mes pirmiau</span>
+                <span className="thunder-detections_title">Perkūniją mes pirmiau</span>
                 {detections.map(detection => (
-                    <button onClick={()=> setActiveButton(detection.id)} className={classNames({
-                        active: isGameOver ? detection.isCorrect : activeButton === detection.id
-                    })}>{detection.title}</button>
+                    <button 
+                        key={detection.id}
+                        onClick={()=> setActiveButton(detection.id)} 
+                        className={classNames({
+                            active: isGameOver ? detection.isCorrect : activeButton === detection.id
+                        })}
+                    >{detection.title}</button>
                 ))}
             </div>
         </div>

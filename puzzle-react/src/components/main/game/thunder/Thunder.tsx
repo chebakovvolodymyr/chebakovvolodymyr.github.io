@@ -65,18 +65,20 @@ export const Thunder: FC<ThunderProps> = ({isGameOver, closeGame, finishGame}) =
                 calculateResult={calculateResult}
                 score={score}
             />
-            <Pictures 
-                places={places} 
-                detections={detections}
-                checkedCheckboxes={checkedCheckboxes} 
-                toogleCheckbox={toogleCheckbox} 
-                isGameOver={isGameOver}
-                activeButton={activeButton} 
-                setActiveButton={setActiveButton}
-            />
-            {isGameOver && (
-                <Result/>
-            )}
+            <div className="thunder-body">
+                <Pictures 
+                    places={places} 
+                    detections={detections}
+                    checkedCheckboxes={checkedCheckboxes} 
+                    toogleCheckbox={toogleCheckbox} 
+                    isGameOver={isGameOver}
+                    activeButton={activeButton} 
+                    setActiveButton={setActiveButton}
+                />
+                {isGameOver && (
+                    <Result/>
+                )}
+            </div>
         </div>
     )
 }
