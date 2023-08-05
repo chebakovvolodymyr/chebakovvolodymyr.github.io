@@ -25,7 +25,7 @@ export const Picture: FC<PictureProps> = ({cloud, checked, toogleCheckbox, setDr
                 return
             }
 
-            setDroppedTitle({attachedCloudId: cloud.id, title: item.title, id: item.id})
+            setDroppedTitle({attachedId: cloud.id, title: item.title, id: item.id})
         },
         accept: 'title',
         collect: monitor => ({

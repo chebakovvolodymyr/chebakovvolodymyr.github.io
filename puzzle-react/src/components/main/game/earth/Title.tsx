@@ -1,18 +1,16 @@
 import { FC } from "react"
 import { useDrag } from "react-dnd"
 
+import { EarthAnswer } from "../../../../data/games.types"
 import classNames from "classnames"
-import { Position } from "../../../utils/getRandomPositions"
 
 interface TitleProps {
-    id: number
-    title: string
-    isHidden: boolean
+    answer: EarthAnswer
 
-    position: Position
+    isHidden: boolean
 }
 
-export const Title: FC<TitleProps> = ({title, position, isHidden, id}) => {
+export const Title: FC<TitleProps> = ({answer: {id, title}, isHidden}) => {
     const [{isDragging}, drag] = useDrag(() => ({
         type: 'title',
         item: { id, title },
@@ -20,11 +18,13 @@ export const Title: FC<TitleProps> = ({title, position, isHidden, id}) => {
             isDragging: !!monitor.isDragging(),
           }),
       }))
-
-      return (
-        <span ref={drag} className={classNames("title", {
+      
+    return (
+        <div className={classNames('title', {
             'title--hidden': isHidden,
             'title--dragging': isDragging
-        })} style={{top: position.y, left: position.x}}>{title}</span>
+        })} ref={drag}>
+            {title}
+        </div>
     )
 }

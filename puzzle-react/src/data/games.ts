@@ -124,6 +124,132 @@ export const games = {
                 isCorrect: false,
                 speed: '28–32 m/s',
             },
+        ],
+    },
+    flood: {
+        questions: [
+            {
+                id: 1,
+                title: '1. Kuri iš šių priežasčių nėra viena iš dažniausių kilti potvyniui Lietuvos upėse?',
+                correctAnswerId: 1,
+                answers: [
+                    {
+                        id: 1,
+                        title: 'Vėjo patvanka',
+                    },
+                    {
+                        id: 2,
+                        title: 'Intensyvus lietus arba sniego tirpsmas',
+                    },
+                    {
+                        id: 3,
+                        title: 'Ledų sangrūdos',
+                    },
+                ],
+            },
+            {
+                id: 2,
+                title: '2. Koks kelias Lietuvoje yra beveik kasmet apsemiamas pavasario potvynio metu?',
+                correctAnswerId: 2,
+                answers: [
+                    {
+                        id: 1,
+                        title: 'Prienai – Birštonas',
+                    },
+                    {
+                        id: 2,
+                        title: 'Šilutė – Rusnė',
+                    },
+                    {
+                        id: 3,
+                        title: 'Jurbarkas – Skaudvilė',
+                    },
+                ],
+            },
+            {
+                id: 3,
+                title: '3. Kuriai Europos šaliai gresia didžiausias pavojus dėl jūros lygio kilimo, vykstant klimato kaitai?',
+                correctAnswerId: 1,
+                answers: [
+                    {
+                        id: 1,
+                        title: 'Nyderlandai',
+                    },
+                    {
+                        id: 2,
+                        title: 'Belgija',
+                    },
+                    {
+                        id: 3,
+                        title: 'Italija',
+                    },
+                ],
+            },
+        ],
+    },
+    sound: {
+        sounds: [
+            {
+                id: 1,
+                picture: './src/assets/games/sound/1.png',
+                soundUrl: 'KqJ37MVf16Y',
+                title: 'Vėjas',
+            },
+            {
+                id: 2,
+                picture: './src/assets/games/sound/2.png',
+                soundUrl: 'T-BOPr7NXME',
+                title: 'Perkūnija',
+            },
+            {
+                id: 3,
+                picture: './src/assets/games/sound/3.png',
+                soundUrl: '7pQPJNkGZHg',
+                title: 'Sniegas',
+                start: 20,
+            },
+            {
+                id: 4,
+                picture: './src/assets/games/sound/4.png',
+                soundUrl: '4B7Cios0_OY',
+                title: 'Liūtis',
+            },
+        ],
+    },
+    earth: {
+        answers: [
+            {
+                id: 1,
+                title: 'Domėkis',
+            },
+            {
+                id: 2,
+                title: 'Rinkis taupius prietaisus',
+            },
+            {
+                id: 3,
+                title: 'Rūšiuok',
+            },
+            {
+                id: 4,
+                title: 'Keliauk tvariau',
+            },
+            {
+                id: 5,
+                title: 'Išjunk, kai nenaudoji',
+            },
+            {
+                id: 6,
+                title: 'Informuok kitus',
+            },
+            {
+                id: 7,
+                title: 'Rinkis žaliąją energiją',
+            },
+            {
+                id: 8,
+                title: 'Naudok mažiau',
+            },
         ]
     }
 }

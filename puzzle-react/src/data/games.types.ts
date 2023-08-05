@@ -35,3 +35,28 @@ export interface Wind {
     isCorrect: boolean
     speed: string
 }
+
+export interface FloodAnswer {
+    id: number
+    title: string
+}
+
+export interface FloodQuestion {
+    id: number
+    title: string
+    correctAnswerId: number
+    answers: FloodAnswer[]
+}
+
+export interface Sound {
+    id: number
+    picture: string
+    soundUrl: string
+    title: string
+    start?: number
+}
+
+export interface EarthAnswer {
+    id: number
+    title: string
+}

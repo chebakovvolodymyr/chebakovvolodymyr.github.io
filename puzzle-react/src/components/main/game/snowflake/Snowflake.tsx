@@ -25,8 +25,8 @@ export const Snowflake: FC<SnowflakeProps> = ({isGameOver, closeGame, finishGame
     const [droppedTitles, setDroppedTitles] = useState<DroppedTitle[]>([])
     const [score, setScore] = useState(0)
 
-    const setDroppedTitle = useCallback(({id, attachedCloudId, title}: DroppedTitle) => {
-        setDroppedTitles(droppedTitles => [...droppedTitles, {id, title, attachedCloudId}])
+    const setDroppedTitle = useCallback(({id, attachedId, title}: DroppedTitle) => {
+        setDroppedTitles(droppedTitles => [...droppedTitles, {id, title, attachedId}])
     }, [])
 
     const [checkedCheckboxes, setCheckedCheckboxes] = useState<number[]>([])
@@ -52,7 +52,7 @@ export const Snowflake: FC<SnowflakeProps> = ({isGameOver, closeGame, finishGame
         }, 0)
 
         const titlesScore = droppedTitles.reduce((acc, title) => {
-            if (title.id === title.attachedCloudId) {
+            if (title.id === title.attachedId) {
                 return acc + 0.25
             }
 

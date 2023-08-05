@@ -217,7 +217,84 @@
       }
     }
 
-    .rain, .snowflake, .thunder {
+    &--slide-flood {
+      background-image: url("./assets/games/flood/Nuotrauka iš Unsplash, aut. Chris Gallagher.jpg");
+      background-size: cover;
+    }
+
+    &--slide-sound {
+      background-image: url("./assets/games/sound/FONAS. Nuotrauka iš Unsplash, aut. Inkredo Designer.jpg");
+      background-size: cover;
+
+      .sounds {
+        display: flex;
+
+        .sound-item {
+          &__title {
+            background-image: url("./assets/buttons/transparent-squared.png");
+            background-size: cover;
+            width: 232px;
+            height: 86px;
+  
+            &--highlight {
+              outline: 3px solid #1AA7EC;
+            }
+          }
+
+          &__video {
+            position: fixed;
+            z-index: -99;
+            width: 100%; 
+            height: 100%;
+            top: -10000%;
+          }
+
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &--slide-earth {
+      background-image: url("./assets/games/earth/FONAS earth.jpg");
+      background-size: cover;
+
+      .earth-titles {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        &.titles {
+          .title {
+            position: static;
+          }
+        }
+      }
+
+      .earths-places {
+        display: flex;
+
+        &.titles {
+          height: auto;
+        } 
+
+        .earth-place {
+          background-image: url("./assets/buttons/transparent-squared-long.png");
+          background-size: cover;
+          width: 424px;
+          height: 86px;
+
+          &--highlight {
+            outline: 3px solid #1AA7EC;
+          }
+
+          &.title {
+            position: static;
+          }
+        }
+      }
+    }
+
       .question_title {
         font-size: 24px;
         font-weight: bold;
@@ -303,7 +380,6 @@
           }
         }
       }
-    }
   }
 }
 
@@ -413,6 +489,14 @@
       }
     }
   }
+}
+
+.melting-ice-river {
+  background-image: url("./assets/games/melting-ice/Nuotrauka iš Pexels, aut. Mikhail Nilov.jpg");
+  background-size: cover;
+
+  height: 60vh;
+  width: 80vw;
 }
 
 @media screen and (max-width: 1650px) {

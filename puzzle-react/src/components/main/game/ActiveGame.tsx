@@ -6,6 +6,10 @@ import { Snowflake } from "./snowflake/Snowflake"
 import { Rainbow } from "./rainbow/Rainbow"
 import { Thunder } from "./thunder/Thunder"
 import { Wind } from "./wind/Wind"
+import { Flood } from "./flood/Flood"
+import { MeltingIce } from "./melting-ice/MeltingIce"
+import { Sound } from "./sound/Sound"
+import { Earth } from "./earth/Earth"
 
 interface ActiveGameProps {
     game: Card
@@ -27,6 +31,14 @@ export const ActiveGame: FC<ActiveGameProps> = ({game, closeGame, finishGame, is
             return <Thunder closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
         case CardName.WIND: 
             return <Wind closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
+        case CardName.FLOOD: 
+            return <Flood closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
+        case CardName.MELTING_ICE: 
+            return <MeltingIce closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
+        case CardName.SOUND: 
+            return <Sound closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
+        case CardName.EARTH: 
+            return <Earth closeGame={closeGame} finishGame={finishGame} isGameOver={isGameOver}/>
     }
     return null
 }

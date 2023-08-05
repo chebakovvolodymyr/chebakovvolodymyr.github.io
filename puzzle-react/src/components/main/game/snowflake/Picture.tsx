@@ -25,7 +25,7 @@ export const Picture: FC<PictureProps> = ({snowflake, checked, toogleCheckbox, s
                 return
             }
 
-            setDroppedTitle({attachedCloudId: snowflake.id, title: item.title, id: item.id})
+            setDroppedTitle({attachedId: snowflake.id, title: item.title, id: item.id})
         },
         accept: 'title',
         collect: monitor => ({
