@@ -1,39 +1,41 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react";
 
-import { Card } from "../data/cards"
+import { Card } from "../data/cards";
 
 export const useFlippedCards = () => {
-    const [flippedCards, setFlippedCards] = useState<Card[]>([])
-    const [correctFlippedCards, setCorrectFlippedCards] = useState<Card[]>([])
+  const [flippedCards, setFlippedCards] = useState<Card[]>([]);
+  const [correctFlippedCards, setCorrectFlippedCards] = useState<Card[]>([]);
 
-    const flipCard = useCallback((card: Card) => {
-        setFlippedCards(flippedCards => ([...flippedCards, card]))
-    }, [])
+  const flipCard = useCallback((card: Card) => {
+    setFlippedCards((flippedCards) => [...flippedCards, card]);
+  }, []);
 
-    useEffect(() => {
-        if (flippedCards.length < 2) {
-            return
-        }
+  useEffect(() => {
+    if (flippedCards.length < 2) {
+      return;
+    }
 
-        const [firstCard, secondCard] = flippedCards
-        if (firstCard.name === secondCard.name) {
-            setFlippedCards([])
-            setCorrectFlippedCards(flippedCards => ([...flippedCards, firstCard, secondCard]))
-            return
-        }
+    const [firstCard, secondCard] = flippedCards;
+    if (firstCard.name === secondCard.name && firstCard.id !== secondCard.id) {
+      setFlippedCards([]);
+      setCorrectFlippedCards((flippedCards) => [
+        ...flippedCards,
+        firstCard,
+        secondCard,
+      ]);
+      return;
+    }
 
-        const timeoutId = setTimeout(() => {
-            setFlippedCards([])
-        }, 1000)
+    const timeoutId = setTimeout(() => {
+      setFlippedCards([]);
+    }, 1000);
 
-        return () => {
-            clearTimeout(timeoutId)
-        }
-    }, [flippedCards])
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [flippedCards]);
 
-    const inProgress = flippedCards.length > 1
+  const inProgress = flippedCards.length > 1;
 
-
-
-    return { flippedCards, flipCard, correctFlippedCards, inProgress }
-}
+  return { flippedCards, flipCard, correctFlippedCards, inProgress };
+};

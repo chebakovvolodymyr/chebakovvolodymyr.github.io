@@ -1,47 +1,52 @@
-import { FC, useCallback, useState } from "react"
-import { Header } from "./Header"
-import { Result } from "./Result"
-import { River } from "./River"
+import { FC, useCallback, useState } from "react";
+import { Header } from "./Header";
+import { Result } from "./Result";
+import { River } from "./River";
 
 interface MeltingIceProps {
-    isGameOver: boolean
+  isGameOver: boolean;
 
-    closeGame: () => void
-    finishGame: () => void
+  closeGame: () => void;
+  finishGame: () => void;
 }
 
-export const MeltingIce: FC<MeltingIceProps> = ({isGameOver, closeGame, finishGame}) => {
-    const [score, setScore] = useState(0)
+export const MeltingIce: FC<MeltingIceProps> = ({
+  isGameOver,
+  closeGame,
+  finishGame,
+}) => {
+  const [score, setScore] = useState(0);
 
-    const [selectedPointId, setSelectedPointId] = useState(0)
-    const onPointSelect = useCallback((pointId: number) => {
-        if (isGameOver) {
-            return
-        }
+  const [selectedPointId, setSelectedPointId] = useState(0);
+  const onPointSelect = useCallback(
+    (pointId: number) => {
+      if (isGameOver) {
+        return;
+      }
 
-        setSelectedPointId(pointId)
-    }, [isGameOver])
+      setSelectedPointId(pointId);
+    },
+    [isGameOver],
+  );
 
-    const calculateResult = useCallback(() => {
-        setScore(selectedPointId === 1 ? 1 : 0)
-    }, [selectedPointId])
+  const calculateResult = useCallback(() => {
+    setScore(selectedPointId === 1 ? 1 : 0);
+  }, [selectedPointId]);
 
-    const isContinueButtonDisabled = !selectedPointId
-    
-    return (
-        <div className="melting-ice">
-            <Header 
-                closeGame={closeGame} 
-                isContinueButtonDisabled={isContinueButtonDisabled} 
-                finishGame={finishGame} 
-                isGameOver={isGameOver}
-                calculateResult={calculateResult}
-                score={score}
-            />
-            <River onPointSelect={onPointSelect} selectedPointId={selectedPointId}/>
-            {isGameOver && (
-                <Result/>
-            )}
-        </div>
-    )
-}
+  const isContinueButtonDisabled = !selectedPointId;
+
+  return (
+    <div className="melting-ice">
+      <Header
+        closeGame={closeGame}
+        isContinueButtonDisabled={isContinueButtonDisabled}
+        finishGame={finishGame}
+        isGameOver={isGameOver}
+        calculateResult={calculateResult}
+        score={score}
+      />
+      <River onPointSelect={onPointSelect} selectedPointId={selectedPointId} />
+      {isGameOver && <Result />}
+    </div>
+  );
+};
