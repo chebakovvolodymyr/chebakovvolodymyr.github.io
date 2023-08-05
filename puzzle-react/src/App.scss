@@ -277,6 +277,7 @@
         span {
           display: inline-block;
           overflow-y: auto;
+          
           &::-webkit-scrollbar {
             width: 15px;
             height: 215px;
@@ -296,9 +297,66 @@
     &--slide-wind {
       background-image: url("./assets/games/wind/FONAS. Nuotrauka iš Unsplash, aut. Bruno Martins.jpg");
       background-size: cover;
+      color: #000;
 
       .wind-pictures {
-        width: 50%;
+        display: flex;
+        margin-top: 20px;
+        gap: 2%;
+        .picture-checkbox {
+          height: auto;
+          width: 33%;
+      
+        } 
+      }
+      .question_title span{
+        color: #000;
+      }
+      .wind-title {
+        background-image: url("./assets/buttons/blue-bg-long.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 34px 0;
+        font-weight: bold;
+        text-align: center;
+      }
+      .wind-question-wrapper {
+        width: 70%;
+        margin-left: 4%;
+      }
+      .wind-wrapper {
+        display: flex;
+        gap: 2%;
+      }
+      .wind-result {
+        display: flex;
+        gap: 2%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-weight: bold;
+        justify-content: space-between;
+
+        &-text {
+          width: 70%;
+          background-image: url("./assets/buttons/blue-bg-wind.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 870px;
+          height: 435px;
+          padding: 20px 40px;
+          box-sizing: border-box;
+        }
+        &-letters {
+          background-image: url("./assets/buttons/blue-bg.png");
+          font-size: 20px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 370px;
+          height: 450px;
+          padding: 20px 40px;
+          box-sizing: border-box;
+        }
       }
     }
 
@@ -505,21 +563,31 @@
     height: 60px;
     line-height: 50px;
   }
-  .main .game--slide-rainbow {
-    .rainbow-wrapper {
-      bottom: 14%;
+  .main {
+    .game--slide-rainbow {
+      .rainbow-wrapper {
+        bottom: 14%;
+      }
+      .rainbow {
+        transform: translateX(50%);
+      }
     }
-    .rainbow {
-      transform: translateX(50%);
+    .game--slide-thunder  {
+      .thunder-pictures .picture-checkbox {
+        width: 360px;
+        height: 290px;
+      }
+      .thunder-result span {
+        max-height: 535px;
+      }
     }
-  }
-  .main .game--slide-thunder  {
-    .thunder-pictures .picture-checkbox {
-      width: 360px;
-      height: 290px;
+    .game--slide-wind {
+      .wind-title {
+        padding: 23px 0;
+      }
+      .wind-result-text {
+        height: 370px;
+      }
     }
-    .thunder-result {
-      max-height: 535px;
-    }
-  }
+  } 
 }

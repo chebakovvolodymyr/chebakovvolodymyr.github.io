@@ -58,19 +58,21 @@ export const Wind: FC<ThunderProps> = ({isGameOver, closeGame, finishGame}) => {
                 calculateResult={calculateResult}
                 score={score}
             />
-            <div>
-                <div>Nepastoviai debesuota. Lietaus tikimybė maža. Vėjas pietvakarių, vakarų, 8–13 m/s. Temperatūra naktį 2–7, dieną 18–23 laipsniai šilumos.</div>
-                <Pictures 
-                    winds={winds} 
-                    checkedCheckboxes={checkedCheckboxes} 
-                    toogleCheckbox={toogleCheckbox} 
-                    isGameOver={isGameOver}
-                />
-                {isGameOver && (
-                    <Result/>
-                )}
+            <div className="wind-wrapper">
+                <div className="wind-question-wrapper">
+                    <div className="wind-title">Nepastoviai debesuota. Lietaus tikimybė maža. Vėjas pietvakarių, vakarų, 8–13 m/s. Temperatūra naktį 2–7, dieną 18–23 laipsniai šilumos.</div>
+                    <Pictures 
+                        winds={winds} 
+                        checkedCheckboxes={checkedCheckboxes} 
+                        toogleCheckbox={toogleCheckbox} 
+                        isGameOver={isGameOver}
+                    />
+                    {isGameOver && (
+                        <Result/>
+                    )}
+                </div>
+                <Compass/>
             </div>
-            <Compass/>
         </div>
     )
 }
