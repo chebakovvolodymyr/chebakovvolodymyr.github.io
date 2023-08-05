@@ -36,7 +36,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(#004993, #021F3D);
+  background: linear-gradient(#004993, #021f3d);
 
   header {
     display: flex;
@@ -55,11 +55,11 @@
       background-position: center;
       background-color: transparent;
       font-weight: 900;
-  
+
       background-image: url("./assets/buttons/button-orange-rounded.png");
       color: #fff;
       padding: 10px 50px;
-  
+
       .title {
         filter: drop-shadow(2px 4px 4px #000);
       }
@@ -98,17 +98,18 @@
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       }
-      
-      &-front, &-back {
+
+      &-front,
+      &-back {
         position: absolute;
         width: 100%;
         height: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
       }
-      
+
       &-back {
         transform: rotateY(180deg);
       }
@@ -122,13 +123,12 @@
     height: 100vh;
     overflow-y: scroll;
     width: 100vw;
-    animation: fadeIn 0.5s ease-out; 
-    background: linear-gradient(#C2E8FF, #1D65AD);
+    animation: fadeIn 0.5s ease-out;
+    background: linear-gradient(#c2e8ff, #1d65ad);
 
     &--over {
-      background: linear-gradient(#DDFFCF, #006633);
+      background: linear-gradient(#ddffcf, #006633);
     }
-
 
     &--slide-rainbow {
       background-image: url("./assets/games/rainbow/Nuotrauka iš Pexels, aut. Moritz Boing.jpg");
@@ -151,13 +151,13 @@
         transform: translateX(65%);
         width: 100%;
         max-width: 800px;
-        &:after{
+        &:after {
           content: "";
           display: block;
           padding-bottom: 100%;
         }
       }
-      
+
       .stripe {
         position: absolute;
         top: 50%;
@@ -166,7 +166,7 @@
         transform-origin: 0% 0%;
         height: 100%;
         border-radius: 50%;
-        &:after{
+        &:after {
           content: "";
           display: block;
           padding-bottom: 100%;
@@ -306,7 +306,6 @@
         .picture-checkbox {
           height: auto;
           width: 33%;
-      
         } 
       }
       .question_title span{
@@ -360,6 +359,84 @@
       }
     }
 
+    &--slide-flood {
+      background-image: url("./assets/games/flood/Nuotrauka iš Unsplash, aut. Chris Gallagher.jpg");
+      background-size: cover;
+    }
+
+    &--slide-sound {
+      background-image: url("./assets/games/sound/FONAS. Nuotrauka iš Unsplash, aut. Inkredo Designer.jpg");
+      background-size: cover;
+
+      .sounds {
+        display: flex;
+
+        .sound-item {
+          &__title {
+            background-image: url("./assets/buttons/transparent-squared.png");
+            background-size: cover;
+            width: 232px;
+            height: 86px;
+
+            &--highlight {
+              outline: 3px solid #1aa7ec;
+            }
+          }
+
+          &__video {
+            position: fixed;
+            z-index: -99;
+            width: 100%;
+            height: 100%;
+            top: -10000%;
+          }
+
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &--slide-earth {
+      background-image: url("./assets/games/earth/FONAS earth.jpg");
+      background-size: cover;
+
+      .earth-titles {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        &.titles {
+          .title {
+            position: static;
+          }
+        }
+      }
+
+      .earths-places {
+        display: flex;
+
+        &.titles {
+          height: auto;
+        }
+
+        .earth-place {
+          background-image: url("./assets/buttons/transparent-squared-long.png");
+          background-size: cover;
+          width: 424px;
+          height: 86px;
+
+          &--highlight {
+            outline: 3px solid #1aa7ec;
+          }
+
+          &.title {
+            position: static;
+          }
+        }
+      }
+    }
+
     .rain, .snowflake, .thunder {
       .question_title {
         font-size: 24px;
@@ -372,78 +449,77 @@
         }
       }
 
-      .question_result {
-        color: #3F6D09;
-        font-weight: 900;
-        font-size: 24px;
-        flex-grow: 1;
-        span {
-          display: inline-block;
-          width: 60%;
-        }
+    .question_result {
+      color: #3f6d09;
+      font-weight: 900;
+      font-size: 24px;
+      flex-grow: 1;
+      span {
+        display: inline-block;
+        width: 60%;
       }
+    }
 
-      .question_close {
-        background-image: url("./assets/buttons/button_cross.png");
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        margin-left: 30px;
-        flex-grow: 0;
-      }
+    .question_close {
+      background-image: url("./assets/buttons/button_cross.png");
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin-left: 30px;
+      flex-grow: 0;
+    }
 
-      .question_check {
-        padding: 17px 25px;
-        &[disabled] {
-          outline: none;
-          border: none;
-          background-image: url("./assets/buttons/button-transparent-squared.png");
-          
-          .title {
-            filter: none;
-            color: #DADADA;
-          }
-        }
-      }
-
-      .pictures {
-        display: flex;
-        width: 90%;
-        justify-content: space-between;
-        margin: auto;      
-
-        .picture {
-          &--highlight {
-            outline: 3px solid #1AA7EC;
-          }
-        }
-      }
-
-      .titles {
-        height: 500px;
-        position: relative;
+    .question_check {
+      padding: 17px 25px;
+      &[disabled] {
+        outline: none;
+        border: none;
+        background-image: url("./assets/buttons/button-transparent-squared.png");
 
         .title {
-          position: absolute;
-          background-image: url("./assets/buttons/button-grey-squared-long.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top center;
-          font-size: 24px;
-          font-weight: bold;
-          color: #000;
-          height: 60px;
-          width: 315px;
-          text-align: center;
-          line-height: 50px;
+          filter: none;
+          color: #dadada;
+        }
+      }
+    }
 
-          &--hidden {
-            display: none;
-          }
+    .pictures {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      margin: auto;
 
-          &--dragging {
-            opacity: 0.2;
-          }
+      .picture {
+        &--highlight {
+          outline: 3px solid #1aa7ec;
+        }
+      }
+    }
+
+    .titles {
+      height: 500px;
+      position: relative;
+
+      .title {
+        position: absolute;
+        background-image: url("./assets/buttons/button-grey-squared-long.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        height: 60px;
+        width: 315px;
+        text-align: center;
+        line-height: 50px;
+
+        &--hidden {
+          display: none;
+        }
+
+        &--dragging {
+          opacity: 0.2;
         }
       }
     }
@@ -466,7 +542,6 @@
 
 .cloud-description-result {
   position: absolute;
-  
 
   .snowflake-caption {
     position: static;
@@ -495,14 +570,14 @@
   left: -20px;
 }
 
-@keyframes fadeIn {  
-  from {  
-      opacity:0;  
-  }  
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-  to {  
-      opacity:1;  
-  }  
+  to {
+    opacity: 1;
+  }
 }
 
 .picture {
@@ -532,19 +607,19 @@
       height: 100%;
       z-index: 100;
       ~ .picture-checkbox_label {
-          background: #fff;
-          position: absolute;
-          bottom: 5px;
-          right: 5px;
-          border-radius: 3px;
-          width: 35px;
-          height: 35px;
+        background: #fff;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        border-radius: 3px;
+        width: 35px;
+        height: 35px;
       }
-      &:checked~.picture-checkbox_label {
+      &:checked ~ .picture-checkbox_label {
         background: transparent;
 
         &::before {
-          content: '';
+          content: "";
           background-image: url("./assets/buttons/button_checkbox.png");
           width: 100%;
           height: 100%;
@@ -558,36 +633,34 @@
   }
 }
 
+.melting-ice-river {
+  background-image: url("./assets/games/melting-ice/Nuotrauka iš Pexels, aut. Mikhail Nilov.jpg");
+  background-size: cover;
+
+  height: 60vh;
+  width: 80vw;
+}
+
 @media screen and (max-width: 1650px) {
   .cloud-description-result .snowflake-caption {
     height: 60px;
     line-height: 50px;
   }
-  .main {
-    .game--slide-rainbow {
-      .rainbow-wrapper {
-        bottom: 14%;
-      }
-      .rainbow {
-        transform: translateX(50%);
-      }
+  .main .game--slide-rainbow {
+    .rainbow-wrapper {
+      bottom: 14%;
     }
-    .game--slide-thunder  {
-      .thunder-pictures .picture-checkbox {
-        width: 360px;
-        height: 290px;
-      }
-      .thunder-result span {
-        max-height: 535px;
-      }
+    .rainbow {
+      transform: translateX(50%);
     }
-    .game--slide-wind {
-      .wind-title {
-        padding: 23px 0;
-      }
-      .wind-result-text {
-        height: 370px;
-      }
+  }
+  .main .game--slide-thunder {
+    .thunder-pictures .picture-checkbox {
+      width: 360px;
+      height: 290px;
     }
-  } 
+    .thunder-result {
+      max-height: 535px;
+    }
+  }
 }

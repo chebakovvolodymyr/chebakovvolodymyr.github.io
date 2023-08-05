@@ -1,5 +1,5 @@
 export interface DroppedTitle {
-    id: number
-    attachedCloudId: number
-    title: string
+  id: number;
+  attachedId: number;
+  title: string;
 }
