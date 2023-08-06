@@ -268,4 +268,50 @@ export const games = {
       },
     ],
   },
+  rainbow: {
+    stripes: [
+      {
+        id: 1,
+        color: '#E20613',
+        text: 'Raudonai,',
+        type: 'red',
+      },
+      {
+        id: 2,
+        color: '#F29100',
+        text: 'o',
+        type: 'orange',
+      },
+      {
+        id: 3,
+        color: '#FBE910',
+        text: 'gal',
+        type: 'yellow',
+      },
+      {
+        id: 4,
+        color: '#52B71D',
+        text: 'žaliai',
+        type: 'green',
+      },
+      {
+        id: 5,
+        color: '#36A8E0',
+        text: 'žydi',
+        type: 'blue',
+      },
+      {
+        id: 6,
+        color: '#27348A',
+        text: 'marių',
+        type: 'indigo',
+      },
+      {
+        id: 7,
+        color: '#81368B',
+        text: 'vandenai.',
+        type: 'violet',
+      },
+    ],
+  }
 };
