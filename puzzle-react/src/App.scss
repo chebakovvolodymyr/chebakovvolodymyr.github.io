@@ -356,6 +356,58 @@
     &--slide-flood {
       background-image: url("./assets/games/flood/Nuotrauka iš Unsplash, aut. Chris Gallagher.jpg");
       background-size: cover;
+      
+      .flood-questions {
+        display: flex;
+        font-size: 24px;
+        gap: 5%;
+        margin: 10px 50px;
+        font-weight: bold;
+        color: #000;
+        .flood-question {
+          background-image: url("./assets/buttons/blue-bg-thunder.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 511px;
+          height: 438px;
+          box-sizing: border-box;
+          padding: 0px 25px;
+          .picture-checkbox {
+            height: auto;
+          }
+          &-option {
+            display: flex;
+            position: relative;
+            margin-bottom: 10px;
+            align-items: center;
+            span {
+              margin-left: 10px;
+            }
+          }
+          .picture-checkbox .picture-checkbox_customized input ~ .picture-checkbox_label {
+            bottom: -5px;
+            left: 5px;
+          }
+        }
+        .picture-checkbox_customized {
+          position: relative;
+        }
+      }
+      .flood-result {
+        display: flex;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-weight: bold;
+        background-image: url("./assets/buttons/blue-bg-long-wind.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 1219px;
+        height: 332px;
+        margin: auto;
+        padding: 30px 60px;
+        color: #000;
+        font-size: 20px;
+      }
     }
 
     &--slide-sound {
@@ -431,11 +483,11 @@
       }
     }
 
-    .rain, .snowflake, .thunder, .flood {
+    .rain, .snowflake, .thunder, .flood, .melting-ice {
       .question_title {
         font-size: 24px;
         font-weight: bold;
-        color: #fff;
+        color: #000;
         flex-grow: 1;
         span {
           width: 60%;
@@ -527,6 +579,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  display: block;
   font-size: 24px;
   font-weight: bold;
   color: #000;
@@ -534,6 +587,8 @@
   width: 315px;
   text-align: center;
   line-height: 50px;
+  margin-top: 10px;
+  margin-left: 0;
 }
 
 .cloud-description-result {
@@ -548,6 +603,7 @@
     margin-top: 15px;
     position: relative;
     z-index: 100;
+    left: -20px;
   }
 }
 
@@ -558,10 +614,12 @@
   color: #000;
   font-size: 20px;
   font-weight: 500;
-  width: 100%;
-  height: 500px;
+  width: 417px;
+  height: 454px;
   padding: 25px 20px;
+  box-sizing: border-box;
   position: relative;
+  font-size: 19px;
   top: -20px;
   left: -20px;
 }
@@ -632,9 +690,11 @@
 .melting-ice-river {
   background-image: url("./assets/games/melting-ice/Nuotrauka iš Pexels, aut. Mikhail Nilov.jpg");
   background-size: cover;
-
   height: 60vh;
-  width: 80vw;
+  background-position: center;
+  max-width: 100%;
+  width: 90%;
+  margin: auto;
 }
 
 @media screen and (max-width: 1650px) {
@@ -642,6 +702,31 @@
     height: 60px;
     line-height: 50px;
   }
+  .cloud-description {
+    width: auto;
+    left: 0;
+    span {
+      display: inline-block;
+      height: 290px;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 15px;
+        height: 215px;
+        background-color: #175fb9;
+        border: 4px solid #acf3fe;
+        border-radius: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #ffa300;
+        border-radius: 8px;
+        border: 4px solid #acf3fe;
+      }
+    }
+  }
+  .cloud-description-result .snowflake-caption {
+    left: 0;
+  }
+
   .main .game--slide-rainbow {
     .rainbow-wrapper {
       bottom: 14%;

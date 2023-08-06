@@ -65,7 +65,9 @@ export const Picture: FC<PictureProps> = ({
       {isGameOver && (
         <div className="cloud-description-result">
           <span className="snowflake-caption">{cloud.title}</span>
-          <div className="cloud-description">{cloud.description}</div>
+          <div className="cloud-description">
+            <span>{cloud.description}</span>
+          </div>
         </div>
       )}
       {!!title && !isGameOver && (
