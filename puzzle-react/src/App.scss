@@ -483,18 +483,16 @@
       }
     }
 
-    .rain, .snowflake, .thunder, .flood, .melting-ice {
-      .question_title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #000;
+    .question_title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
         flex-grow: 1;
         span {
           width: 60%;
           display: inline-block;
         }
       }
-    }
       
 
     .question_result {
@@ -624,6 +622,40 @@
   left: -20px;
 }
 
+.clouds-wrapper {
+  .cloud-item {
+    position: absolute;
+  }
+  div:first-child {
+    bottom: 30%;
+    right: 12%;
+  }
+  div:nth-child(2) {
+    bottom: 55%;
+    right: 20%;
+  }
+  div:nth-child(3) {
+    bottom: 75%;
+    right: 30%;
+  }
+  div:nth-child(4) {
+    bottom: 0;
+    left: 10%;
+  }
+  div:nth-child(5) {
+    bottom: 30%;
+    left: 10%;
+  }
+  div:nth-child(6) {
+    bottom: 55%;
+    left: 17%;
+  }
+  div:nth-child(7) {
+    bottom: 75%;
+    left: 25%;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -746,5 +778,39 @@
   }
   .main .game--slide-wind .wind-title {
     padding: 22px 0;
+  }
+
+  .clouds-wrapper {
+    .cloud-item {
+      position: absolute;
+    }
+    div:first-child {
+      bottom: 30%;
+      right: 5%;
+    }
+    div:nth-child(2) {
+      bottom: 55%;
+      right: 10%;
+    }
+    div:nth-child(3) {
+      bottom: 75%;
+      right: 20%;
+    }
+    div:nth-child(4) {
+      bottom: 0;
+      left: 10%;
+    }
+    div:nth-child(5) {
+      bottom: 30%;
+      left: 10%;
+    }
+    div:nth-child(6) {
+      bottom: 55%;
+      left: 17%;
+    }
+    div:nth-child(7) {
+      bottom: 75%;
+      left: 25%;
+    }
   }
 }

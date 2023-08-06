@@ -11,7 +11,7 @@ interface CloudsProps {
 
 export const Clouds: FC<CloudsProps> = ({stripes, droppedColors}) => {
     return (
-        <div>
+        <div className="clouds-wrapper">
             {stripes.map(stripe => <Cloud key={stripe.id} cloud={stripe} isHidden={!!droppedColors.find(droppedColor => droppedColor.id === stripe.id)}/>)}
         </div>
     )

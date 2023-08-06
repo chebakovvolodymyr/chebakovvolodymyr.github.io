@@ -23,7 +23,7 @@ export const Cloud: FC<CloudProps> = ({cloud: {id, color}, isHidden}) => {
     }
 
     return (
-        <div ref={drag}>
+        <div className="cloud-item" ref={drag}>
             <CloudSvg color={color} opacity={isDragging ? 0.5 : 1}/>
         </div>
     )
