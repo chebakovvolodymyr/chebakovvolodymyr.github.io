@@ -437,7 +437,7 @@
       }
     }
 
-    .rain, .snowflake, .thunder {
+    .rain, .snowflake, .thunder, .flood {
       .question_title {
         font-size: 24px;
         font-weight: bold;
@@ -448,6 +448,8 @@
           display: inline-block;
         }
       }
+    }
+      
 
     .question_result {
       color: #3f6d09;
@@ -662,5 +664,8 @@
     .thunder-result {
       max-height: 535px;
     }
+  }
+  .main .game--slide-wind .wind-title {
+    padding: 22px 0;
   }
 }
