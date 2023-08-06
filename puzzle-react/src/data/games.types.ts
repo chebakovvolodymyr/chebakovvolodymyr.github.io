@@ -60,3 +60,10 @@ export interface EarthAnswer {
   id: number;
   title: string;
 }
+
+export interface RainbowStripe {
+  id: number;
+  color: string;
+  text: string;
+  type: string;
+}
