@@ -4,7 +4,8 @@ import { games } from "../../../../data/games";
 import { Header } from "./Header";
 import { Pictures } from "./Pictures";
 import { Result } from "./Result";
-import { Compass } from "./Compass";
+import { Compass } from "./compass/Compass";
+import { CardinalDirections } from "./Wind.types";
 
 interface ThunderProps {
   isGameOver: boolean;
@@ -42,6 +43,18 @@ export const Wind: FC<ThunderProps> = ({
     [isGameOver],
   );
 
+  const [selectedPolygons, setSelectedPolygons] = useState<CardinalDirections[]>([])
+
+  const toggleSelectedPolygon = useCallback((direction: CardinalDirections) => {
+    setSelectedPolygons(selectedPolygons => {
+      if (selectedPolygons.includes(direction)) {
+        return selectedPolygons.filter(selectedPolygon => selectedPolygon !== direction)
+      }
+
+      return [...selectedPolygons, direction]
+    })
+  }, [])
+
   const calculateResult = useCallback(() => {
     const checkboxesScore = winds.reduce((acc, wind) => {
       if (wind.isCorrect && checkedCheckboxes.includes(wind.id)) {
@@ -51,10 +64,12 @@ export const Wind: FC<ThunderProps> = ({
       return acc;
     }, 0);
 
-    setScore(checkboxesScore);
-  }, [winds, checkedCheckboxes]);
+    const directionScore = selectedPolygons.includes(CardinalDirections.WEST) && selectedPolygons.includes(CardinalDirections.SOUTHWEST) && selectedPolygons.includes(CardinalDirections.NORTHWEST) ? 1 : 0
 
-    const isContinueButtonDisabled = !checkedCheckboxes.length
+    setScore(checkboxesScore + directionScore);
+  }, [winds, checkedCheckboxes, selectedPolygons]);
+
+    const isContinueButtonDisabled = !checkedCheckboxes.length || !selectedPolygons.length
     
     return (
         <div className="thunder">
@@ -79,7 +94,11 @@ export const Wind: FC<ThunderProps> = ({
                         <Result/>
                     )}
                 </div>
-                <Compass/>
+                <Compass 
+                  isGameOver={isGameOver}
+                  selectedPolygons={selectedPolygons} 
+                  toggleSelectedPolygon={toggleSelectedPolygon}
+                />
             </div>
         </div>
     )

@@ -20,6 +20,7 @@ export const Pictures: FC<PicturesProps> = ({
     <div className="wind-pictures">
       {winds.map((wind) => (
         <PictureCheckbox
+          key={wind.id}
           url={wind.picture}
           alt={wind.alt}
           checked={
