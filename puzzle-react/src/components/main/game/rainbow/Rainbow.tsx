@@ -23,11 +23,13 @@ export const Rainbow: FC<RainbowProps> = ({isGameOver, closeGame, finishGame}) =
   const setDroppedColor = useCallback((droppedColor: DroppedColor) => {
     setDroppedColors(prevDroppedColors => ([...prevDroppedColors, droppedColor]))
   }, [])
+
+  const isContinueButtonDisabled = droppedColors.length !== stripes.length
   
   return (
     <div> 
       <Header 
-        isContinueButtonDisabled={true} 
+        isContinueButtonDisabled={isContinueButtonDisabled} 
         isGameOver={isGameOver} 
         score={0} 
         closeGame={closeGame} 

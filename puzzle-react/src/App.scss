@@ -626,6 +626,7 @@
 .clouds-wrapper {
   .cloud-item {
     position: absolute;
+    cursor: pointer;
   }
   div:first-child {
     bottom: 30%;
@@ -814,4 +815,18 @@
       left: 25%;
     }
   }
+}
+
+.compass-icon {
+  width: 428px;
+  height: 462px;
+  cursor: pointer;
+
+  .text{font-family:AsapCondensed-Bold, 'Asap Condensed';font-size:30.91px;font-weight:700;}
+  .circle{fill:url(#white_gradient);}
+  .white{fill:#fff;}
+  .grey{fill:#c5c5c5;}
+  .black{fill:#1d1d1b;}
+  .light-green{fill:url(#light_green_gradient)}
+  .green{fill:url(#green_gradient-2)}
 }
