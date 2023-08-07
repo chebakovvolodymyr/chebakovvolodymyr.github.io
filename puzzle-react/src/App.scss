@@ -420,13 +420,32 @@
 
       .sounds {
         display: flex;
+        justify-content: space-around;
+
 
         .sound-item {
           &__title {
             background-image: url("./assets/buttons/transparent-squared.png");
             background-size: cover;
+            background-color: transparent;
             width: 232px;
             height: 86px;
+            opacity: 0.5;
+            &--filled {
+              opacity: 1;
+              position: absolute;
+              background-image: url(/src/assets/buttons/button-grey-squared.png);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: top center;
+              font-size: 24px;
+              font-weight: bold;
+              color: #000;
+              width: 231px;
+              height: 86px;
+              text-align: center;
+              line-height: 70px;
+            }
 
             &--highlight {
               outline: 3px solid #1aa7ec;
@@ -444,6 +463,28 @@
           img {
             cursor: pointer;
           }
+        }
+      }
+      .sound {
+        .titles .title {
+          width: 231px;
+          height: 86px;
+          background-image: url(/src/assets/buttons/button-grey-high.png);
+          background-color: transparent;
+          line-height: 84px;
+        }
+        .sound-result {
+          width: 70%;
+          background-image: url("./assets/buttons/blue-bg-sound.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 1040px;
+          height: 292px;
+          padding: 20px 40px;
+          box-sizing: border-box;
+          margin: 100px auto 0;
+          color: #000;
+          font-size: 20px;
         }
       }
     }
