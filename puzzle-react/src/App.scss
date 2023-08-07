@@ -201,6 +201,9 @@
           width: 40%;
           height: 40%;
         }
+        &--highlight {
+          border-color: rgba(255, 255, 255, 0.8);
+        }
       }
     }
 
@@ -376,15 +379,6 @@
           .picture-checkbox {
             height: auto;
           }
-          &-option {
-            display: flex;
-            position: relative;
-            margin-bottom: 10px;
-            align-items: center;
-            span {
-              margin-left: 10px;
-            }
-          }
           .picture-checkbox .picture-checkbox_customized input ~ .picture-checkbox_label {
             bottom: -5px;
             left: 5px;
@@ -392,6 +386,15 @@
         }
         .picture-checkbox_customized {
           position: relative;
+        }
+        &-option {
+          display: flex;
+          position: relative;
+          margin-bottom: 10px;
+          align-items: center;
+          span {
+            margin-left: 10px;
+          }
         }
       }
       .flood-result {
@@ -722,13 +725,15 @@
 }
 
 .melting-ice-river {
-  background-image: url("./assets/games/melting-ice/Nuotrauka iš Pexels, aut. Mikhail Nilov.jpg");
-  background-size: cover;
-  height: 60vh;
+  display: flex;
+  justify-content: center;
   background-position: center;
   max-width: 100%;
-  width: 90%;
   margin: auto;
+}
+
+.sourse {
+  display: none;
 }
 
 @media screen and (max-width: 1650px) {
