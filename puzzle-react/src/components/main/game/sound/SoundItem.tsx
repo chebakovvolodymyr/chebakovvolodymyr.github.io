@@ -49,6 +49,7 @@ export const SoundItem: FC<SoundItemProps> = ({
       <div
         className={classNames("sound-item__title", {
           "sound-item__title--highlight": isOver && !title,
+          "sound-item__title--filled": title,
         })}
         ref={drop}
       >
