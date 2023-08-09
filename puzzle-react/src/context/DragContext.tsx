@@ -39,8 +39,10 @@ export const DragContextProvider: FC<PropsWithChildren> = ({children}) => {
         if (!element) {
             return
         }
+
+        const a = element.getBoundingClientRect()
         
-        const {left, right, bottom, top} = element.getBoundingClientRect()
+        const {left, right, bottom, top} = a
         
         setDropElements(dropElements => {
             if (dropElements.find(dropElement => dropElement.element === element)) {
@@ -51,6 +53,7 @@ export const DragContextProvider: FC<PropsWithChildren> = ({children}) => {
     }, [])
 
     const mouseMoveHandler = useCallback(({x, y}: XYCoord) => {
+        console.log({x, y})
         const element = getIntersectedElement(dropElements, {x, y})
         
         setHoveredElement(element)

@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, useContext, useEffect, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 import classNames from "classnames";
 
 import { PictureCheckbox } from "../../../picture-checkbox/PictureCheckbox";
 import { DroppedTitle } from "../../titles/Titles.types";
 import { Cloud } from "../../../../data/games.types";
+import { DragContext } from "../../../../context/DragContext";
 
 interface PictureProps {
   cloud: Cloud;
@@ -25,6 +26,10 @@ export const Picture: FC<PictureProps> = ({
   title,
   isGameOver,
 }) => {
+  const divRef = useRef<HTMLDivElement | null>(null)
+  const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  
   const [{ isOver }, drop] = useDrop(
     () => ({
       drop: (item: { id: number; title: string }) => {
@@ -40,27 +45,47 @@ export const Picture: FC<PictureProps> = ({
       },
       accept: "title",
       collect: (monitor) => ({
-        isOver: !!monitor.isOver(),
+        isOver: !!monitor.isOver() || (!title && !!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
-    [title],
+    [title, hoveredElement],
   );
+
+  useEffect(() => {
+    if (title) {
+      return
+    }
+    
+    if (droppedElement.element && droppedElement.element === divRef.current) {
+      setDroppedTitle({
+        attachedId: cloud.id,
+        title: droppedElement.params.title as string,
+        id: droppedElement.params.id as number,
+      });
+    }
+  }, [cloud.id, droppedElement, setDroppedTitle, title])
 
   const onChange = () => {
     toogleCheckbox(cloud.id);
   };
   return (
-    <div
-      ref={drop}
-      className={classNames("picture", {
+    <div className={classNames("picture", {
         "picture--highlight": isOver && !title,
       })}
     >
       <PictureCheckbox
+        ref={(ref) => {
+          drop(ref)
+          if (imageLoaded) {
+            setDropElement(ref)
+            divRef.current = ref
+          }
+        }}
         url={cloud.picture}
         alt={cloud.alt}
         checked={isGameOver ? cloud.isCorrect : checked}
         onChange={onChange}
+        onLoad={() => setImageLoaded(true)}
       />
       {isGameOver && (
         <div className="cloud-description-result">

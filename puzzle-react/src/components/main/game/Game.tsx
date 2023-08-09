@@ -9,14 +9,13 @@ interface GameProps {
 }
 
 export const Game: FC<GameProps> = ({correctFlippedCards}) => {
-    const [lastGame, setLastGame] = useState<Card | null>(cards[2])
+    const [lastGame, setLastGame] = useState<Card | null>(cards[6])
     const [isGameOver, setIsGameOver] = useState(false)
     
     useEffect(() => {
         if (!correctFlippedCards.length) {
             return
         }
-
         
         const timeoutId = setTimeout(() => {
             setLastGame(correctFlippedCards[correctFlippedCards.length - 1])

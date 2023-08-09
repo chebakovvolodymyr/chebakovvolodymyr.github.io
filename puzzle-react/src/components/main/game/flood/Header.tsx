@@ -30,11 +30,11 @@ export const Header: FC<HeaderProps> = ({
   return (
     <header>
       {isGameOver ? (
-        <div className="question_result">
+        <div className="question_result question_result--shadow">
           Iššūkis įveiktas! Taškai: {score} iš 2
         </div>
       ) : (
-        <div className="question_title">
+        <div className="question_title question_title--white">
           <span>
             Potvynio iššūkis. Atsakyk į testo klausimus ir spausk „Pateikti“.
           </span>

@@ -34,7 +34,7 @@ export const Header: FC<HeaderProps> = ({
           Iššūkis įveiktas! Taškai: {score} iš 2
         </div>
       ) : (
-        <div className="question_title">
+        <div className="question_title question_title--white">
           <span>
             Perkūnijos iššūkis. Pažymėk nuotrauką, kur saugiausia slėptis
             perkūnijos metu, atsakyk į klausimą ir spausk „Pateikti“.

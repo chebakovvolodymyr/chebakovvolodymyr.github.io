@@ -22,6 +22,13 @@ const drawArrow = (context: CanvasRenderingContext2D , fromx: number, fromy: num
   context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 4), toy - headlen * Math.sin(angle + Math.PI / 4));
 }
 
+const drawCircle = (context: CanvasRenderingContext2D, x: number, y: number, radius: number) => {
+  context.arc(x, y, radius, 0, 2 * Math.PI);
+  context.fillStyle = "white";
+  context.strokeStyle = "green";
+  context.fill();
+}
+
 const draw = (canvas: HTMLCanvasElement | null) => {
   if (!canvas) {
     return;
@@ -52,24 +59,15 @@ const draw = (canvas: HTMLCanvasElement | null) => {
     ctx.lineWidth = 2;
 
     ctx.beginPath();
-    ctx.arc(centerX - radius - 10, centerY + 70, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = "white";
-    ctx.strokeStyle = "green";
-    ctx.fill();
+    drawCircle(ctx, centerX - radius - 10, centerY + 70, radius);
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(centerX + 400, centerY + 85, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = "white";
-    ctx.strokeStyle = "green";
-    ctx.fill();
+    drawCircle(ctx, centerX + 400, centerY + 85, radius);
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(centerX + 730, centerY - 40, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = "white";
-    ctx.strokeStyle = "green";
-    ctx.fill();
+    drawCircle(ctx, centerX + 730, centerY - 40, radius);
     ctx.stroke();
 
     ctx.beginPath();

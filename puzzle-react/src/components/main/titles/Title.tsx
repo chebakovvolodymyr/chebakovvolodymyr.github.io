@@ -1,8 +1,9 @@
-import { FC, useRef } from "react";
-import { useDrag } from "react-dnd";
+import { FC, useContext, useEffect, useRef } from "react";
+import { XYCoord, useDrag } from "react-dnd";
 
 import classNames from "classnames";
 import { Position } from "../../../utils/getRandomPositions";
+import { DragContext } from "../../../context/DragContext";
 
 interface TitleProps {
   id: number;
@@ -14,6 +15,9 @@ interface TitleProps {
 
 export const Title: FC<TitleProps> = ({ title, position, isHidden, id }) => {
   const titleRef = useRef<HTMLSpanElement | null>(null)
+
+  const {mouseMoveHandler, mouseUpHandler} = useContext(DragContext)
+
   const [{ diffOffset, isDragging }, drag, preview] = useDrag(() => ({
     type: "title",
     item: { id, title },
@@ -22,6 +26,38 @@ export const Title: FC<TitleProps> = ({ title, position, isHidden, id }) => {
       diffOffset: monitor.getDifferenceFromInitialOffset(),
     }),
   }));
+
+  useEffect(() => {
+    let lastCoord: XYCoord = {x: 0, y: 0}
+    const onMouseMove = (evt: MouseEvent) => {
+        lastCoord = {
+            x: evt.clientX,
+            y: evt.clientY,
+        }
+        mouseMoveHandler(lastCoord)
+    }
+
+    const onTouchMove = (evt: TouchEvent) => {
+        lastCoord = {
+            x: evt.touches[0]?.clientX || 0,
+            y: evt.touches[0]?.clientY || 0,
+        }
+        mouseMoveHandler(lastCoord)
+    }
+
+    if (isDragging) {
+        document.addEventListener('mousemove', onMouseMove)
+        document.addEventListener('touchmove', onTouchMove)
+    }
+
+    return () => {
+        if (isDragging) {
+            document.removeEventListener('mousemove', onMouseMove)
+            document.removeEventListener('touchmove', onTouchMove)
+            mouseUpHandler(lastCoord, {id, title})
+        }
+    }
+}, [title, id, isDragging, mouseMoveHandler, mouseUpHandler])
   
   return (
     <>
@@ -42,7 +78,7 @@ export const Title: FC<TitleProps> = ({ title, position, isHidden, id }) => {
         <span 
           ref={preview} 
           className="title"
-          style={diffOffset && titleRef.current ? { top: titleRef.current.offsetTop + diffOffset.y + 20, left: titleRef.current.offsetLeft + diffOffset.x } : undefined}
+          style={diffOffset && titleRef.current ? { top: titleRef.current.offsetTop + diffOffset.y, left: titleRef.current.offsetLeft + diffOffset.x } : undefined}
         >{title}</span>)}
     </>
   );

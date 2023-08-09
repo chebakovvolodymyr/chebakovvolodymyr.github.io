@@ -71,7 +71,7 @@ export const Cloud: FC<CloudProps> = ({cloud: {id, color}, isHidden}) => {
             {isDragging && (
                 <div 
                     ref={preview}
-                    style={diffOffset && cloudRef.current ? { position: 'absolute', zIndex: 0, top: cloudRef.current.offsetTop + diffOffset.y, left: cloudRef.current.offsetLeft + diffOffset.x } : undefined}
+                    style={diffOffset && cloudRef.current ? { position: 'absolute', top: cloudRef.current.offsetTop + diffOffset.y, left: cloudRef.current.offsetLeft + diffOffset.x } : undefined}
                 >
                     <CloudSvg color={color} opacity={1}/>
                 </div> 

@@ -533,9 +533,15 @@
       font-weight: bold;
       color: #000;
         flex-grow: 1;
+
         span {
           width: 60%;
           display: inline-block;
+        }
+
+        &--white {
+          color: #fff;
+          filter: drop-shadow(2px 4px 4px #000);
         }
       }
       
@@ -545,9 +551,14 @@
       font-weight: 900;
       font-size: 24px;
       flex-grow: 1;
+
       span {
         display: inline-block;
         width: 60%;
+      }
+
+      &--shadow {
+        text-shadow: 2px 2px black;
       }
     }
 
@@ -604,6 +615,7 @@
         width: 315px;
         text-align: center;
         line-height: 50px;
+        cursor: pointer;
 
         &--hidden {
           display: none;

@@ -44,7 +44,7 @@ export const Stripe: FC<StripeProps> = ({stripe, droppedColor, setDroppedColor, 
         return
       }
       
-      if (droppedElement && droppedElement.element === divRef.current) {
+      if (droppedElement.element && droppedElement.element === divRef.current) {
         setDroppedColor({
           attachedId: stripe.id,
           color: droppedElement.params.color as string,

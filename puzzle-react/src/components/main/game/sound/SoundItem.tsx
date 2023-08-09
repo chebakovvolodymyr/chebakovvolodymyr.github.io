@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { FC, useContext, useEffect, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
+import classNames from "classnames";
 
 import { Sound } from "../../../../data/games.types";
 import { DroppedTitle } from "../../titles/Titles.types";
-import classNames from "classnames";
+import { DragContext } from "../../../../context/DragContext";
 
 interface SoundItemProps {
   isGameOver: boolean;
@@ -22,6 +23,10 @@ export const SoundItem: FC<SoundItemProps> = ({
   toggleSound,
   isActive,
 }) => {
+  const divRef = useRef<HTMLDivElement | null>(null)
+  const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
+  const [imageLoaded, setImageLoaded] = useState(false)
+
   const [{ isOver }, drop] = useDrop(
     () => ({
       drop: (item: { id: number; title: string }) => {
@@ -37,21 +42,41 @@ export const SoundItem: FC<SoundItemProps> = ({
       },
       accept: "title",
       collect: (monitor) => ({
-        isOver: !!monitor.isOver(),
+        isOver: !!monitor.isOver() || (!title && !!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
-    [title],
+    [title, hoveredElement],
   );
+
+  useEffect(() => {
+    if (title) {
+      return
+    }
+    
+    if (droppedElement.element && droppedElement.element === divRef.current) {
+      setDroppedTitle({
+        attachedId: sound.id,
+        title: droppedElement.params.title as string,
+        id: droppedElement.params.id as number,
+      });
+    }
+  }, [sound.id, droppedElement, setDroppedTitle, title])
 
   return (
     <div className="sound-item">
-      <img src={sound.picture} onClick={() => toggleSound(sound.id)} />
+      <img src={sound.picture} onClick={() => toggleSound(sound.id)} onLoad={() => setImageLoaded(true)}/>
       <div
         className={classNames("sound-item__title", {
           "sound-item__title--highlight": isOver && !title,
           "sound-item__title--filled": title,
         })}
-        ref={drop}
+        ref={(ref) => {
+          drop(ref)
+          if (imageLoaded) {
+            setDropElement(ref)
+            divRef.current = ref
+          }
+        }}
       >
         {isGameOver ? sound.title : title}
       </div>
