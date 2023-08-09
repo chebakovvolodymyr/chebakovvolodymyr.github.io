@@ -3,6 +3,7 @@ import { DndProvider } from "react-dnd";
 
 import { Main } from "./components/main/Main";
 import "./App.scss";
+import { DragContextProvider } from "./context/DragContext";
 
 const dndOptions = {
   enableMouseEvents: true,
@@ -12,7 +13,9 @@ const dndOptions = {
 function App() {
   return (
     <DndProvider backend={TouchBackend} options={dndOptions}>
-      <Main />
+      <DragContextProvider>
+        <Main />
+      </DragContextProvider>
     </DndProvider>
   );
 }
