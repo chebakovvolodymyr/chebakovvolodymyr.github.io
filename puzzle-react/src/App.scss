@@ -496,6 +496,12 @@
       .earth-titles {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        width: 1640px;
+      height: 200px;
+      position: fixed;
+      left: 50%;
+      top: 881px;
+      transform: translateX(-50%);
 
         &.titles {
           .title {
@@ -508,15 +514,73 @@
         display: flex;
 
         &.titles {
-          height: auto;
+          position: fixed;
+          width: 1640px;
+          height: 765px;
+          overflow: hidden;
+          top: 116px;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
         .earth-place {
-          background-image: url("./assets/buttons/transparent-squared-long.png");
-          background-size: cover;
-          width: 424px;
-          height: 86px;
-
+          position: absolute;
+          &:first-child {
+            background-image: url("./assets/buttons/grey_bg_300.png");
+            width: 300px;
+            height: 86px;
+            top: 22%;
+            left: 22%;
+          }
+          &:nth-child(2) {
+            background-image: url("./assets/buttons/grey_bg_425.png");
+            width: 424px;
+            height: 86px;
+            top: 22%;
+            left: 41%;
+          }
+          &:nth-child(3) {
+            background-image: url("./assets/buttons/grey_bg_300.png");
+            width: 300px;
+            height: 86px;
+            top: 38%;
+            left: 11%;
+          }
+          &:nth-child(4) {
+            background-image: url("./assets/buttons/grey_bg_425.png");
+            width: 424px;
+            height: 86px;
+            top: 38%;
+            left: 63%;
+          }
+          &:nth-child(5) {
+            background-image: url("./assets/buttons/grey_bg_350.png");
+            width: 349px;
+            height: 86px;
+            top: 54%;
+            left: 11%;
+          }
+          &:nth-child(6) {
+            background-image: url("./assets/buttons/grey_bg_425.png");
+            width: 424px;
+            height: 86px;
+            top: 54%;
+            left: 63%;
+          }
+          &:nth-child(7) {
+            background-image: url("./assets/buttons/grey_bg_392.png");
+            width: 392px;
+            height: 86px;
+            top: 66%;
+            left: 18%;
+          }
+          &:nth-child(8) {
+            background-image: url("./assets/buttons/grey_bg_425.png");
+            width: 424px;
+            height: 86px;
+            top: 71%;
+            left: 42%;
+          }
           &--highlight {
             outline: 3px solid #1aa7ec;
           }
