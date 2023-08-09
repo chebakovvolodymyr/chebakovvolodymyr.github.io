@@ -62,7 +62,7 @@ export const Cloud: FC<CloudProps> = ({cloud: {id, color}, isHidden}) => {
 
     return (
         <>
-            <div className="cloud-item" ref={(ref) => {
+            <div className={`cloud-item cloud-item--${id}`} ref={(ref) => {
                 drag(ref)
                 cloudRef.current = ref
             }}>
