@@ -1,8 +1,9 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 import { Header } from "./Header";
 import { games } from "../../../../data/games";
 import { Result } from "./Result";
 import { Questions } from "./Questions";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface FloodProps {
   isGameOver: boolean;
@@ -34,6 +35,8 @@ export const Flood: FC<FloodProps> = ({
     [isGameOver],
   );
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const radioScore = questions.reduce((acc, question) => {
       if (radio[question.id] === question.correctAnswerId) {
@@ -44,7 +47,8 @@ export const Flood: FC<FloodProps> = ({
     }, 0);
 
     setScore(radioScore);
-  }, [questions, radio]);
+    addScore(radioScore)
+  }, [questions, radio, addScore]);
 
   const isContinueButtonDisabled = Object.keys(radio).length < 3;
 

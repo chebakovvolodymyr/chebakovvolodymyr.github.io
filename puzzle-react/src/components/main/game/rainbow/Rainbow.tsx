@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 
 import { games } from "../../../../data/games";
 import { Header } from "./Header";
@@ -6,6 +6,7 @@ import { Stripes } from "./Stripes";
 import { Clouds } from "./Clouds";
 import { DroppedColor } from "./Rainbow.types";
 import { Result } from "./Result";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface RainbowProps {
   isGameOver: boolean;
@@ -27,11 +28,15 @@ export const Rainbow: FC<RainbowProps> = ({isGameOver, closeGame, finishGame}) =
     setDroppedColors(prevDroppedColors => ([...prevDroppedColors, droppedColor]))
   }, [])
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const isAllColorsCorrect = droppedColors.every((color) => color.id === color.attachedId);
 
-    setScore(isAllColorsCorrect ? 1 : 0);
-  }, [droppedColors]);
+    const score = isAllColorsCorrect ? 1 : 0
+    setScore(score);
+    addScore(score)
+  }, [addScore, droppedColors]);
 
   const isContinueButtonDisabled = droppedColors.length !== stripes.length
   

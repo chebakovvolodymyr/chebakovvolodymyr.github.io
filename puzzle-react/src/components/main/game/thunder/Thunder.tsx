@@ -1,8 +1,9 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 import { Header } from "./Header";
 import { games } from "../../../../data/games";
 import { Pictures } from "./Pictures";
 import { Result } from "./Result";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface ThunderProps {
   isGameOver: boolean;
@@ -41,6 +42,8 @@ export const Thunder: FC<ThunderProps> = ({
     [isGameOver],
   );
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const checkboxesScore = places.reduce((acc, place) => {
       if (place.isCorrect && checkedCheckboxes.includes(place.id)) {
@@ -57,8 +60,11 @@ export const Thunder: FC<ThunderProps> = ({
       return acc;
     }, 0);
 
-    setScore(checkboxesScore + detectionScore);
-  }, [places, checkedCheckboxes, activeButton, detections]);
+    const score = checkboxesScore + detectionScore
+    
+    setScore(score);
+    addScore(score)
+  }, [places, detections, addScore, checkedCheckboxes, activeButton]);
 
   const isContinueButtonDisabled = !checkedCheckboxes.length || !activeButton;
 

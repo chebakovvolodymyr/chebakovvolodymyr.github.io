@@ -1,7 +1,8 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 import { Header } from "./Header";
 import { Result } from "./Result";
 import { River } from "./River";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface MeltingIceProps {
   isGameOver: boolean;
@@ -28,10 +29,14 @@ export const MeltingIce: FC<MeltingIceProps> = ({
     },
     [isGameOver],
   );
+    
+  const addScore = useContext(ScoreContext)
 
   const calculateResult = useCallback(() => {
-    setScore(selectedPointId === 1 ? 1 : 0);
-  }, [selectedPointId]);
+    const score = selectedPointId === 1 ? 1 : 0
+    setScore(score);
+    addScore(score)
+  }, [addScore, selectedPointId]);
 
   const isContinueButtonDisabled = !selectedPointId;
 

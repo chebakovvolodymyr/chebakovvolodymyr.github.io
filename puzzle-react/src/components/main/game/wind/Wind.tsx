@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 
 import { games } from "../../../../data/games";
 import { Header } from "./Header";
@@ -6,6 +6,7 @@ import { Pictures } from "./Pictures";
 import { Result } from "./Result";
 import { Compass } from "./compass/Compass";
 import { CardinalDirections } from "./Wind.types";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface ThunderProps {
   isGameOver: boolean;
@@ -55,6 +56,8 @@ export const Wind: FC<ThunderProps> = ({
     })
   }, [])
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const checkboxesScore = winds.reduce((acc, wind) => {
       if (wind.isCorrect && checkedCheckboxes.includes(wind.id)) {
@@ -66,8 +69,10 @@ export const Wind: FC<ThunderProps> = ({
 
     const directionScore = selectedPolygons.includes(CardinalDirections.WEST) && selectedPolygons.includes(CardinalDirections.SOUTHWEST) && selectedPolygons.includes(CardinalDirections.NORTHWEST) ? 1 : 0
 
-    setScore(checkboxesScore + directionScore);
-  }, [winds, checkedCheckboxes, selectedPolygons]);
+    const score = checkboxesScore + directionScore
+    setScore(score);
+    addScore(score)
+  }, [winds, selectedPolygons, addScore, checkedCheckboxes]);
 
     const isContinueButtonDisabled = !checkedCheckboxes.length || !selectedPolygons.length
     

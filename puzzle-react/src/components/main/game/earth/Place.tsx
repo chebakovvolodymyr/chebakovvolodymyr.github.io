@@ -20,7 +20,7 @@ export const Place: FC<PlaceProps> = ({
 }) => {
   const divRef = useRef<HTMLDivElement | null>(null)
   const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
-
+  
   const [{ isOver }, drop] = useDrop(
     () => ({
       drop: (item: { id: number; title: string }) => {
@@ -46,6 +46,7 @@ export const Place: FC<PlaceProps> = ({
     if (droppedTitle) {
       return
     }
+
     
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
@@ -65,6 +66,7 @@ export const Place: FC<PlaceProps> = ({
       ref={(ref) => {
         drop(ref)
         setDropElement(ref)
+        divRef.current = ref
       }}
     >
       {droppedTitle?.title}

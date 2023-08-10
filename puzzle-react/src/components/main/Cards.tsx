@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { FC, useCallback, useEffect, useMemo } from "react";
 
 import {
   cards,
@@ -9,7 +9,11 @@ import { Card } from "./Card";
 import { useFlippedCards } from "../../hooks/useFlippedCards";
 import { Game } from "./game/Game";
 
-export const Cards = () => {
+interface CardsProps {
+  setGameOver: () => void
+}
+
+export const Cards: FC<CardsProps> = ({setGameOver}) => {  
   const memoisedCards = useMemo(() => getDoubledAndShuffledCards(cards), []);
 
   const { flippedCards, flipCard, correctFlippedCards, inProgress } =
@@ -25,6 +29,12 @@ export const Cards = () => {
     },
     [flipCard, inProgress],
   );
+
+  useEffect(() =>{
+    if (memoisedCards.length <= flippedCards.length) {
+      setGameOver()
+    }
+  }, [memoisedCards, flippedCards, setGameOver])
 
   return (
     <div className="cards">

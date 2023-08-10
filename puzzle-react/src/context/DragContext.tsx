@@ -51,7 +51,6 @@ export const DragContextProvider: FC<PropsWithChildren> = ({children}) => {
     }, [])
 
     const mouseMoveHandler = useCallback(({x, y}: XYCoord) => {
-        console.log({x, y})
         const element = getIntersectedElement(dropElements, {x, y})
         
         setHoveredElement(element)

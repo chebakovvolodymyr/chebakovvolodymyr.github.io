@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo, useState } from "react";
+import { FC, useCallback, useContext, useMemo, useState } from "react";
 
 import { Header } from "./Header";
 import { games } from "../../../../data/games";
@@ -7,6 +7,8 @@ import { DroppedTitle } from "../../titles/Titles.types";
 import { shuffle } from "../../../../utils/shuffle";
 import { Titles } from "./Titles";
 import { Places } from "./Places";
+import { correctAnswers } from "./correctAnswers";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface EarthProps {
   isGameOver: boolean;
@@ -39,17 +41,20 @@ export const Earth: FC<EarthProps> = ({
     [],
   );
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const titlesScore = droppedTitles.reduce((acc, title) => {
-      if (title.id === title.attachedId) {
-        return acc + 1;
+      if (correctAnswers[title.attachedId] === title.id) {
+        return acc + 0.25;
       }
 
       return acc;
     }, 0);
 
     setScore(titlesScore);
-  }, [droppedTitles]);
+    addScore(titlesScore)
+  }, [addScore, droppedTitles]);
 
   const isContinueButtonDisabled = droppedTitles.length !== answers.length;
 
@@ -67,6 +72,7 @@ export const Earth: FC<EarthProps> = ({
         setDroppedTitle={setDroppedTitle}
         droppedTitles={droppedTitles}
         answers={answers}
+        isGameOver={isGameOver}
       />
       <Titles answers={shuffledAnswers} droppedTitles={droppedTitles} />
       {isGameOver && <Result />}

@@ -49,6 +49,21 @@
       font-size: 40px;
     }
 
+    .result {
+      background-image: url("./assets/buttons/blue_bg_392.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 424px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: black;
+      font-weight: 900;
+    }
+
     button {
       background-size: contain;
       background-repeat: no-repeat;
@@ -553,7 +568,7 @@
           width: 1640px;
           height: 765px;
           overflow: hidden;
-          top: 116px;
+          top: 140px;
           left: 50%;
           transform: translateX(-50%);
         }
@@ -564,7 +579,7 @@
             background-image: url("./assets/buttons/grey_bg_300.png");
             width: 300px;
             height: 86px;
-            top: 22%;
+            top: 20%;
             left: 22%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_300.png");
@@ -574,7 +589,7 @@
             background-image: url("./assets/buttons/grey_bg_425.png");
             width: 424px;
             height: 86px;
-            top: 22%;
+            top: 20%;
             left: 41%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_425.png");
@@ -584,7 +599,7 @@
             background-image: url("./assets/buttons/grey_bg_300.png");
             width: 300px;
             height: 86px;
-            top: 38%;
+            top: 36%;
             left: 11%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_300.png");
@@ -594,7 +609,7 @@
             background-image: url("./assets/buttons/grey_bg_425.png");
             width: 424px;
             height: 86px;
-            top: 38%;
+            top: 36%;
             left: 63%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_425.png");
@@ -604,7 +619,7 @@
             background-image: url("./assets/buttons/grey_bg_350.png");
             width: 349px;
             height: 86px;
-            top: 54%;
+            top: 52%;
             left: 11%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_350.png");
@@ -614,7 +629,7 @@
             background-image: url("./assets/buttons/grey_bg_425.png");
             width: 424px;
             height: 86px;
-            top: 54%;
+            top: 52%;
             left: 63%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_425.png");
@@ -624,7 +639,7 @@
             background-image: url("./assets/buttons/grey_bg_392.png");
             width: 392px;
             height: 86px;
-            top: 66%;
+            top: 64%;
             left: 18%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_392.png");
@@ -634,7 +649,7 @@
             background-image: url("./assets/buttons/grey_bg_425.png");
             width: 424px;
             height: 86px;
-            top: 71%;
+            top: 69%;
             left: 42%;
             &.title-dropped {
               background-image: url("./assets/buttons/blue_bg_425.png");
@@ -687,7 +702,8 @@
       font-size: 40px;
       font-weight: bold;
       color: #000;
-        flex-grow: 1;
+      flex-grow: 1;
+      width: 80%;
 
         span {
           display: inline-block;
@@ -727,7 +743,7 @@
 
     .question_check {
       padding: 17px 25px;
-      min-width: 400px;
+      min-width: 300px;
       height: 80px;
       font-size: 30px;
       &[disabled] {

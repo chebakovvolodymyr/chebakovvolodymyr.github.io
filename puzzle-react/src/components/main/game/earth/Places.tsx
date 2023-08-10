@@ -3,8 +3,10 @@ import { FC } from "react";
 import { DroppedTitle } from "../../titles/Titles.types";
 import { EarthAnswer } from "../../../../data/games.types";
 import { Place } from "./Place";
+import { correctAnswers } from "./correctAnswers";
 
 interface PlacesProps {
+  isGameOver: boolean
   droppedTitles: DroppedTitle[];
   answers: EarthAnswer[];
   setDroppedTitle: (title: DroppedTitle) => void;
@@ -14,6 +16,7 @@ export const Places: FC<PlacesProps> = ({
   answers,
   setDroppedTitle,
   droppedTitles,
+  isGameOver,
 }) => {
   return (
     <div className="earths-places titles">
@@ -23,7 +26,7 @@ export const Places: FC<PlacesProps> = ({
           answer={answer}
           setDroppedTitle={setDroppedTitle}
           droppedTitle={droppedTitles.find(
-            (title) => title.attachedId === answer.id,
+            (title) => isGameOver ? correctAnswers[answer.id] === title.id : answer.id === title.attachedId,
           )}
         />
       ))}

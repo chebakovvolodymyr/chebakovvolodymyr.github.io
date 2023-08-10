@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 
 import { games } from "../../../../data/games";
 
@@ -7,6 +7,7 @@ import { DroppedTitle } from "../../titles/Titles.types";
 import { Titles } from "../../titles/Titles";
 import { Pictures } from "./Pictures";
 import { ResultDescription } from "./ResultDescription";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface SnowflakeProps {
   isGameOver: boolean;
@@ -56,6 +57,8 @@ export const Snowflake: FC<SnowflakeProps> = ({
     [isGameOver],
   );
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const checkboxesScore = snowflakes.reduce((acc, cloud) => {
       if (cloud.isCorrect && checkedCheckboxes.includes(cloud.id)) {
@@ -73,8 +76,10 @@ export const Snowflake: FC<SnowflakeProps> = ({
       return acc;
     }, 0);
 
-    setScore(checkboxesScore + titlesScore);
-  }, [snowflakes, droppedTitles, checkedCheckboxes]);
+    const score = checkboxesScore + titlesScore
+    setScore(score);
+    addScore(score)
+  }, [snowflakes, droppedTitles, addScore, checkedCheckboxes]);
 
   const isContinueButtonDisabled =
     droppedTitles.length !== snowflakes.length || !checkedCheckboxes.length;

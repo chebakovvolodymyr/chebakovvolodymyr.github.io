@@ -1,10 +1,11 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useContext, useState } from "react";
 
 import { games } from "../../../../data/games";
 import { Pictures } from "./Pictures";
 import { Header } from "./Header";
 import { DroppedTitle } from "../../titles/Titles.types";
 import { Titles } from "../../titles/Titles";
+import { ScoreContext } from "../../../../context/ScoreContext";
 
 interface RainProps {
   isGameOver: boolean;
@@ -49,6 +50,8 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
     [isGameOver],
   );
 
+  const addScore = useContext(ScoreContext)
+
   const calculateResult = useCallback(() => {
     const checkboxesScore = clouds.reduce((acc, cloud) => {
       if (cloud.isCorrect && checkedCheckboxes.includes(cloud.id)) {
@@ -66,8 +69,11 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
       return acc;
     }, 0);
 
-    setScore(checkboxesScore + titlesScore);
-  }, [clouds, droppedTitles, checkedCheckboxes]);
+    const score = checkboxesScore + titlesScore
+
+    setScore(score);
+    addScore(score)
+  }, [clouds, droppedTitles, addScore, checkedCheckboxes]);
 
   const isContinueButtonDisabled =
     droppedTitles.length !== clouds.length || !checkedCheckboxes.length;
