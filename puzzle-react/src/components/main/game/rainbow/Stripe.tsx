@@ -62,6 +62,6 @@ export const Stripe: FC<StripeProps> = ({stripe, droppedColor, setDroppedColor, 
             'stripe--highlight': isOver && !droppedColor,
         })} style={{
             borderColor: isGameOver ? stripe.color : droppedColor?.color,
-        }}>{isGameOver && stripe.text}</div>
+        }}>{isGameOver && <span className="stripe-word">{stripe.text}</span>}</div>
     )
 }

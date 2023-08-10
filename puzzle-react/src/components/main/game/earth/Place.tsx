@@ -41,7 +41,7 @@ export const Place: FC<PlaceProps> = ({
     <div
       className={classNames("earth-place", {
         "earth-place--highlight": isOver && !droppedTitle,
-        title: !!droppedTitle,
+        "title-dropped": !!droppedTitle,
       })}
       ref={drop}
     >

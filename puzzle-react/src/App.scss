@@ -161,7 +161,7 @@
       background-repeat: no-repeat;
 
       .rainbow-wrapper {
-        height: 500px;
+        height: 732px;
         overflow: hidden;
         position: absolute;
         bottom: 11%;
@@ -170,14 +170,21 @@
 
       .rainbow {
         position: absolute;
-        bottom: -75%;
-        transform: translateX(65%);
+        bottom: -100%;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
-        max-width: 800px;
+        max-width: 1400px;
+        text-align: center;
         &:after {
           content: "";
           display: block;
           padding-bottom: 100%;
+        }
+        .stripe-word {
+          position: relative;
+          top: -42px;
+          font-size: 24px;
         }
       }
 
@@ -188,8 +195,10 @@
         transform: rotate(0) translate(-50%, -50%);
         transform-origin: 0% 0%;
         height: 100%;
-        border: 30px solid rgba(255, 255, 255, 0.6);
+        border: 45px solid rgba(255, 255, 255, 0.6);
         border-radius: 50%;
+        color: #fff;
+        font-weight: bold;
         &:after {
           content: "";
           display: block;
@@ -251,6 +260,8 @@
           background-size: contain;
           background-repeat: no-repeat;
           align-items: center;
+          width: 370px;
+          height: 300px;
 
           &_title {
             color: #000;
@@ -297,6 +308,7 @@
         span {
           display: inline-block;
           overflow-y: auto;
+          height: 535px;
           
           &::-webkit-scrollbar {
             width: 15px;
@@ -335,7 +347,6 @@
         background-image: url("./assets/buttons/blue-bg-long.png");
         background-repeat: no-repeat;
         background-size: 100%;
-        background-repeat: no-repeat;
         padding: 34px 0;
         font-weight: bold;
         text-align: center;
@@ -771,31 +782,31 @@
     cursor: pointer;
     &--1 {
       bottom: 25%;
-      right: 18%;
+      right: 3%;
     }
     &--2 {
       bottom: 52%;
-      right: 22%;
+      right: 8%;
     }
     &--3 {
       bottom: 75%;
-      right: 30%;
+      right: 16%;
     }
     &--4 {
       bottom: 0;
-      left: 13%;
+      left: 1%;
     }
     &--5 {
       bottom: 27%;
-      left: 15%;
+      left: 3%;
     }
     &--6 {
       bottom: 52%;
-      left: 19%;
+      left: 8%;
     }
     &--7 {
       bottom: 75%;
-      left: 25%;
+      left: 16%;
     }
   }
 }
@@ -810,7 +821,7 @@
   width: 420px;
   bottom: 20%;
   height: 470px;
-  left: 10%;
+  left: 1%;
   padding: 17px;
   box-sizing: border-box;
   font-weight: 500;
@@ -820,7 +831,7 @@
 
 .rainbow-right-result {
   left: unset;
-  right: 15%;
+  right: 1%;
   padding: 80px 60px;
   text-align: center;
   span {
@@ -922,6 +933,24 @@
   background-position: center;
   max-width: 100%;
   margin: auto;
+}
+
+.melting-ice-result {
+  background-image: url("./assets/buttons/blue-bg-river.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1451px;
+  height: 155px;
+  margin: auto;
+  color: #000;
+  display: flex;
+  font-weight: 500;
+  div {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 19px;
+  }
 }
 
 .sourse {
@@ -1047,6 +1076,40 @@
       }
     }
   }
+  .main .game--slide-rainbow {
+    .rainbow-wrapper {
+      height: 500px;
+      overflow: hidden;
+      position: absolute;
+      bottom: 11%;
+      width: 100%;
+    }
+
+    .rainbow {
+      position: absolute;
+      bottom: -75%;
+      transform: translateX(65%);
+      width: 100%;
+      max-width: 800px;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+    .stripe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: rotate(0) translate(-50%, -50%);
+      transform-origin: 0% 0%;
+      height: 100%;
+      border: 30px solid rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
   .rainbow-left-result, .rainbow-right-result {
     width: 350px;
     bottom: 20%;
@@ -1074,6 +1137,10 @@
   .rainbow-right-result {
     right: 10%;
     padding: 30px;
+  }
+  .main .game--slide-thunder .thunder-pictures .thunder-detections {
+    width: 320px;
+    height: 260px;
   }
 }
 
