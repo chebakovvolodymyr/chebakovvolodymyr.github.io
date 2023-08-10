@@ -615,13 +615,12 @@
     }
 
     .question_title {
-      font-size: 24px;
+      font-size: 40px;
       font-weight: bold;
       color: #000;
         flex-grow: 1;
 
         span {
-          width: 60%;
           display: inline-block;
         }
 
@@ -635,7 +634,7 @@
     .question_result {
       color: #3f6d09;
       font-weight: 900;
-      font-size: 24px;
+      font-size: 40px;
       flex-grow: 1;
 
       span {
@@ -650,8 +649,8 @@
 
     .question_close {
       background-image: url("./assets/buttons/button_cross.png");
-      width: 40px;
-      height: 40px;
+      width: 80px;
+      height: 80px;
       padding: 0;
       margin-left: 30px;
       flex-grow: 0;
@@ -659,6 +658,9 @@
 
     .question_check {
       padding: 17px 25px;
+      min-width: 400px;
+      height: 80px;
+      font-size: 30px;
       &[disabled] {
         outline: none;
         border: none;
