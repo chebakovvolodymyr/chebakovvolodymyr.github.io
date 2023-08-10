@@ -528,7 +528,7 @@
       background-image: url("./assets/games/earth/FONAS earth.jpg");
       background-size: cover;
 
-      .earth-titles {
+      .titles.earth-titles {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         width: 1640px;
@@ -566,6 +566,9 @@
             height: 86px;
             top: 22%;
             left: 22%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_300.png");
+            }
           }
           &:nth-child(2) {
             background-image: url("./assets/buttons/grey_bg_425.png");
@@ -573,6 +576,9 @@
             height: 86px;
             top: 22%;
             left: 41%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_425.png");
+            }
           }
           &:nth-child(3) {
             background-image: url("./assets/buttons/grey_bg_300.png");
@@ -580,6 +586,9 @@
             height: 86px;
             top: 38%;
             left: 11%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_300.png");
+            }
           }
           &:nth-child(4) {
             background-image: url("./assets/buttons/grey_bg_425.png");
@@ -587,6 +596,9 @@
             height: 86px;
             top: 38%;
             left: 63%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_425.png");
+            }
           }
           &:nth-child(5) {
             background-image: url("./assets/buttons/grey_bg_350.png");
@@ -594,6 +606,9 @@
             height: 86px;
             top: 54%;
             left: 11%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_350.png");
+            }
           }
           &:nth-child(6) {
             background-image: url("./assets/buttons/grey_bg_425.png");
@@ -601,6 +616,9 @@
             height: 86px;
             top: 54%;
             left: 63%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_425.png");
+            }
           }
           &:nth-child(7) {
             background-image: url("./assets/buttons/grey_bg_392.png");
@@ -608,6 +626,9 @@
             height: 86px;
             top: 66%;
             left: 18%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_392.png");
+            }
           }
           &:nth-child(8) {
             background-image: url("./assets/buttons/grey_bg_425.png");
@@ -615,6 +636,9 @@
             height: 86px;
             top: 71%;
             left: 42%;
+            &.title-dropped {
+              background-image: url("./assets/buttons/blue_bg_425.png");
+            }
           }
           &--highlight {
             outline: 3px solid #1aa7ec;
@@ -623,7 +647,39 @@
           &.title {
             position: static;
           }
+          &.title-dropped {
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            line-height: 80px;
+            cursor: pointer;
+          }
         }
+      }
+    }
+
+    .earth-result {
+      background-image: url("./assets/buttons/blue-bg-earth.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 1730px;
+      height: 178px;
+      position: fixed;
+      left: 50%;
+      top: 881px;
+      transform: translateX(-50%);
+      margin: auto;
+      color: #000;
+      display: flex;
+      font-weight: 500;
+      span {
+        width: 50%;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 20px;
       }
     }
 
