@@ -45,7 +45,7 @@ export const MeltingIce: FC<MeltingIceProps> = ({
         calculateResult={calculateResult}
         score={score}
       />
-      <River onPointSelect={onPointSelect} selectedPointId={selectedPointId} />
+      <River onPointSelect={onPointSelect} selectedPointId={selectedPointId} isGameOver={isGameOver}/>
       {isGameOver && <Result />}
     </div>
   );

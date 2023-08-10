@@ -6,8 +6,8 @@ interface RiverProps {
 }
 
 const drawArrow = (context: CanvasRenderingContext2D, fromx: number, fromy: number, tox: number, toy: number) => {
-  const headlen = 30; // length of head in pixels
-  context.lineWidth = 5;
+  const headlen = 50; // length of head in pixels
+  context.lineWidth = 10;
   context.strokeStyle = "#3AAA35";
 
 
@@ -22,18 +22,18 @@ const drawArrow = (context: CanvasRenderingContext2D, fromx: number, fromy: numb
 }
 
 const drawCircle = (context: CanvasRenderingContext2D, x: number, y: number, isSelected: boolean) => {
-  const radius = 40;
+  const radius = 60;
   const circle = new Path2D();
 
   circle.arc(x, y, radius, 0, 2 * Math.PI);
-  context.lineWidth = 2;
+  context.lineWidth = 6;
   context.fillStyle = "white";
-  context.strokeStyle = "green";
+  context.strokeStyle = "#3AAA35";
   context.fill(circle);
   context.stroke(circle);
 
   if (isSelected) {
-    context.strokeStyle = "green";
+    context.strokeStyle = "#3AAA35";
     context.lineWidth = 8;
     context.beginPath();
     context.moveTo(x - 20, y);
@@ -78,15 +78,15 @@ const draw = (canvas: HTMLCanvasElement | null, selectedPointId: number): Promis
       const circleCoords = [
         {
           x: centerX - 50,
-          y: centerY + 70,
+          y: centerY + 100,
         },
         {
-          x: centerX + 400,
-          y: centerY + 85,
+          x: centerX + 600,
+          y: centerY + 110,
         },
         {
-          x: centerX + 730,
-          y: centerY - 40,
+          x: centerX + 1050,
+          y: centerY - 80,
         },
       ]
   
@@ -98,9 +98,9 @@ const draw = (canvas: HTMLCanvasElement | null, selectedPointId: number): Promis
       })
   
       ctx.beginPath();
-      drawArrow(ctx, 220, 260, 180, 150);
-      drawArrow(ctx, 650, 400, 520, 400);
-      drawArrow(ctx, 1050, 310, 950, 350);
+      drawArrow(ctx, centerX - 220, centerY + 50, centerX - 320, centerY - 200);
+      drawArrow(ctx, centerX + 420, centerY + 140, centerX + 120, centerY + 130);
+      drawArrow(ctx, centerX + 950, centerY - 20, centerX + 750, centerY + 70);
       ctx.stroke();
 
       res(circles)
@@ -120,15 +120,15 @@ const redrawCircles = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D,
   const circleCoords = [
     {
       x: centerX - 50,
-      y: centerY + 70,
+      y: centerY + 100,
     },
     {
-      x: centerX + 400,
-      y: centerY + 85,
+      x: centerX + 600,
+      y: centerY + 110,
     },
     {
-      x: centerX + 730,
-      y: centerY - 40,
+      x: centerX + 1050,
+      y: centerY - 80,
     },
   ]
 
@@ -140,11 +140,11 @@ const redrawCircles = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D,
   })
 }
 
-export const River: FC<RiverProps> = memo(({ onPointSelect, selectedPointId }) => {
+export const River: FC<RiverProps> = memo(({ onPointSelect, selectedPointId, isGameOver}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [circles, setCircles] = useState<Path2D[]>([])
   
-  const [width, setWidth] = useState(window.outerWidth * 0.8);
+  const [width, setWidth] = useState(window.innerWidth * 0.9);
 
   useEffect(() => {
     (async () => {
@@ -155,6 +155,23 @@ export const River: FC<RiverProps> = memo(({ onPointSelect, selectedPointId }) =
 
   useEffect(() => {
     if (!circles.length) {
+      return
+    }
+
+    if (isGameOver) {
+      if (!canvasRef.current) {
+        return
+      }
+
+      const canvas = canvasRef.current
+
+      const context = canvas.getContext('2d')
+      if (!context) {
+        return
+      }
+      
+      const newCircles = redrawCircles(canvas, context, 0)
+      setCircles(newCircles)
       return
     }
 
@@ -188,11 +205,11 @@ export const River: FC<RiverProps> = memo(({ onPointSelect, selectedPointId }) =
     return () => {
       canvasRef.current?.removeEventListener('click', onCanvasClick)
     }
-  }, [circles, onPointSelect, selectedPointId])
+  }, [circles, onPointSelect, selectedPointId, isGameOver])
 
   return (
     <div className="melting-ice-river">
-      <canvas ref={canvasRef} width={`${width}px`} height="600px"></canvas>
+      <canvas ref={canvasRef} width={`${width}px`} height="750px"></canvas>
     </div>
   );
 });
