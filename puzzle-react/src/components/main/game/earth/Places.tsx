@@ -19,6 +19,7 @@ export const Places: FC<PlacesProps> = ({
     <div className="earths-places titles">
       {answers.map((answer) => (
         <Place
+          key={answer.id}
           answer={answer}
           setDroppedTitle={setDroppedTitle}
           droppedTitle={droppedTitles.find(

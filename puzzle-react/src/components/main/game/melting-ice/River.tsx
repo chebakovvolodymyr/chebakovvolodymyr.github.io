@@ -3,6 +3,7 @@ import { FC, memo, useEffect, useRef, useState } from "react";
 interface RiverProps {
   onPointSelect: (pointId: number) => void;
   selectedPointId: number
+  isGameOver: boolean
 }
 
 const drawArrow = (context: CanvasRenderingContext2D, fromx: number, fromy: number, tox: number, toy: number) => {
@@ -158,23 +159,6 @@ export const River: FC<RiverProps> = memo(({ onPointSelect, selectedPointId, isG
       return
     }
 
-    if (isGameOver) {
-      if (!canvasRef.current) {
-        return
-      }
-
-      const canvas = canvasRef.current
-
-      const context = canvas.getContext('2d')
-      if (!context) {
-        return
-      }
-      
-      const newCircles = redrawCircles(canvas, context, 0)
-      setCircles(newCircles)
-      return
-    }
-
     const onCanvasClick = (evt: MouseEvent) => {
       if (!canvasRef.current) {
         return
@@ -206,6 +190,26 @@ export const River: FC<RiverProps> = memo(({ onPointSelect, selectedPointId, isG
       canvasRef.current?.removeEventListener('click', onCanvasClick)
     }
   }, [circles, onPointSelect, selectedPointId, isGameOver])
+
+  useEffect(() => {
+    if (!isGameOver) {
+      return
+    }
+      
+    if (!canvasRef.current) {
+      return
+    }
+
+    const canvas = canvasRef.current
+
+    const context = canvas.getContext('2d')
+    if (!context) {
+      return
+    }
+
+    const newCircles = redrawCircles(canvas, context, 0)
+    setCircles(newCircles)
+  }, [isGameOver])
 
   return (
     <div className="melting-ice-river">

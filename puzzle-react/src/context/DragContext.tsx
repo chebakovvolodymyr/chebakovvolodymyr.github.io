@@ -39,10 +39,8 @@ export const DragContextProvider: FC<PropsWithChildren> = ({children}) => {
         if (!element) {
             return
         }
-
-        const a = element.getBoundingClientRect()
         
-        const {left, right, bottom, top} = a
+        const {left, right, bottom, top} = element.getBoundingClientRect()
         
         setDropElements(dropElements => {
             if (dropElements.find(dropElement => dropElement.element === element)) {
