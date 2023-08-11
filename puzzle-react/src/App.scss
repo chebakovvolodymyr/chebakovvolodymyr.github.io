@@ -304,8 +304,8 @@
         }
 
         .picture-checkbox {
-          width: 450px;
-          height: 370px;
+          width: 370px;
+          height: 300px;
         }
 
         .picture-checkbox_customized {
@@ -314,32 +314,16 @@
       }
 
       .thunder-result {
-        background-image: url("./assets/buttons/blue-bg.png");
+        background-image: url("./assets/buttons/blue-big-bg-thunder.png");
         background-repeat: no-repeat;
         background-size: contain;
         margin: 0 5%;
         color: #000;
         font-weight: bold;
         font-size: 20px;
-        padding: 40px 60px;
-        span {
-          display: inline-block;
-          overflow-y: auto;
-          height: 535px;
-          
-          &::-webkit-scrollbar {
-            width: 15px;
-            height: 215px;
-            background-color: #175fb9;
-            border: 4px solid #acf3fe;
-            border-radius: 8px;
-          }
-          &::-webkit-scrollbar-thumb {
-            background-color: #ffa300;
-            border-radius: 8px;
-            border: 4px solid #acf3fe;
-          }
-        }
+        padding: 40px;
+        width: 845px;
+        height: 684px;
       }
     }
 
@@ -1117,6 +1101,24 @@
     }
     .thunder-result {
       max-height: 535px;
+      span {
+        display: inline-block;
+        overflow-y: auto;
+        height: 535px;
+        
+        &::-webkit-scrollbar {
+          width: 15px;
+          height: 215px;
+          background-color: #175fb9;
+          border: 4px solid #acf3fe;
+          border-radius: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #ffa300;
+          border-radius: 8px;
+          border: 4px solid #acf3fe;
+        }
+      }
     }
   }
   .main .game--slide-wind .wind-title {
