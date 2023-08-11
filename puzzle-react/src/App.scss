@@ -321,9 +321,25 @@
         color: #000;
         font-weight: bold;
         font-size: 20px;
-        padding: 40px;
-        width: 845px;
-        height: 684px;
+        padding: 40px 60px;
+        span {
+          display: inline-block;
+          overflow-y: auto;
+          height: 535px;
+
+          &::-webkit-scrollbar {
+            width: 15px;
+            height: 215px;
+            background-color: #175fb9;
+            border: 4px solid #acf3fe;
+            border-radius: 8px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: #ffa300;
+            border-radius: 8px;
+            border: 4px solid #acf3fe;
+          }
+        }
       }
     }
 
@@ -343,9 +359,9 @@
             right: 65px;
             top: 15px;
           }
-        } 
+        }
       }
-      .question_title span{
+      .question_title span {
         color: #000;
       }
       .wind-title {
@@ -398,7 +414,7 @@
     &--slide-flood {
       background-image: url("./assets/games/flood/Nuotrauka iš Unsplash, aut. Chris Gallagher.jpg");
       background-size: cover;
-      
+
       .flood-questions {
         display: flex;
         font-size: 24px;
@@ -417,7 +433,10 @@
           .picture-checkbox {
             height: auto;
           }
-          .picture-checkbox .picture-checkbox_customized input ~ .picture-checkbox_label {
+          .picture-checkbox
+            .picture-checkbox_customized
+            input
+            ~ .picture-checkbox_label {
             bottom: -5px;
             left: 5px;
           }
@@ -459,7 +478,6 @@
       .sounds {
         display: flex;
         justify-content: space-around;
-
 
         .sound-item {
           &__title {
@@ -535,11 +553,11 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         width: 1640px;
-      height: 200px;
-      position: fixed;
-      left: 50%;
-      top: 881px;
-      transform: translateX(-50%);
+        height: 200px;
+        position: fixed;
+        left: 50%;
+        top: 881px;
+        transform: translateX(-50%);
 
         &.titles {
           .title {
@@ -693,16 +711,15 @@
       flex-grow: 1;
       width: 80%;
 
-        span {
-          display: inline-block;
-        }
-
-        &--white {
-          color: #fff;
-          filter: drop-shadow(2px 4px 4px #000);
-        }
+      span {
+        display: inline-block;
       }
-      
+
+      &--white {
+        color: #fff;
+        filter: drop-shadow(2px 4px 4px #000);
+      }
+    }
 
     .question_result {
       color: #3f6d09;
@@ -928,7 +945,6 @@
   color: rgb(129, 54, 139);
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1029,7 +1045,7 @@
 
   .picture-checkbox img {
     width: 300px;
-    height: 260px
+    height: 260px;
   }
   .snowflake-caption {
     height: 57px;
@@ -1192,7 +1208,8 @@
       font-weight: bold;
     }
   }
-  .rainbow-left-result, .rainbow-right-result {
+  .rainbow-left-result,
+  .rainbow-right-result {
     width: 350px;
     bottom: 20%;
     height: 392px;
@@ -1224,7 +1241,11 @@
     width: 320px;
     height: 260px;
   }
-  .main .game--slide-wind .wind-pictures .picture-checkbox .picture-checkbox_customized {
+  .main
+    .game--slide-wind
+    .wind-pictures
+    .picture-checkbox
+    .picture-checkbox_customized {
     right: 30px;
   }
 }
@@ -1234,11 +1255,27 @@
   height: 462px;
   cursor: pointer;
 
-  .text{font-family:AsapCondensed-Bold, 'Asap Condensed';font-size:30.91px;font-weight:700;}
-  .circle{fill:url(#white_gradient);}
-  .white{fill:#fff;}
-  .grey{fill:#c5c5c5;}
-  .black{fill:#1d1d1b;}
-  .light-green{fill:url(#light_green_gradient)}
-  .green{fill:url(#green_gradient-2)}
+  .text {
+    font-family: AsapCondensed-Bold, "Asap Condensed";
+    font-size: 30.91px;
+    font-weight: 700;
+  }
+  .circle {
+    fill: url(#white_gradient);
+  }
+  .white {
+    fill: #fff;
+  }
+  .grey {
+    fill: #c5c5c5;
+  }
+  .black {
+    fill: #1d1d1b;
+  }
+  .light-green {
+    fill: url(#light_green_gradient);
+  }
+  .green {
+    fill: url(#green_gradient-2);
+  }
 }

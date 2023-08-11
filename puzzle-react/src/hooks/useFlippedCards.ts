@@ -8,7 +8,7 @@ export const useFlippedCards = () => {
 
   const flipCard = useCallback((card: Card) => {
     setFlippedCards((flippedCards) => {
-      if (flippedCards.find(flippedCard => flippedCard.id === card.id)) {
+      if (flippedCards.find((flippedCard) => flippedCard.id === card.id)) {
         return flippedCards;
       }
       return [...flippedCards, card];

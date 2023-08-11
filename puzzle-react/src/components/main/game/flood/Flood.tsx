@@ -35,7 +35,7 @@ export const Flood: FC<FloodProps> = ({
     [isGameOver],
   );
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const radioScore = questions.reduce((acc, question) => {
@@ -47,7 +47,7 @@ export const Flood: FC<FloodProps> = ({
     }, 0);
 
     setScore(radioScore);
-    addScore(radioScore)
+    addScore(radioScore);
   }, [questions, radio, addScore]);
 
   const isContinueButtonDisabled = Object.keys(radio).length < 3;

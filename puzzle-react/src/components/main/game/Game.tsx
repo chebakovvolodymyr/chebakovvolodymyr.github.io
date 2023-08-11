@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { Card, cards } from "../../../data/cards";
+import { Card } from "../../../data/cards";
 import { ActiveGame } from "./ActiveGame";
 
 interface GameProps {

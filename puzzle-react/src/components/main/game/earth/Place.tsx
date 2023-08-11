@@ -18,9 +18,10 @@ export const Place: FC<PlaceProps> = ({
   droppedTitle,
   setDroppedTitle,
 }) => {
-  const divRef = useRef<HTMLDivElement | null>(null)
-  const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
-  
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const { setDropElement, hoveredElement, droppedElement } =
+    useContext(DragContext);
+
   const [{ isOver }, drop] = useDrop(
     () => ({
       drop: (item: { id: number; title: string }) => {
@@ -36,7 +37,11 @@ export const Place: FC<PlaceProps> = ({
       },
       accept: "title",
       collect: (monitor) => ({
-        isOver: !!monitor.isOver() || (!droppedTitle && !!hoveredElement && hoveredElement === divRef.current),
+        isOver:
+          !!monitor.isOver() ||
+          (!droppedTitle &&
+            !!hoveredElement &&
+            hoveredElement === divRef.current),
       }),
     }),
     [droppedTitle, hoveredElement],
@@ -44,10 +49,9 @@ export const Place: FC<PlaceProps> = ({
 
   useEffect(() => {
     if (droppedTitle) {
-      return
+      return;
     }
 
-    
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: answer.id,
@@ -55,8 +59,8 @@ export const Place: FC<PlaceProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [answer.id, droppedElement, setDroppedTitle, droppedTitle])
-  
+  }, [answer.id, droppedElement, setDroppedTitle, droppedTitle]);
+
   return (
     <div
       className={classNames("earth-place", {
@@ -64,9 +68,9 @@ export const Place: FC<PlaceProps> = ({
         "title-dropped": !!droppedTitle,
       })}
       ref={(ref) => {
-        drop(ref)
-        setDropElement(ref)
-        divRef.current = ref
+        drop(ref);
+        setDropElement(ref);
+        divRef.current = ref;
       }}
     >
       {droppedTitle?.title}

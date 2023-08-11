@@ -6,7 +6,7 @@ import { Place } from "./Place";
 import { correctAnswers } from "./correctAnswers";
 
 interface PlacesProps {
-  isGameOver: boolean
+  isGameOver: boolean;
   droppedTitles: DroppedTitle[];
   answers: EarthAnswer[];
   setDroppedTitle: (title: DroppedTitle) => void;
@@ -25,8 +25,10 @@ export const Places: FC<PlacesProps> = ({
           key={answer.id}
           answer={answer}
           setDroppedTitle={setDroppedTitle}
-          droppedTitle={droppedTitles.find(
-            (title) => isGameOver ? correctAnswers[answer.id] === title.id : answer.id === title.attachedId,
+          droppedTitle={droppedTitles.find((title) =>
+            isGameOver
+              ? correctAnswers[answer.id] === title.id
+              : answer.id === title.attachedId,
           )}
         />
       ))}

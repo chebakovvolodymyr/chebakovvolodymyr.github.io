@@ -42,7 +42,7 @@ export const Thunder: FC<ThunderProps> = ({
     [isGameOver],
   );
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const checkboxesScore = places.reduce((acc, place) => {
@@ -60,10 +60,10 @@ export const Thunder: FC<ThunderProps> = ({
       return acc;
     }, 0);
 
-    const score = checkboxesScore + detectionScore
-    
+    const score = checkboxesScore + detectionScore;
+
     setScore(score);
-    addScore(score)
+    addScore(score);
   }, [places, detections, addScore, checkedCheckboxes, activeButton]);
 
   const isContinueButtonDisabled = !checkedCheckboxes.length || !activeButton;

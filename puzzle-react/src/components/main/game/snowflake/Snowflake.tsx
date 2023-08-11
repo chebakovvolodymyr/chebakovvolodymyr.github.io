@@ -57,7 +57,7 @@ export const Snowflake: FC<SnowflakeProps> = ({
     [isGameOver],
   );
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const checkboxesScore = snowflakes.reduce((acc, cloud) => {
@@ -76,9 +76,9 @@ export const Snowflake: FC<SnowflakeProps> = ({
       return acc;
     }, 0);
 
-    const score = checkboxesScore + titlesScore
+    const score = checkboxesScore + titlesScore;
     setScore(score);
-    addScore(score)
+    addScore(score);
   }, [snowflakes, droppedTitles, addScore, checkedCheckboxes]);
 
   const isContinueButtonDisabled =

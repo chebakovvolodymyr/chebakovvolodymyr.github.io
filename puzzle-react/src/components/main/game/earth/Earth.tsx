@@ -41,7 +41,7 @@ export const Earth: FC<EarthProps> = ({
     [],
   );
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const titlesScore = droppedTitles.reduce((acc, title) => {
@@ -53,7 +53,7 @@ export const Earth: FC<EarthProps> = ({
     }, 0);
 
     setScore(titlesScore);
-    addScore(titlesScore)
+    addScore(titlesScore);
   }, [addScore, droppedTitles]);
 
   const isContinueButtonDisabled = droppedTitles.length !== answers.length;

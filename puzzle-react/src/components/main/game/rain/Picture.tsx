@@ -26,10 +26,11 @@ export const Picture: FC<PictureProps> = ({
   title,
   isGameOver,
 }) => {
-  const divRef = useRef<HTMLDivElement | null>(null)
-  const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
-  const [imageLoaded, setImageLoaded] = useState(false)
-  
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const { setDropElement, hoveredElement, droppedElement } =
+    useContext(DragContext);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const [{ isOver }, drop] = useDrop(
     () => ({
       drop: (item: { id: number; title: string }) => {
@@ -45,7 +46,9 @@ export const Picture: FC<PictureProps> = ({
       },
       accept: "title",
       collect: (monitor) => ({
-        isOver: !!monitor.isOver() || (!title && !!hoveredElement && hoveredElement === divRef.current),
+        isOver:
+          !!monitor.isOver() ||
+          (!title && !!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
     [title, hoveredElement],
@@ -53,9 +56,9 @@ export const Picture: FC<PictureProps> = ({
 
   useEffect(() => {
     if (title) {
-      return
+      return;
     }
-    
+
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: cloud.id,
@@ -63,22 +66,23 @@ export const Picture: FC<PictureProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [cloud.id, droppedElement, setDroppedTitle, title])
+  }, [cloud.id, droppedElement, setDroppedTitle, title]);
 
   const onChange = () => {
     toogleCheckbox(cloud.id);
   };
   return (
-    <div className={classNames("picture", {
+    <div
+      className={classNames("picture", {
         "picture--highlight": isOver && !title,
       })}
     >
       <PictureCheckbox
         ref={(ref) => {
-          drop(ref)
+          drop(ref);
           if (imageLoaded) {
-            setDropElement(ref)
-            divRef.current = ref
+            setDropElement(ref);
+            divRef.current = ref;
           }
         }}
         url={cloud.picture}

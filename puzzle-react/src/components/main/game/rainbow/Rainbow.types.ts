@@ -1,5 +1,5 @@
 export interface DroppedColor {
-    id: number
-    attachedId: number
-    color: string
+  id: number;
+  attachedId: number;
+  color: string;
 }

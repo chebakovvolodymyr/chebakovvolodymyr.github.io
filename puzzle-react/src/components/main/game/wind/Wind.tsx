@@ -44,19 +44,23 @@ export const Wind: FC<ThunderProps> = ({
     [isGameOver],
   );
 
-  const [selectedPolygons, setSelectedPolygons] = useState<CardinalDirections[]>([])
+  const [selectedPolygons, setSelectedPolygons] = useState<
+    CardinalDirections[]
+  >([]);
 
   const toggleSelectedPolygon = useCallback((direction: CardinalDirections) => {
-    setSelectedPolygons(selectedPolygons => {
+    setSelectedPolygons((selectedPolygons) => {
       if (selectedPolygons.includes(direction)) {
-        return selectedPolygons.filter(selectedPolygon => selectedPolygon !== direction)
+        return selectedPolygons.filter(
+          (selectedPolygon) => selectedPolygon !== direction,
+        );
       }
 
-      return [...selectedPolygons, direction]
-    })
-  }, [])
+      return [...selectedPolygons, direction];
+    });
+  }, []);
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const checkboxesScore = winds.reduce((acc, wind) => {
@@ -67,44 +71,52 @@ export const Wind: FC<ThunderProps> = ({
       return acc;
     }, 0);
 
-    const directionScore = selectedPolygons.includes(CardinalDirections.WEST) && selectedPolygons.includes(CardinalDirections.SOUTHWEST) && selectedPolygons.includes(CardinalDirections.NORTHWEST) ? 1 : 0
+    const directionScore =
+      selectedPolygons.includes(CardinalDirections.WEST) &&
+      selectedPolygons.includes(CardinalDirections.SOUTHWEST) &&
+      selectedPolygons.includes(CardinalDirections.NORTHWEST)
+        ? 1
+        : 0;
 
-    const score = checkboxesScore + directionScore
+    const score = checkboxesScore + directionScore;
     setScore(score);
-    addScore(score)
+    addScore(score);
   }, [winds, selectedPolygons, addScore, checkedCheckboxes]);
 
-    const isContinueButtonDisabled = !checkedCheckboxes.length || !selectedPolygons.length
-    
-    return (
-        <div className="thunder">
-            <Header 
-                closeGame={closeGame} 
-                isContinueButtonDisabled={isContinueButtonDisabled} 
-                finishGame={finishGame} 
-                isGameOver={isGameOver}
-                calculateResult={calculateResult}
-                score={score}
-            />
-            <div className="wind-wrapper">
-                <div className="wind-question-wrapper">
-                    <div className="wind-title">Nepastoviai debesuota. Lietaus tikimybė maža. Vėjas pietvakarių, vakarų, 8–13 m/s. Temperatūra naktį 2–7, dieną 18–23 laipsniai šilumos.</div>
-                    <Pictures 
-                        winds={winds} 
-                        checkedCheckboxes={checkedCheckboxes} 
-                        toogleCheckbox={toogleCheckbox} 
-                        isGameOver={isGameOver}
-                    />
-                    {isGameOver && (
-                        <Result/>
-                    )}
-                </div>
-                <Compass 
-                  isGameOver={isGameOver}
-                  selectedPolygons={selectedPolygons} 
-                  toggleSelectedPolygon={toggleSelectedPolygon}
-                />
-            </div>
+  const isContinueButtonDisabled =
+    !checkedCheckboxes.length || !selectedPolygons.length;
+
+  return (
+    <div className="thunder">
+      <Header
+        closeGame={closeGame}
+        isContinueButtonDisabled={isContinueButtonDisabled}
+        finishGame={finishGame}
+        isGameOver={isGameOver}
+        calculateResult={calculateResult}
+        score={score}
+      />
+      <div className="wind-wrapper">
+        <div className="wind-question-wrapper">
+          <div className="wind-title">
+            Nepastoviai debesuota. Lietaus tikimybė maža. Vėjas pietvakarių,
+            vakarų, 8–13 m/s. Temperatūra naktį 2–7, dieną 18–23 laipsniai
+            šilumos.
+          </div>
+          <Pictures
+            winds={winds}
+            checkedCheckboxes={checkedCheckboxes}
+            toogleCheckbox={toogleCheckbox}
+            isGameOver={isGameOver}
+          />
+          {isGameOver && <Result />}
         </div>
-    )
-}
+        <Compass
+          isGameOver={isGameOver}
+          selectedPolygons={selectedPolygons}
+          toggleSelectedPolygon={toggleSelectedPolygon}
+        />
+      </div>
+    </div>
+  );
+};

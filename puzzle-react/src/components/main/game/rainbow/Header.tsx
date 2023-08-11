@@ -36,7 +36,8 @@ export const Header: FC<HeaderProps> = ({
       ) : (
         <div className="question_title">
           <span>
-            Vaivorykštės iššūkis. Sudėliok vaivorykštės spalvas teisinga tvarka ir spausk „Pateikti“.
+            Vaivorykštės iššūkis. Sudėliok vaivorykštės spalvas teisinga tvarka
+            ir spausk „Pateikti“.
           </span>
         </div>
       )}
