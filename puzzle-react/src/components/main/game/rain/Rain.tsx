@@ -50,7 +50,7 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
     [isGameOver],
   );
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const checkboxesScore = clouds.reduce((acc, cloud) => {
@@ -69,10 +69,10 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
       return acc;
     }, 0);
 
-    const score = checkboxesScore + titlesScore
+    const score = checkboxesScore + titlesScore;
 
     setScore(score);
-    addScore(score)
+    addScore(score);
   }, [clouds, droppedTitles, addScore, checkedCheckboxes]);
 
   const isContinueButtonDisabled =

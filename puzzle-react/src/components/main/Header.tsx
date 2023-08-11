@@ -1,11 +1,11 @@
 import { FC } from "react";
 
 interface HeaderProps {
-  gameOver: boolean
-  score: number
+  gameOver: boolean;
+  score: number;
 }
 
-export const Header: FC<HeaderProps> = ({gameOver, score}) => {
+export const Header: FC<HeaderProps> = ({ gameOver, score }) => {
   const onEndClick = () => {
     location.reload();
   };
@@ -21,10 +21,8 @@ export const Header: FC<HeaderProps> = ({gameOver, score}) => {
         </h1>
       )}
 
-      {gameOver && (
-        <div className="result">Tavo taškai: {score} iš 20</div>
-      )}
-      
+      {gameOver && <div className="result">Tavo taškai: {score} iš 20</div>}
+
       <button onClick={onEndClick}>
         <span className="title">Baigti</span>
       </button>

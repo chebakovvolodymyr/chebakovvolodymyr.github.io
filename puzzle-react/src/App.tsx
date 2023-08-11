@@ -1,4 +1,4 @@
-import { TouchBackend  } from "react-dnd-touch-backend";
+import { TouchBackend } from "react-dnd-touch-backend";
 import { DndProvider } from "react-dnd";
 
 import { Main } from "./components/main/Main";
@@ -8,7 +8,7 @@ import { DragContextProvider } from "./context/DragContext";
 const dndOptions = {
   enableMouseEvents: true,
   enableHoverOutsideTarget: true,
-}
+};
 
 function App() {
   return (

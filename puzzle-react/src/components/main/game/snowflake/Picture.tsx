@@ -26,10 +26,11 @@ export const Picture: FC<PictureProps> = ({
   title,
   isGameOver,
 }) => {
-  const divRef = useRef<HTMLDivElement | null>(null)
-  const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
-  const [imageLoaded, setImageLoaded] = useState(false)
-  
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const { setDropElement, hoveredElement, droppedElement } =
+    useContext(DragContext);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const [{ isOver }, drop] = useDrop(
     () => ({
       drop: (item: { id: number; title: string }) => {
@@ -45,7 +46,9 @@ export const Picture: FC<PictureProps> = ({
       },
       accept: "title",
       collect: (monitor) => ({
-        isOver: !!monitor.isOver() || (!title && !!hoveredElement && hoveredElement === divRef.current),
+        isOver:
+          !!monitor.isOver() ||
+          (!title && !!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
     [title, hoveredElement],
@@ -53,9 +56,9 @@ export const Picture: FC<PictureProps> = ({
 
   useEffect(() => {
     if (title) {
-      return
+      return;
     }
-    
+
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: snowflake.id,
@@ -63,7 +66,7 @@ export const Picture: FC<PictureProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [snowflake.id, droppedElement, setDroppedTitle, title])
+  }, [snowflake.id, droppedElement, setDroppedTitle, title]);
 
   const onChange = () => {
     toogleCheckbox(snowflake.id);
@@ -77,10 +80,10 @@ export const Picture: FC<PictureProps> = ({
     >
       <PictureCheckbox
         ref={(ref) => {
-          drop(ref)
+          drop(ref);
           if (imageLoaded) {
-            setDropElement(ref)
-            divRef.current = ref
+            setDropElement(ref);
+            divRef.current = ref;
           }
         }}
         url={snowflake.picture}
@@ -89,8 +92,12 @@ export const Picture: FC<PictureProps> = ({
         onChange={onChange}
         onLoad={() => setImageLoaded(true)}
       />
-      {isGameOver && <span className="snowflake-caption">{snowflake.title}</span>}
-      {!!title && !isGameOver && <span className="snowflake-caption">{title}</span>}
+      {isGameOver && (
+        <span className="snowflake-caption">{snowflake.title}</span>
+      )}
+      {!!title && !isGameOver && (
+        <span className="snowflake-caption">{title}</span>
+      )}
     </div>
   );
 };

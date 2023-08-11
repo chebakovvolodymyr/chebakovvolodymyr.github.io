@@ -1,25 +1,25 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { Card, cards } from "../../../data/cards";
+import { Card } from "../../../data/cards";
 import { ActiveGame } from "./ActiveGame";
 
 interface GameProps {
   correctFlippedCards: Card[];
 }
 
-export const Game: FC<GameProps> = ({correctFlippedCards}) => {
-    const [lastGame, setLastGame] = useState<Card | null>(cards[4])
-    const [isGameOver, setIsGameOver] = useState(false)
-    
-    useEffect(() => {
-        if (!correctFlippedCards.length) {
-            return
-        }
-        
-        const timeoutId = setTimeout(() => {
-            setLastGame(correctFlippedCards[correctFlippedCards.length - 1])
-        }, 1000)
+export const Game: FC<GameProps> = ({ correctFlippedCards }) => {
+  const [lastGame, setLastGame] = useState<Card | null>(null);
+  const [isGameOver, setIsGameOver] = useState(false);
+
+  useEffect(() => {
+    if (!correctFlippedCards.length) {
+      return;
+    }
+
+    const timeoutId = setTimeout(() => {
+      setLastGame(correctFlippedCards[correctFlippedCards.length - 1]);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutId);

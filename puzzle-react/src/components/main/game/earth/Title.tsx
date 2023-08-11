@@ -12,10 +12,10 @@ interface TitleProps {
 }
 
 export const Title: FC<TitleProps> = ({ answer: { id, title }, isHidden }) => {
-  const titleRef = useRef<HTMLDivElement | null>(null)
+  const titleRef = useRef<HTMLDivElement | null>(null);
 
-  const {mouseMoveHandler, mouseUpHandler} = useContext(DragContext)
-  
+  const { mouseMoveHandler, mouseUpHandler } = useContext(DragContext);
+
   const [{ diffOffset, isDragging }, drag, preview] = useDrag(() => ({
     type: "title",
     item: { id, title },
@@ -26,36 +26,36 @@ export const Title: FC<TitleProps> = ({ answer: { id, title }, isHidden }) => {
   }));
 
   useEffect(() => {
-    let lastCoord: XYCoord = {x: 0, y: 0}
+    let lastCoord: XYCoord = { x: 0, y: 0 };
     const onMouseMove = (evt: MouseEvent) => {
-        lastCoord = {
-            x: evt.clientX,
-            y: evt.clientY,
-        }
-        mouseMoveHandler(lastCoord)
-    }
+      lastCoord = {
+        x: evt.clientX,
+        y: evt.clientY,
+      };
+      mouseMoveHandler(lastCoord);
+    };
 
     const onTouchMove = (evt: TouchEvent) => {
-        lastCoord = {
-            x: evt.touches[0]?.clientX || 0,
-            y: evt.touches[0]?.clientY || 0,
-        }
-        mouseMoveHandler(lastCoord)
-    }
+      lastCoord = {
+        x: evt.touches[0]?.clientX || 0,
+        y: evt.touches[0]?.clientY || 0,
+      };
+      mouseMoveHandler(lastCoord);
+    };
 
     if (isDragging) {
-        document.addEventListener('mousemove', onMouseMove)
-        document.addEventListener('touchmove', onTouchMove)
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("touchmove", onTouchMove);
     }
 
     return () => {
-        if (isDragging) {
-            document.removeEventListener('mousemove', onMouseMove)
-            document.removeEventListener('touchmove', onTouchMove)
-            mouseUpHandler(lastCoord, {id, title})
-        }
-    }
-}, [title, id, isDragging, mouseMoveHandler, mouseUpHandler])
+      if (isDragging) {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("touchmove", onTouchMove);
+        mouseUpHandler(lastCoord, { id, title });
+      }
+    };
+  }, [title, id, isDragging, mouseMoveHandler, mouseUpHandler]);
 
   return (
     <>
@@ -65,8 +65,8 @@ export const Title: FC<TitleProps> = ({ answer: { id, title }, isHidden }) => {
           "title--dragging": isDragging,
         })}
         ref={(ref) => {
-          drag(ref)
-          titleRef.current = ref
+          drag(ref);
+          titleRef.current = ref;
         }}
       >
         {title}
@@ -75,7 +75,15 @@ export const Title: FC<TitleProps> = ({ answer: { id, title }, isHidden }) => {
         <div
           className="title"
           ref={preview}
-          style={diffOffset && titleRef.current ? { position: 'absolute', top: titleRef.current.offsetTop + diffOffset.y, left: titleRef.current.offsetLeft + diffOffset.x } : undefined}
+          style={
+            diffOffset && titleRef.current
+              ? {
+                  position: "absolute",
+                  top: titleRef.current.offsetTop + diffOffset.y,
+                  left: titleRef.current.offsetLeft + diffOffset.x,
+                }
+              : undefined
+          }
         >
           {title}
         </div>

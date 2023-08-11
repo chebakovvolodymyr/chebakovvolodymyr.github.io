@@ -29,13 +29,13 @@ export const MeltingIce: FC<MeltingIceProps> = ({
     },
     [isGameOver],
   );
-    
-  const addScore = useContext(ScoreContext)
+
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
-    const score = selectedPointId === 1 ? 1 : 0
+    const score = selectedPointId === 1 ? 1 : 0;
     setScore(score);
-    addScore(score)
+    addScore(score);
   }, [addScore, selectedPointId]);
 
   const isContinueButtonDisabled = !selectedPointId;
@@ -50,7 +50,11 @@ export const MeltingIce: FC<MeltingIceProps> = ({
         calculateResult={calculateResult}
         score={score}
       />
-      <River onPointSelect={onPointSelect} selectedPointId={selectedPointId} isGameOver={isGameOver}/>
+      <River
+        onPointSelect={onPointSelect}
+        selectedPointId={selectedPointId}
+        isGameOver={isGameOver}
+      />
       {isGameOver && <Result />}
     </div>
   );

@@ -37,7 +37,7 @@ export const Sound: FC<SoundProps> = ({
     [],
   );
 
-  const addScore = useContext(ScoreContext)
+  const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
     const titlesScore = droppedTitles.reduce((acc, title) => {
@@ -49,7 +49,7 @@ export const Sound: FC<SoundProps> = ({
     }, 0);
 
     setScore(titlesScore);
-    addScore(titlesScore)
+    addScore(titlesScore);
   }, [addScore, droppedTitles]);
 
   const isContinueButtonDisabled = droppedTitles.length !== sounds.length;

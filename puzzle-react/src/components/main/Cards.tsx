@@ -10,10 +10,10 @@ import { useFlippedCards } from "../../hooks/useFlippedCards";
 import { Game } from "./game/Game";
 
 interface CardsProps {
-  setGameOver: () => void
+  setGameOver: () => void;
 }
 
-export const Cards: FC<CardsProps> = ({setGameOver}) => {  
+export const Cards: FC<CardsProps> = ({ setGameOver }) => {
   const memoisedCards = useMemo(() => getDoubledAndShuffledCards(cards), []);
 
   const { flippedCards, flipCard, correctFlippedCards, inProgress } =
@@ -30,11 +30,11 @@ export const Cards: FC<CardsProps> = ({setGameOver}) => {
     [flipCard, inProgress],
   );
 
-  useEffect(() =>{
+  useEffect(() => {
     if (memoisedCards.length <= flippedCards.length) {
-      setGameOver()
+      setGameOver();
     }
-  }, [memoisedCards, flippedCards, setGameOver])
+  }, [memoisedCards, flippedCards, setGameOver]);
 
   return (
     <div className="cards">

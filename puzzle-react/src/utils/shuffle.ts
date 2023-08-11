@@ -1,5 +1,5 @@
 export const shuffle = <T>(initArray: T[]) => {
-  const array = [...initArray]
+  const array = [...initArray];
   let currentIndex = array.length;
   let randomIndex;
 

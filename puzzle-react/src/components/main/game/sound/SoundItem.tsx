@@ -23,9 +23,10 @@ export const SoundItem: FC<SoundItemProps> = ({
   toggleSound,
   isActive,
 }) => {
-  const divRef = useRef<HTMLDivElement | null>(null)
-  const {setDropElement, hoveredElement, droppedElement} = useContext(DragContext)
-  const [imageLoaded, setImageLoaded] = useState(false)
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const { setDropElement, hoveredElement, droppedElement } =
+    useContext(DragContext);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const [{ isOver }, drop] = useDrop(
     () => ({
@@ -42,7 +43,9 @@ export const SoundItem: FC<SoundItemProps> = ({
       },
       accept: "title",
       collect: (monitor) => ({
-        isOver: !!monitor.isOver() || (!title && !!hoveredElement && hoveredElement === divRef.current),
+        isOver:
+          !!monitor.isOver() ||
+          (!title && !!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
     [title, hoveredElement],
@@ -50,9 +53,9 @@ export const SoundItem: FC<SoundItemProps> = ({
 
   useEffect(() => {
     if (title) {
-      return
+      return;
     }
-    
+
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: sound.id,
@@ -60,21 +63,25 @@ export const SoundItem: FC<SoundItemProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [sound.id, droppedElement, setDroppedTitle, title])
+  }, [sound.id, droppedElement, setDroppedTitle, title]);
 
   return (
     <div className="sound-item">
-      <img src={sound.picture} onClick={() => toggleSound(sound.id)} onLoad={() => setImageLoaded(true)}/>
+      <img
+        src={sound.picture}
+        onClick={() => toggleSound(sound.id)}
+        onLoad={() => setImageLoaded(true)}
+      />
       <div
         className={classNames("sound-item__title", {
           "sound-item__title--highlight": isOver && !title,
           "sound-item__title--filled": title,
         })}
         ref={(ref) => {
-          drop(ref)
+          drop(ref);
           if (imageLoaded) {
-            setDropElement(ref)
-            divRef.current = ref
+            setDropElement(ref);
+            divRef.current = ref;
           }
         }}
       >
