@@ -355,6 +355,9 @@
         .picture-checkbox {
           height: auto;
           width: 33%;
+          .picture-checkbox_customized {
+            right: 65px;
+          }
         } 
       }
       .question_title span{
@@ -1217,6 +1220,9 @@
   .main .game--slide-thunder .thunder-pictures .thunder-detections {
     width: 320px;
     height: 260px;
+  }
+  .main .game--slide-wind .wind-pictures .picture-checkbox .picture-checkbox_customized {
+    right: 30px;
   }
 }
 
