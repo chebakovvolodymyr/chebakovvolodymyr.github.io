@@ -34,6 +34,7 @@ export const Pictures: FC<PicturesProps> = ({
             isGameOver ? place.isCorrect : checkedCheckboxes.includes(place.id)
           }
           onChange={() => toogleCheckbox(place.id)}
+          isGameOver={isGameOver}
         />
       ))}
       <div className="thunder-detections">
@@ -46,6 +47,7 @@ export const Pictures: FC<PicturesProps> = ({
               active: isGameOver
                 ? detection.isCorrect
                 : activeButton === detection.id,
+              inactive: isGameOver && !detection.isCorrect,
             })}
           >
             {detection.title}

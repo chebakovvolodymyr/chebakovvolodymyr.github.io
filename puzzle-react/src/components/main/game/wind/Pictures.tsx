@@ -27,6 +27,7 @@ export const Pictures: FC<PicturesProps> = ({
             isGameOver ? wind.isCorrect : checkedCheckboxes.includes(wind.id)
           }
           onChange={() => toogleCheckbox(wind.id)}
+          isGameOver={isGameOver}
         />
       ))}
     </div>

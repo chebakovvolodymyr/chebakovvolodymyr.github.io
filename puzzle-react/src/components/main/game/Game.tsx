@@ -8,18 +8,18 @@ interface GameProps {
   correctFlippedCards: Card[];
 }
 
-export const Game: FC<GameProps> = ({correctFlippedCards}) => {
-    const [lastGame, setLastGame] = useState<Card | null>(cards[3])
-    const [isGameOver, setIsGameOver] = useState(false)
-    
-    useEffect(() => {
-        if (!correctFlippedCards.length) {
-            return
-        }
-        
-        const timeoutId = setTimeout(() => {
-            setLastGame(correctFlippedCards[correctFlippedCards.length - 1])
-        }, 1000)
+export const Game: FC<GameProps> = ({ correctFlippedCards }) => {
+  const [lastGame, setLastGame] = useState<Card | null>(null);
+  const [isGameOver, setIsGameOver] = useState(false);
+
+  useEffect(() => {
+    if (!correctFlippedCards.length) {
+      return;
+    }
+
+    const timeoutId = setTimeout(() => {
+      setLastGame(correctFlippedCards[correctFlippedCards.length - 1]);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutId);

@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { FloodQuestion } from "../../../../data/games.types";
+import classNames from "classnames";
 
 interface QuestionsProps {
   isGameOver: boolean;
@@ -23,12 +24,17 @@ export const Questions: FC<QuestionsProps> = ({
           <header>{question.title}</header>
           <div className="picture-checkbox">
             {question.answers.map((answer) => (
-              <div className="flood-questions-option">
+              <div className="flood-questions-option" key={answer.id}>
                 <div className="picture-checkbox_customized" key={answer.id}>
                   <input
+                    id={`flood-answer-${question.id}-${answer.id}`}
                     type="radio"
                     name={`flood-answer-${question.id}`}
                     onChange={() => onRadioChange(question.id, answer.id)}
+                    className={classNames({
+                      "show-wrong":
+                        isGameOver && question.correctAnswerId !== answer.id,
+                    })}
                     checked={
                       isGameOver
                         ? question.correctAnswerId === answer.id
@@ -37,7 +43,9 @@ export const Questions: FC<QuestionsProps> = ({
                   />
                   <label className="picture-checkbox_label"></label>
                 </div>
-                <span>{answer.title}</span>
+                <label htmlFor={`flood-answer-${question.id}-${answer.id}`}>
+                  <span>{answer.title}</span>
+                </label>
               </div>
             ))}
           </div>

@@ -46,9 +46,7 @@ export const Header: FC<HeaderProps> = ({
         disabled={isContinueButtonDisabled}
         onClick={onContinueClick}
       >
-        <span className="title">
-          {isGameOver ? "Grįžti į žaidimą" : "Pateikti"}
-        </span>
+        <span className="title">{isGameOver ? "Toliau" : "Pateikti"}</span>
       </button>
       <button className="question_close" onClick={closeGame}></button>
     </header>

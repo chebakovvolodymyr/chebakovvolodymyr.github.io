@@ -90,12 +90,12 @@ export const SoundItem: FC<SoundItemProps> = ({
       <div className="sound-item__video">
         <iframe
           src={
-            isActive
+            isActive && !isGameOver
               ? `https://www.youtube.com/embed/${
                   sound.soundUrl
                 }?&autoplay=1&loop=1${
                   sound.start ? `&start=${sound.start}` : ""
-                }`
+                }&end=${(sound.start || 0) + 5}`
               : undefined
           }
           allow="autoplay *; fullscreen *"

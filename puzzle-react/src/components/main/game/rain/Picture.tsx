@@ -90,6 +90,7 @@ export const Picture: FC<PictureProps> = ({
         checked={isGameOver ? cloud.isCorrect : checked}
         onChange={onChange}
         onLoad={() => setImageLoaded(true)}
+        isGameOver={isGameOver}
       />
       {isGameOver && (
         <div className="cloud-description-result">

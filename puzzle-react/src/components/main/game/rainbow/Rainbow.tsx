@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useState } from "react";
+import { FC, useCallback, useContext, useMemo, useState } from "react";
 
 import { games } from "../../../../data/games";
 import { Header } from "./Header";
@@ -7,6 +7,7 @@ import { Clouds } from "./Clouds";
 import { DroppedColor } from "./Rainbow.types";
 import { Result } from "./Result";
 import { ScoreContext } from "../../../../context/ScoreContext";
+import { shuffle } from "../../../../utils/shuffle";
 
 interface RainbowProps {
   isGameOver: boolean;
@@ -23,6 +24,8 @@ export const Rainbow: FC<RainbowProps> = ({
   const {
     rainbow: { stripes },
   } = games;
+  const shuffledStripes = useMemo(() => shuffle(stripes), [stripes]);
+  console.log("shuffledStripes", shuffledStripes);
 
   const [score, setScore] = useState(0);
 
@@ -66,7 +69,7 @@ export const Rainbow: FC<RainbowProps> = ({
           setDroppedColor={setDroppedColor}
           isGameOver={isGameOver}
         />
-        <Clouds stripes={stripes} droppedColors={droppedColors} />
+        <Clouds stripes={shuffledStripes} droppedColors={droppedColors} />
       </div>
       {isGameOver && <Result />}
     </div>

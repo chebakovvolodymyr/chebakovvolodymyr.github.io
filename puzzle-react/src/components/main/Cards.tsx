@@ -31,10 +31,10 @@ export const Cards: FC<CardsProps> = ({ setGameOver }) => {
   );
 
   useEffect(() => {
-    if (memoisedCards.length <= flippedCards.length) {
+    if (memoisedCards.length <= correctFlippedCards.length) {
       setGameOver();
     }
-  }, [memoisedCards, flippedCards, setGameOver]);
+  }, [memoisedCards, correctFlippedCards, setGameOver]);
 
   return (
     <div className="cards">

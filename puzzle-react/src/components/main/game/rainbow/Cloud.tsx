@@ -8,9 +8,14 @@ import { CloudSvg } from "./CloudSvg";
 interface CloudProps {
   isHidden: boolean;
   cloud: RainbowStripe;
+  index: number;
 }
 
-export const Cloud: FC<CloudProps> = ({ cloud: { id, color }, isHidden }) => {
+export const Cloud: FC<CloudProps> = ({
+  cloud: { id, color },
+  isHidden,
+  index,
+}) => {
   const cloudRef = useRef<HTMLDivElement | null>(null);
 
   const { mouseMoveHandler, mouseUpHandler } = useContext(DragContext);
@@ -66,7 +71,7 @@ export const Cloud: FC<CloudProps> = ({ cloud: { id, color }, isHidden }) => {
   return (
     <>
       <div
-        className={`cloud-item cloud-item--${id}`}
+        className={`cloud-item cloud-item--${index}`}
         ref={(ref) => {
           drag(ref);
           cloudRef.current = ref;

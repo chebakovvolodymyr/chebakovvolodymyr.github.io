@@ -73,8 +73,7 @@ export const Wind: FC<ThunderProps> = ({
 
     const directionScore =
       selectedPolygons.includes(CardinalDirections.WEST) &&
-      selectedPolygons.includes(CardinalDirections.SOUTHWEST) &&
-      selectedPolygons.includes(CardinalDirections.NORTHWEST)
+      selectedPolygons.includes(CardinalDirections.SOUTHWEST)
         ? 1
         : 0;
 

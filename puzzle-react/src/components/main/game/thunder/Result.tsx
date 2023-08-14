@@ -10,16 +10,29 @@ export const Result = () => {
         griaustinio yra mažesnis nei 10 sekundžių, tai mus nuo elektros išlydžio
         skiria vos keli kilometrai. Vis dėl to, toks skaičiavimas yra labai
         apytikslis, nes šviesos reiškinys būna itin trumpas, o garsas gali
-        sukelti aidą. <p>Įprastai perkūniją lydi gausūs krituliai, škvalas, gali
-        iškristi kruša arba susiformuoti viesulas. Elektros iškrovos – žaibai –
-        yra vienas iš pačių pavojingiausių meteorologinių reiškinių, todėl labai
-        svarbu žinoti, kaip elgtis perkūnijos metu: 
-        <ul>
-          <li>saugiausia yra pasilikti namuose, tačiau būtinai uždarykite pastatų duris ir langus, išjunkite elektros prietaisus, nesinaudokite mobiliaisiais telefonais;</li>
-          <li>jei perkūnijos metu esate lauke, nebūkite šalia pavienių, aukštų medžių, metalinių stulpų  ar stendų, venkite aukštesnių, atvirų vietų. Nelaikykite rankose ilgų ar metalinių daiktų;</li>
-          <li>jei perkūnija jus užklupo vandens telkinyje, nedelsdami plaukite į krantą, nes vanduo yra geras elektros laidininkas ir traukia žaibus.
-          </li>
-        </ul>
+        sukelti aidą.{" "}
+        <p>
+          Įprastai perkūniją lydi gausūs krituliai, škvalas, gali iškristi kruša
+          arba susiformuoti viesulas. Elektros iškrovos – žaibai – yra vienas iš
+          pačių pavojingiausių meteorologinių reiškinių, todėl labai svarbu
+          žinoti, kaip elgtis perkūnijos metu:
+          <ul>
+            <li>
+              saugiausia yra pasilikti namuose, tačiau būtinai uždarykite
+              pastatų duris ir langus, išjunkite elektros prietaisus,
+              nesinaudokite mobiliaisiais telefonais;
+            </li>
+            <li>
+              jei perkūnijos metu esate lauke, nebūkite šalia pavienių, aukštų
+              medžių, metalinių stulpų ar stendų, venkite aukštesnių, atvirų
+              vietų. Nelaikykite rankose ilgų ar metalinių daiktų;
+            </li>
+            <li>
+              jei perkūnija jus užklupo vandens telkinyje, nedelsdami plaukite į
+              krantą, nes vanduo yra geras elektros laidininkas ir traukia
+              žaibus.
+            </li>
+          </ul>
         </p>
       </span>
     </div>

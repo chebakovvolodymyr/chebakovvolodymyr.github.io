@@ -91,6 +91,7 @@ export const Picture: FC<PictureProps> = ({
         checked={isGameOver ? snowflake.isCorrect : checked}
         onChange={onChange}
         onLoad={() => setImageLoaded(true)}
+        isGameOver={isGameOver}
       />
       {isGameOver && (
         <span className="snowflake-caption">{snowflake.title}</span>
