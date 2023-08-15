@@ -31,10 +31,9 @@ export const Pictures: FC<PicturesProps> = ({
           toogleCheckbox={toogleCheckbox}
           checked={checkedCheckboxes.includes(snowflake.id)}
           setDroppedTitle={setDroppedTitle}
-          title={
-            droppedTitles.find((title) => title.attachedId === snowflake.id)
-              ?.title
-          }
+          title={droppedTitles.find(
+            (title) => title.attachedId === snowflake.id,
+          )}
           isGameOver={isGameOver}
         />
       ))}

@@ -30,10 +30,38 @@ export const Snowflake: FC<SnowflakeProps> = ({
 
   const setDroppedTitle = useCallback(
     ({ id, attachedId, title }: DroppedTitle) => {
-      setDroppedTitles((droppedTitles) => [
-        ...droppedTitles,
-        { id, title, attachedId },
-      ]);
+      setDroppedTitles((droppedTitles) => {
+        const previousDroppedFile = droppedTitles.find(
+          (droppedTitle) => droppedTitle.id === id,
+        );
+
+        const attachedTitle = droppedTitles.find(
+          (droppedTitle) => droppedTitle.attachedId === attachedId,
+        );
+
+        if (previousDroppedFile && attachedTitle) {
+          return droppedTitles.map((droppedTitle) => {
+            if (droppedTitle.id === id) {
+              return { ...droppedTitle, attachedId: attachedTitle.attachedId };
+            }
+
+            if (droppedTitle.attachedId === attachedId) {
+              return {
+                ...droppedTitle,
+                attachedId: previousDroppedFile.attachedId,
+              };
+            }
+
+            return droppedTitle;
+          });
+        }
+
+        const titles = droppedTitles.filter(
+          (droppedTitle) =>
+            droppedTitle.attachedId !== attachedId && droppedTitle.id !== id,
+        );
+        return [...titles, { id, title, attachedId }];
+      });
     },
     [],
   );

@@ -2,7 +2,7 @@ export const ResultDescription = () => {
   return (
     <div className="snowflake-result">
       <img
-        src="./assets/games/snowflake/Snaigių grafikas - reikėtų perpiešti.png"
+        src="./src/assets/games/snowflake/Snaigių grafikas - reikėtų perpiešti.png"
         alt="Snaigių grafikas - reikėtų perpiešti"
       />
       <div>

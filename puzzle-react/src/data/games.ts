@@ -4,7 +4,7 @@ export const games = {
       {
         id: 1,
         picture:
-          "./assets/games/rain/Liūtinis debesis_Nuotraukos aut. Arthur Goldstein iš Unsplash.jpg",
+          "./src/assets/games/rain/Liūtinis debesis_Nuotraukos aut. Arthur Goldstein iš Unsplash.jpg",
         alt: "Liūtinis debesis_Nuotraukos aut. Arthur Goldstein iš Unsplash",
         isCorrect: true,
         title: "Liūtiniai kamuoliniai",
@@ -14,7 +14,7 @@ export const games = {
       {
         id: 2,
         picture:
-          "./assets/games/rain/Sluoksniniai kamuoliniai_Nuotraukos aut. Simon Eugster.jpg",
+          "./src/assets/games/rain/Sluoksniniai kamuoliniai_Nuotraukos aut. Simon Eugster.jpg",
         alt: "Sluoksniniai kamuoliniai_Nuotraukos aut. Simon Eugster",
         isCorrect: true,
         title: "Sluoksniniai kamuoliniai",
@@ -23,7 +23,7 @@ export const games = {
       },
       {
         id: 3,
-        picture: "./assets/games/rain/Kamuoliniai_autorius nežinomas.jpg",
+        picture: "./src/assets/games/rain/Kamuoliniai_autorius nežinomas.jpg",
         alt: "Kamuoliniai_autorius nežinomas",
         isCorrect: false,
         title: "Kamuoliniai",
@@ -33,7 +33,7 @@ export const games = {
       {
         id: 4,
         picture:
-          "./assets/games/rain/Plunksniniai_Nuotraukos aut. Przemyslaw _BlueShade_ Idzkiewicz.jpg",
+          "./src/assets/games/rain/Plunksniniai_Nuotraukos aut. Przemyslaw _BlueShade_ Idzkiewicz.jpg",
         alt: "Plunksniniai_Nuotraukos aut. Przemyslaw _BlueShade_ Idzkiewicz",
         isCorrect: false,
         title: "Plunksniniai",
@@ -46,28 +46,28 @@ export const games = {
     snowflakes: [
       {
         id: 1,
-        picture: "./assets/games/snowflake/1.Plokštelės.jpg.webp.jpeg",
+        picture: "./src/assets/games/snowflake/1.Plokštelės.jpg.webp.jpeg",
         alt: "Plokštelės",
         isCorrect: false,
         title: "Plokštelės",
       },
       {
         id: 2,
-        picture: "./assets/games/snowflake/2.Karpytos plokštelės.jpg",
+        picture: "./src/assets/games/snowflake/2.Karpytos plokštelės.jpg",
         alt: "Karpytos plokštelės",
         isCorrect: false,
         title: "Karpytos plokštelės",
       },
       {
         id: 3,
-        picture: "./assets/games/snowflake/3.Adatos.jpg.webp.jpeg",
+        picture: "./src/assets/games/snowflake/3.Adatos.jpg.webp.jpeg",
         alt: "Adatos",
         isCorrect: true,
         title: "Adatos",
       },
       {
         id: 4,
-        picture: "./assets/games/snowflake/4.Dendritai.jpg.webp.jpeg",
+        picture: "./src/assets/games/snowflake/4.Dendritai.jpg.webp.jpeg",
         alt: "Dendritai",
         isCorrect: false,
         title: "Dendritai",
@@ -79,21 +79,21 @@ export const games = {
       {
         id: 1,
         picture:
-          "./assets/games/thunder/1. Nuotrauka iš Unsplash, aut. Gilly Stewart.jpg",
+          "./src/assets/games/thunder/1. Nuotrauka iš Unsplash, aut. Gilly Stewart.jpg",
         alt: "Nuotrauka iš Unsplash, aut. Gilly Stewart",
         isCorrect: false,
       },
       {
         id: 2,
         picture:
-          "./assets/games/thunder/2. Nuotrauka iš Unsplash, aut. Ben White.jpg",
+          "./src/assets/games/thunder/2. Nuotrauka iš Unsplash, aut. Ben White.jpg",
         alt: "Nuotrauka iš Unsplash, aut. Ben White",
         isCorrect: false,
       },
       {
         id: 3,
         picture:
-          "./assets/games/thunder/3. Nuotrauka iš Unsplash, aut. Kelly Sikkema.jpg",
+          "./src/assets/games/thunder/3. Nuotrauka iš Unsplash, aut. Kelly Sikkema.jpg",
         alt: "Nuotrauka iš Unsplash, aut. Kelly Sikkema",
         isCorrect: true,
       },
@@ -116,7 +116,7 @@ export const games = {
       {
         id: 1,
         picture:
-          "./assets/games/wind/1. Nuotrauka iš Unsplash, aut. Zugr.jpg",
+          "./src/assets/games/wind/1. Nuotrauka iš Unsplash, aut. Zugr.jpg",
         alt: "1. Nuotrauka iš Unsplash, aut. Zugr",
         isCorrect: false,
         speed: "5–10 m/s",
@@ -124,7 +124,7 @@ export const games = {
       {
         id: 2,
         picture:
-          "./assets/games/wind/2. Nuotrauka iš Unsplash, aut. Cristobal Baeza.jpg",
+          "./src/assets/games/wind/2. Nuotrauka iš Unsplash, aut. Cristobal Baeza.jpg",
         alt: "2. Nuotrauka iš Unsplash, aut. Cristobal Baeza",
         isCorrect: true,
         speed: "8–13 m/s",
@@ -132,7 +132,7 @@ export const games = {
       {
         id: 3,
         picture:
-          "./assets/games/wind/3. Nuotrauka iš Unsplash, aut. Marek Studzinski.jpg",
+          "./src/assets/games/wind/3. Nuotrauka iš Unsplash, aut. Marek Studzinski.jpg",
         alt: "3. Nuotrauka iš Unsplash, aut. Marek Studzinski",
         isCorrect: false,
         speed: "28–32 m/s",
@@ -207,26 +207,26 @@ export const games = {
     sounds: [
       {
         id: 1,
-        picture: "./assets/games/sound/1.png",
+        picture: "./src/assets/games/sound/1.png",
         soundUrl: "KqJ37MVf16Y",
         title: "Vėjas",
       },
       {
         id: 2,
-        picture: "./assets/games/sound/2.png",
+        picture: "./src/assets/games/sound/2.png",
         soundUrl: "T-BOPr7NXME",
         title: "Perkūnija",
       },
       {
         id: 3,
-        picture: "./assets/games/sound/3.png",
+        picture: "./src/assets/games/sound/3.png",
         soundUrl: "7pQPJNkGZHg",
         title: "Sniegas",
         start: 20,
       },
       {
         id: 4,
-        picture: "./assets/games/sound/4.png",
+        picture: "./src/assets/games/sound/4.png",
         soundUrl: "4B7Cios0_OY",
         title: "Liūtis",
       },

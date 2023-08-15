@@ -8,12 +8,19 @@ import { DragContext } from "../../../context/DragContext";
 interface TitleProps {
   id: number;
   title: string;
-  isHidden: boolean;
+  isHidden?: boolean;
+  className?: string;
 
-  position: Position;
+  position?: Position;
 }
 
-export const Title: FC<TitleProps> = ({ title, position, isHidden, id }) => {
+export const Title: FC<TitleProps> = ({
+  title,
+  position,
+  isHidden,
+  id,
+  className,
+}) => {
   const titleRef = useRef<HTMLSpanElement | null>(null);
 
   const { mouseMoveHandler, mouseUpHandler } = useContext(DragContext);
@@ -66,21 +73,23 @@ export const Title: FC<TitleProps> = ({ title, position, isHidden, id }) => {
           drag(ref);
           titleRef.current = ref;
         }}
-        className={classNames("title", {
+        className={classNames("title", className, {
           "title--hidden": isHidden,
           "title--dragging": isDragging,
         })}
-        style={{ top: position.y, left: position.x }}
+        style={position ? { top: position.y, left: position.x } : undefined}
       >
         {title}
       </span>
       {isDragging && (
         <span
           ref={preview}
-          className="title"
+          className={classNames("title", className)}
           style={
             diffOffset && titleRef.current
               ? {
+                  position: "absolute",
+                  zIndex: 100,
                   top: titleRef.current.offsetTop + diffOffset.y,
                   left: titleRef.current.offsetLeft + diffOffset.x,
                 }

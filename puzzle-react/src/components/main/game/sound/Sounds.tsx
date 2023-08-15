@@ -32,9 +32,7 @@ export const Sounds: FC<SoundsProps> = ({
           key={sound.id}
           sound={sound}
           setDroppedTitle={setDroppedTitle}
-          title={
-            droppedTitles.find((title) => title.attachedId === sound.id)?.title
-          }
+          title={droppedTitles.find((title) => title.attachedId === sound.id)}
           isGameOver={isGameOver}
           toggleSound={toggleSound}
           isActive={activeSound === sound.id}

@@ -135,7 +135,7 @@ const draw = (
       res(circles);
     };
 
-    img.src = "/src/assets/games/melting-ice/melted_ice_bg.jpg";
+    img.src = "./src/assets/games/melting-ice/melted_ice_bg.jpg";
   });
 };
 

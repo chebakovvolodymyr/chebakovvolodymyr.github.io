@@ -5,12 +5,13 @@ import classNames from "classnames";
 import { Sound } from "../../../../data/games.types";
 import { DroppedTitle } from "../../titles/Titles.types";
 import { DragContext } from "../../../../context/DragContext";
+import { Title } from "../../titles/Title";
 
 interface SoundItemProps {
   isGameOver: boolean;
   isActive: boolean;
   sound: Sound;
-  title: string | undefined;
+  title?: DroppedTitle;
   setDroppedTitle: (droppedTitle: DroppedTitle) => void;
   toggleSound: (soundId: number) => void;
 }
@@ -30,32 +31,17 @@ export const SoundItem: FC<SoundItemProps> = ({
 
   const [{ isOver }, drop] = useDrop(
     () => ({
-      drop: (item: { id: number; title: string }) => {
-        if (title) {
-          return;
-        }
-
-        setDroppedTitle({
-          attachedId: sound.id,
-          title: item.title,
-          id: item.id,
-        });
-      },
       accept: "title",
       collect: (monitor) => ({
         isOver:
           !!monitor.isOver() ||
-          (!title && !!hoveredElement && hoveredElement === divRef.current),
+          (!!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
-    [title, hoveredElement],
+    [hoveredElement],
   );
 
   useEffect(() => {
-    if (title) {
-      return;
-    }
-
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: sound.id,
@@ -63,7 +49,7 @@ export const SoundItem: FC<SoundItemProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [sound.id, droppedElement, setDroppedTitle, title]);
+  }, [sound.id, droppedElement, setDroppedTitle]);
 
   return (
     <div className="sound-item">
@@ -74,7 +60,7 @@ export const SoundItem: FC<SoundItemProps> = ({
       />
       <div
         className={classNames("sound-item__title", {
-          "sound-item__title--highlight": isOver && !title,
+          "sound-item__title--highlight": isOver,
           "sound-item__title--filled": title,
         })}
         ref={(ref) => {
@@ -85,7 +71,15 @@ export const SoundItem: FC<SoundItemProps> = ({
           }
         }}
       >
-        {isGameOver ? sound.title : title}
+        {isGameOver
+          ? sound.title
+          : !!title && (
+              <Title
+                className="sound-item__title sound-item__title--filled"
+                title={title.title}
+                id={title.id}
+              />
+            )}
       </div>
       <div className="sound-item__video">
         <iframe

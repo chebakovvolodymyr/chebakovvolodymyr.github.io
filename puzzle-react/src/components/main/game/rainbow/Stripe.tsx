@@ -26,34 +26,17 @@ export const Stripe: FC<StripeProps> = ({
 
   const [{ isOver }, drop] = useDrop(
     () => ({
-      drop: (item: { id: number; color: string }) => {
-        if (droppedColor) {
-          return;
-        }
-
-        setDroppedColor({
-          attachedId: stripe.id,
-          color: item.color,
-          id: item.id,
-        });
-      },
       accept: "title",
       collect: (monitor) => ({
         isOver:
           !!monitor.isOver() ||
-          (!droppedColor &&
-            !!hoveredElement &&
-            hoveredElement === divRef.current),
+          (!!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
-    [droppedColor, hoveredElement],
+    [hoveredElement],
   );
 
   useEffect(() => {
-    if (droppedColor) {
-      return;
-    }
-
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedColor({
         attachedId: stripe.id,
@@ -61,7 +44,7 @@ export const Stripe: FC<StripeProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [droppedColor, droppedElement, setDroppedColor, stripe.id]);
+  }, [droppedElement, setDroppedColor, stripe.id]);
 
   return (
     <div
@@ -71,7 +54,7 @@ export const Stripe: FC<StripeProps> = ({
         divRef.current = ref;
       }}
       className={classNames("stripe", stripe.type, {
-        "stripe--highlight": isOver && !droppedColor,
+        "stripe--highlight": isOver,
       })}
       style={{
         borderColor: isGameOver ? stripe.color : droppedColor?.color,

@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { EarthAnswer } from "../../../../data/games.types";
 import { DroppedTitle } from "../../titles/Titles.types";
 import { DragContext } from "../../../../context/DragContext";
+import { Title } from "../../titles/Title";
 
 interface PlaceProps {
   answer: EarthAnswer;
@@ -24,34 +25,17 @@ export const Place: FC<PlaceProps> = ({
 
   const [{ isOver }, drop] = useDrop(
     () => ({
-      drop: (item: { id: number; title: string }) => {
-        if (droppedTitle) {
-          return;
-        }
-
-        setDroppedTitle({
-          attachedId: answer.id,
-          title: item.title,
-          id: item.id,
-        });
-      },
       accept: "title",
       collect: (monitor) => ({
         isOver:
           !!monitor.isOver() ||
-          (!droppedTitle &&
-            !!hoveredElement &&
-            hoveredElement === divRef.current),
+          (!!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
-    [droppedTitle, hoveredElement],
+    [hoveredElement],
   );
 
   useEffect(() => {
-    if (droppedTitle) {
-      return;
-    }
-
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: answer.id,
@@ -59,13 +43,12 @@ export const Place: FC<PlaceProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [answer.id, droppedElement, setDroppedTitle, droppedTitle]);
+  }, [answer.id, droppedElement, setDroppedTitle]);
 
   return (
     <div
       className={classNames("earth-place", {
-        "earth-place--highlight": isOver && !droppedTitle,
-        "title-dropped": !!droppedTitle,
+        "earth-place--highlight": isOver,
       })}
       ref={(ref) => {
         drop(ref);
@@ -73,7 +56,13 @@ export const Place: FC<PlaceProps> = ({
         divRef.current = ref;
       }}
     >
-      {droppedTitle?.title}
+      {!!droppedTitle && (
+        <Title
+          className="title-dropped"
+          title={droppedTitle.title}
+          id={droppedTitle.id}
+        />
+      )}
     </div>
   );
 };

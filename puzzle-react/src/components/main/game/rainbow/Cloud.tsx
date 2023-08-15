@@ -6,7 +6,7 @@ import { DragContext } from "../../../../context/DragContext";
 import { CloudSvg } from "./CloudSvg";
 
 interface CloudProps {
-  isHidden: boolean;
+  isHidden?: boolean;
   cloud: RainbowStripe;
   index: number;
 }
@@ -47,7 +47,7 @@ export const Cloud: FC<CloudProps> = ({
         x: evt.touches[0]?.clientX || 0,
         y: evt.touches[0]?.clientY || 0,
       };
-      mouseMoveHandler(lastCoord);
+      mouseMoveHandler(lastCoord, { isRainbow: true });
     };
 
     if (isDragging) {
@@ -59,14 +59,10 @@ export const Cloud: FC<CloudProps> = ({
       if (isDragging) {
         document.removeEventListener("mousemove", onMouseMove);
         document.removeEventListener("touchmove", onTouchMove);
-        mouseUpHandler(lastCoord, { id, color });
+        mouseUpHandler(lastCoord, { id, color }, { isRainbow: true });
       }
     };
   }, [color, id, isDragging, mouseMoveHandler, mouseUpHandler]);
-
-  if (isHidden) {
-    return null;
-  }
 
   return (
     <>
@@ -77,7 +73,10 @@ export const Cloud: FC<CloudProps> = ({
           cloudRef.current = ref;
         }}
       >
-        <CloudSvg color={color} opacity={isDragging ? 0.5 : 1} />
+        <CloudSvg
+          color={color}
+          opacity={isDragging ? 0.3 : isHidden ? 0.6 : 1}
+        />
       </div>
       {isDragging && (
         <div

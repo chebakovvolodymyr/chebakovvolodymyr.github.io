@@ -23,10 +23,11 @@ type DroppedElement = {
 interface DragContextProps {
   dropElements: DropElements[];
   setDropElement: (element: HTMLElement | null) => void;
-  mouseMoveHandler: (coords: XYCoord) => void;
+  mouseMoveHandler: (coords: XYCoord, params?: { isRainbow: boolean }) => void;
   mouseUpHandler: (
     coords: XYCoord,
     params: Record<string, number | string>,
+    eventParams?: { isRainbow: boolean },
   ) => void;
   hoveredElement: HTMLElement | null;
   droppedElement: DroppedElement;
@@ -34,17 +35,38 @@ interface DragContextProps {
 
 export const DragContext = createContext({} as DragContextProps);
 
+const isCoordsInsideCircleElement = (
+  dropElement: DropElements,
+  coords: XYCoord,
+) => {
+  const centerX = (dropElement.left + dropElement.right) / 2;
+  const centerY = (dropElement.top + dropElement.bottom) / 2;
+  const radius = (dropElement.right - dropElement.left) / 2 + 25;
+
+  return (coords.x - centerX) ** 2 + (coords.y - centerY) ** 2 <= radius ** 2;
+};
+
+const isCoordsInsideRectangleElement = (
+  dropElement: DropElements,
+  coords: XYCoord,
+) =>
+  coords.x >= dropElement.left &&
+  coords.x <= dropElement.right &&
+  coords.y <= dropElement.bottom &&
+  coords.y >= dropElement.top;
+
 const getIntersectedElement = (
   dropElements: DropElements[],
   coords: XYCoord,
+  isRainbow = false,
 ): HTMLElement | null =>
-  dropElements.find(
-    (dropElement) =>
-      coords.x >= dropElement.left &&
-      coords.x <= dropElement.right &&
-      coords.y <= dropElement.bottom &&
-      coords.y >= dropElement.top,
-  )?.element ?? null;
+  dropElements.find((dropElement) => {
+    if (!isRainbow) {
+      return isCoordsInsideRectangleElement(dropElement, coords);
+    }
+
+    return isCoordsInsideCircleElement(dropElement, coords);
+  })?.element ?? null;
 
 export const DragContextProvider: FC<PropsWithChildren> = ({ children }) => {
   const [dropElements, setDropElements] = useState<DropElements[]>([]);
@@ -72,8 +94,12 @@ export const DragContextProvider: FC<PropsWithChildren> = ({ children }) => {
   }, []);
 
   const mouseMoveHandler = useCallback(
-    ({ x, y }: XYCoord) => {
-      const element = getIntersectedElement(dropElements, { x, y });
+    ({ x, y }: XYCoord, params?: { isRainbow: boolean }) => {
+      const element = getIntersectedElement(
+        dropElements,
+        { x, y },
+        params?.isRainbow,
+      );
 
       setHoveredElement(element);
     },
@@ -81,9 +107,16 @@ export const DragContextProvider: FC<PropsWithChildren> = ({ children }) => {
   );
 
   const mouseUpHandler = useCallback(
-    ({ x, y }: XYCoord, params: Record<string, number | string>) => {
-      const element = getIntersectedElement(dropElements, { x, y });
-
+    (
+      { x, y }: XYCoord,
+      params: Record<string, number | string>,
+      eventParams?: { isRainbow: boolean },
+    ) => {
+      const element = getIntersectedElement(
+        dropElements,
+        { x, y },
+        eventParams?.isRainbow,
+      );
       setHoveredElement(null);
       setDroppedElement({ element, params });
     },

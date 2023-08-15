@@ -25,18 +25,48 @@ export const Rainbow: FC<RainbowProps> = ({
     rainbow: { stripes },
   } = games;
   const shuffledStripes = useMemo(() => shuffle(stripes), [stripes]);
-  console.log("shuffledStripes", shuffledStripes);
 
   const [score, setScore] = useState(0);
 
   const [droppedColors, setDroppedColors] = useState<DroppedColor[]>([]);
 
-  const setDroppedColor = useCallback((droppedColor: DroppedColor) => {
-    setDroppedColors((prevDroppedColors) => [
-      ...prevDroppedColors,
-      droppedColor,
-    ]);
-  }, []);
+  const setDroppedColor = useCallback(
+    ({ id, attachedId, color }: DroppedColor) => {
+      setDroppedColors((droppedColors) => {
+        const previousDroppedFile = droppedColors.find(
+          (droppedColor) => droppedColor.id === id,
+        );
+
+        const attachedTitle = droppedColors.find(
+          (droppedColor) => droppedColor.attachedId === attachedId,
+        );
+
+        if (previousDroppedFile && attachedTitle) {
+          return droppedColors.map((droppedColor) => {
+            if (droppedColor.id === id) {
+              return { ...droppedColor, attachedId: attachedTitle.attachedId };
+            }
+
+            if (droppedColor.attachedId === attachedId) {
+              return {
+                ...droppedColor,
+                attachedId: previousDroppedFile.attachedId,
+              };
+            }
+
+            return droppedColor;
+          });
+        }
+
+        const titles = droppedColors.filter(
+          (droppedColor) =>
+            droppedColor.attachedId !== attachedId && droppedColor.id !== id,
+        );
+        return [...titles, { id, color, attachedId }];
+      });
+    },
+    [],
+  );
 
   const addScore = useContext(ScoreContext);
 

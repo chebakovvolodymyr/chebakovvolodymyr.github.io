@@ -10,7 +10,7 @@ interface CardProps {
   onCardClick: (card: ICard) => void;
 }
 
-const DEFAULT_IMAGE = "./assets/NUGARĖLĖ. Nuotrauka iš Vecteezy, aut 1.png";
+const DEFAULT_IMAGE = "./src/assets/NUGARĖLĖ. Nuotrauka iš Vecteezy, aut 1.png";
 
 export const Card: FC<CardProps> = ({ isFlipped, card, onCardClick }) => {
   const onClick = () => {

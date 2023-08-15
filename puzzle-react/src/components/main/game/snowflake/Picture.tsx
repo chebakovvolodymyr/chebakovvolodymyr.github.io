@@ -6,13 +6,14 @@ import { Snowflake } from "../../../../data/games.types";
 import { PictureCheckbox } from "../../../picture-checkbox/PictureCheckbox";
 import { DroppedTitle } from "../../titles/Titles.types";
 import { DragContext } from "../../../../context/DragContext";
+import { Title } from "../../titles/Title";
 
 interface PictureProps {
   snowflake: Snowflake;
 
   checked: boolean;
   isGameOver: boolean;
-  title?: string;
+  title?: DroppedTitle;
 
   toogleCheckbox: (cloudId: number) => void;
   setDroppedTitle: (droppedTitle: DroppedTitle) => void;
@@ -33,32 +34,17 @@ export const Picture: FC<PictureProps> = ({
 
   const [{ isOver }, drop] = useDrop(
     () => ({
-      drop: (item: { id: number; title: string }) => {
-        if (title) {
-          return;
-        }
-
-        setDroppedTitle({
-          attachedId: snowflake.id,
-          title: item.title,
-          id: item.id,
-        });
-      },
       accept: "title",
       collect: (monitor) => ({
         isOver:
           !!monitor.isOver() ||
-          (!title && !!hoveredElement && hoveredElement === divRef.current),
+          (!!hoveredElement && hoveredElement === divRef.current),
       }),
     }),
-    [title, hoveredElement],
+    [hoveredElement],
   );
 
   useEffect(() => {
-    if (title) {
-      return;
-    }
-
     if (droppedElement.element && droppedElement.element === divRef.current) {
       setDroppedTitle({
         attachedId: snowflake.id,
@@ -66,7 +52,7 @@ export const Picture: FC<PictureProps> = ({
         id: droppedElement.params.id as number,
       });
     }
-  }, [snowflake.id, droppedElement, setDroppedTitle, title]);
+  }, [snowflake.id, droppedElement, setDroppedTitle]);
 
   const onChange = () => {
     toogleCheckbox(snowflake.id);
@@ -75,7 +61,7 @@ export const Picture: FC<PictureProps> = ({
     <div
       ref={drop}
       className={classNames("picture", {
-        "picture--highlight": isOver && !title,
+        "picture--highlight": isOver,
       })}
     >
       <PictureCheckbox
@@ -97,7 +83,11 @@ export const Picture: FC<PictureProps> = ({
         <span className="snowflake-caption">{snowflake.title}</span>
       )}
       {!!title && !isGameOver && (
-        <span className="snowflake-caption">{title}</span>
+        <Title
+          className="snowflake-caption"
+          title={title.title}
+          id={title.id}
+        />
       )}
     </div>
   );

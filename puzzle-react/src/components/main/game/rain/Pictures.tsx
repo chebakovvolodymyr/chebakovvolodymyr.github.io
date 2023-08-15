@@ -31,9 +31,7 @@ export const Pictures: FC<PicturesProps> = ({
           toogleCheckbox={toogleCheckbox}
           checked={checkedCheckboxes.includes(cloud.id)}
           setDroppedTitle={setDroppedTitle}
-          title={
-            droppedTitles.find((title) => title.attachedId === cloud.id)?.title
-          }
+          title={droppedTitles.find((title) => title.attachedId === cloud.id)}
           isGameOver={isGameOver}
         />
       ))}
