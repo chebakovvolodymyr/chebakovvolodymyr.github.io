@@ -10,7 +10,7 @@ export const Footer = () => {
   );
 
   const onEndClick = () => {
-    location.reload();
+    location.assign('/')
   };
 
   return (
