@@ -16,13 +16,7 @@ const isOpened = (status: Status) =>
   status === Status.CORRECT_OPEN || status === Status.ICORRECT_OPEN;
 
 export const Word = memo<WordProps>(
-  ({
-    word,
-    status,
-    letterPosition,
-    isFinished,
-    onAnimationFinished,
-  }) => {
+  ({ word, status, letterPosition, isFinished, onAnimationFinished }) => {
     const [openClassIndex, setOpenClassIndex] = useState(0);
 
     const increaseOpenClassIndex = useCallback(

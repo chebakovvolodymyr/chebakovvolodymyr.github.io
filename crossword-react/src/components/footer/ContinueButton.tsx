@@ -4,11 +4,8 @@ import classNames from "classnames";
 import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 
 export const ContinueButton = () => {
-  const {
-    correctedAnswersAmount,
-    questions,
-    answeredQuestionsAmount,
-  } = useContext(ActiveQuestionContext);
+  const { correctedAnswersAmount, questions, answeredQuestionsAmount } =
+    useContext(ActiveQuestionContext);
 
   return (
     <button

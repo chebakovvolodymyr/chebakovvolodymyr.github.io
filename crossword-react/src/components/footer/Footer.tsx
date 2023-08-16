@@ -5,21 +5,21 @@ import { ActiveQuestionContext } from "../../context/ActiveQuestion";
 import { ContinueButton } from "./ContinueButton";
 
 export const Footer = () => {
-  const { selectedAnswer, answeredQuestionsAmount, questions, isFinished } = useContext(
-    ActiveQuestionContext,
-  );
+  const { selectedAnswer, answeredQuestionsAmount, questions, isFinished } =
+    useContext(ActiveQuestionContext);
 
   const onEndClick = () => {
-    location.assign('/')
+    location.assign("/");
   };
 
   return (
     <footer
       className={classNames({
-          "footer--long": selectedAnswer && answeredQuestionsAmount === questions.length
+        "footer--long":
+          selectedAnswer && answeredQuestionsAmount === questions.length,
       })}
     >
-       <button className="btn btn-orange" onClick={onEndClick}>
+      <button className="btn btn-orange" onClick={onEndClick}>
         <span className="title">Baigti</span>
       </button>
       {isFinished && <ContinueButton />}

@@ -19,15 +19,15 @@ export const questions = [
   },
   {
     id: 2,
-    word: "GRENLANDIJOUS",
+    word: "GRENLANDIJOS",
     letter: "L",
     question:
       "Kokios salos ledo skydo tirpimas šiuo metu yra pagrindinis<br> veiksnys, lemiantis Žemės vandenyno plėtimąsi?",
-    answers: ["Grenlandijous", "Jutlandijos", "Indonezijos"],
-    correctAnswer: "Grenlandijous",
+    answers: ["Grenlandijos", "Jutlandijos", "Indonezijos"],
+    correctAnswer: "Grenlandijos",
     description: {
       short:
-        "Skaičiuojama, kad pasaulyje nesumažinus į aplinką išmetamo CO2 kiekio, per 100&nbsp;metų Grenlandijoje ištirps daugiau nei 6 trilijonai tonų ledo, o pasaulinis vandens lygis pakils apie 10&nbsp;centimetrų. Jeigu ištirptų visas Grenlandiją dengiantis ledas, pasaulinis vandens lygis pakiltų daugiau nei 7&nbsp;metrais.",
+        "Skaičiuojama, kad pasaulyje nesumažinus į aplinką išmetamo CO<sub>2</sub> kiekio, per 100&nbsp;metų Grenlandijoje ištirps daugiau nei 6 trilijonai tonų ledo, o pasaulinis vandens lygis pakils apie 10&nbsp;centimetrų. Jeigu ištirptų visas Grenlandiją dengiantis ledas, pasaulinis vandens lygis pakiltų daugiau nei 7&nbsp;metrais.",
       long: "Grenlandijous ledo skydas – neaprėpiami ledo plotai, dengiantys 1,71&nbsp;mln.&nbsp;km² ir apima beveik 80&nbsp;% visos salos. Tai yra antrasis pagal dydį ledo skydas pasaulyje, plotu nusileidžiantis tik Antarktidai. Įsivaizduokite, Grenlandijous ledynas užima tokį plotą, kaip 26-ios Lietuvos! JAV mokslininkų atlikta Grenlandijous skydinio ledyno istorijos analizė atskleidė niūrią realybę: šiuo metu ledynas nyksta sparčiausiai per 12 tūkstančių metų.  Skaičiuojama, kad pasaulyje nesumažinus į aplinką išmetamo CO<sub>2</sub> kiekio, per 100 metų Grenlandijoje ištirps daugiau nei 6 trilijonai tonų ledo pasaulinis vandens lygis pakils apie 10 centimetrų. Jeigu ištirptų visas Grenlandiją dengiantis ledas, pasaulinis vandens lygis pakiltų daugiau nei 7 metrais.",
       picture: {
         url: "./src/assets/2.jpg",
@@ -45,7 +45,7 @@ export const questions = [
     description: {
       short:
         "2021&nbsp;m. pasaulyje į atmosferą pateko daugiau kaip 37 milijardai tonų CO<sub>2</sub> ir šis skaičius auga kasmet. Vien Kinija į aplinką išmetė beveik tiek pat anglies dvideginio, kaip visos išsivysčiusios šalys kartu sudėjus – 30,9&nbsp;%.",
-      long: "2021&nbsp;m. pasaulyje į atmosferą pateko daugiau kaip 37 milijardai tonų CO<sub>2</sub> ir šis skaičius auga kasmet. Vien Kinija į aplinką išmetė beveik tiek pat anglies dvideginio, kaip visos išsivysčiusios šalys kartu sudėjus – 30,9&nbsp;%. Jeigu paskaičiuotume CO<sub>2</sub> kiekius, tenkančius vienam šalies gyventojui, Kinija nebūtų lyderė - vienam gyventojui čia tenka apie 9&nbsp;tonos CO<sub>2</sub>. Pavyzdžiui, vienam Artimųjų Rytų valstybių (tokių kaip Kataras, Bahreinas ir Kuveitas) gyventojui šis skaičius siekia 25–35 tonos CO<sub>2</sub> per metus. Lietuvoje vienam gyventojui tenka beveik 4,5 tonos CO<sub>2</sub> emisijų.",
+      long: "2021&nbsp;m. pasaulyje į atmosferą pateko daugiau kaip 37 milijardai tonų CO<sub>2</sub> ir šis skaičius auga kasmet. Vien Kinija į aplinką išmetė beveik tiek pat anglies dvideginio, kaip visos išsivysčiusios šalys kartu sudėjus – 30,9&nbsp;%. Jeigu paskaičiuotume CO<sub>2</sub> kiekius, tenkančius vienam šalies gyventojui, Kinija nebūtų lyderė — vienam gyventojui čia tenka apie 9&nbsp;tonos CO<sub>2</sub>. Pavyzdžiui, vienam Artimųjų Rytų valstybių (tokių kaip Kataras, Bahreinas ir Kuveitas) gyventojui šis skaičius siekia 25–35 tonos CO<sub>2</sub> per metus. Lietuvoje vienam gyventojui tenka beveik 4,5 tonos CO<sub>2</sub> emisijų.",
       picture: {
         url: "./src/assets/3.jpg",
         author: "Nuotrauka iš Unsplash, aut. Ziang Guo",
