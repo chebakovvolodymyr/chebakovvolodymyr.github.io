@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <style>
+        @font-face {
+            font-family: "Asap";
+            src:
+                url("./assets/fonts/asap/Asap-Medium.woff2") format("woff2"),
+                url("./assets/fonts/asap/Asap-Medium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Asap";
+            src:
+                url("./assets/fonts/asap/Asap-Bold.woff2") format("woff2"),
+                url("./assets/fonts/asap/Asap-Bold.woff") format("woff");
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Asap";
+            src:
+                url("./assets/fonts/asap/Asap-Regular.woff2") format("woff2"),
+                url("./assets/fonts/asap/Asap-Regular.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        body {
+            font-family: "Asap", sans-serif;
+            background: linear-gradient(to left, #FF9833, #FFCB00, #FF9833);
+        }
+        section {
+            width: 95vw;
+            height: 95vh;
+            margin: 0 auto;
+            background-image: url("./assets/background.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+        }
+        header {
+            padding: 50px 0;
+        }
+        header h1{
+            background-image: url("./assets/header.png");
+            background-size: contain;
+            width: 1455px;
+            margin: auto;
+            color: #000;
+            height: 216px;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 199px;
+            text-align: center;
+        }
+        .game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game-description {
+            font-size: 50px;
+            font-weight: bold;
+            width: 81%;
+            margin: auto;
+            text-align: center;
+        }
+        footer {
+            background-image: url("./assets/footer.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 642px;
+            height: 121px;
+            margin: 40px auto 0;
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 116px;
+        }
+        button {
+            background-image: url("./assets/button.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: none;
+            width: 390px;
+            height: 121px;
+            font-size: 45px;
+            font-weight: bold;
+        }
+        .divider {
+            background-image: url("./assets/divider.png");
+            height: 449px;
+            width: 60px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+        }
+    </style>
+  </head>
+  <body>
+    <section class="main-screen">
+        <header><h1>Sveiki atvykę į meteorologijos muziejaus žaidimų aikštelėje</h1></header>
+        <main>
+            <div class="game">
+                <div class="game-description">
+                    Patikrinkite savo žinias ir išspręskite kryžiažodyje paslėptą slaptą žodį
+                </div>
+                <button>Atspėkite</button>
+            </div>
+            <div class="divider"></div>
+            <div class="game">
+                <div class="game-description">
+                    Smagiai žaiskite mūsų žaidimą ir smagiai atpažinkite jus supantį pasaulį
+                </div>
+                <button>Žaisti</button>
+            </div>
+        </main>
+        <footer>Eikite į muziejaus svetainę</footer>
+    </section>
+  </body>
+</html>
