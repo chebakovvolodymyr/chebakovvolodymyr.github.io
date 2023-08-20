@@ -31,9 +31,3 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:active {
-  outline: 4px auto -webkit-focus-ring-color;
-}

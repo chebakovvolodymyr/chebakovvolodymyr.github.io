@@ -15,10 +15,10 @@ export const ResultDescription = () => {
           pagrindinės jų – temperatūra ir oro drėgmė, todėl beveik neįmanoma
           rasti dviejų identiškų snaigių.{" "}
           <p>
-            Įprastai snaigių skersmuo siekia nuo {"<"}1 mm iki kelių milimetrų,
+            Įprastai snaigių skersmuo siekia nuo {"<"}1&nbsp;mm iki kelių milimetrų,
             tačiau Gineso rekordų knygoje yra užregistruotas didžiausios kada
-            nors iškritusios snaigės rekordas – net 38 cm pločio ir 20 cm
-            apimties snaigė, iškritusi 1887 m. sausio 28 d. Montanos valstijoje,
+            nors iškritusios snaigės rekordas – net 38&nbsp;cm pločio ir 20&nbsp;cm
+            apimties snaigė, iškritusi 1887&nbsp;m. sausio 28&nbsp;d. Montanos valstijoje,
             JAV.
           </p>
         </span>

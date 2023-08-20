@@ -60,9 +60,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 24px 4%;
+    gap: 30px;
 
     h1 {
-      font-size: 40px;
+      font-size: 36px;
     }
 
     .result {
@@ -78,6 +79,7 @@
       font-size: 30px;
       color: black;
       font-weight: 900;
+      flex-shrink: 0;
     }
 
     button {
@@ -93,6 +95,7 @@
       width: 250px;
       height: 80px;
       font-size: 30px;
+      flex-shrink: 0;
 
       .title {
         filter: drop-shadow(2px 4px 4px #000);
@@ -318,6 +321,8 @@
             padding: 15px 50px;
             margin-top: 15px;
             height: 70px;
+            display: flex;
+            align-items: baseline;
 
             &.active {
               background-image: url("./assets/buttons/button-green-squared.png");
@@ -367,10 +372,28 @@
         gap: 2%;
         .picture-checkbox {
           height: auto;
-          width: 33%;
           .picture-checkbox_customized {
             right: 55px;
             top: 10px;
+          }
+        }
+
+        .wind-picture {
+          position: relative;
+          width: 33%;
+
+          &-speed {
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            background-color: rgba(23, 3, 0, 0.7);
+            width: 370px;
+            height: 61px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
           }
         }
       }
@@ -762,16 +785,19 @@
       transform: translateX(-50%);
       margin: auto;
       color: #000;
-      display: flex;
       font-weight: 500;
+      overflow-y: auto;
+      padding: 20px 0;
+
       span {
-        width: 50%;
-        padding: 10px;
-        box-sizing: border-box;
+        width: 98%;
+        padding: 10px 10px 10px 30px;
         font-size: 26px;
-        display: inline-block;
-        height: 158px;
+
         overflow-y: auto;
+        height: 138px;
+        display: inline-block;
+        box-sizing: border-box;
 
         @include scrollbar();
       }
@@ -792,6 +818,10 @@
         color: #fff;
         filter: drop-shadow(2px 4px 4px #000);
       }
+
+      &--white-shadow {
+        filter: drop-shadow(1px 1px 2px white);
+      }
     }
 
     .question_result {
@@ -805,8 +835,9 @@
         width: 60%;
       }
 
-      &--shadow {
-        text-shadow: 2px 2px black;
+      &--lite {
+        color: #22dc22;
+        filter: drop-shadow(2px 2px 4px black);
       }
     }
 
@@ -922,7 +953,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   color: #000;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   width: 417px;
   height: 454px;
@@ -947,31 +978,31 @@
     position: absolute;
     cursor: pointer;
     &--1 {
-      bottom: 25%;
+      bottom: 40%;
       right: 3%;
     }
     &--2 {
-      bottom: 52%;
+      bottom: 60%;
       right: 8%;
     }
     &--3 {
-      bottom: 75%;
+      bottom: 80%;
       right: 16%;
     }
     &--4 {
-      bottom: 0;
+      bottom: 20%;
       left: 1%;
     }
     &--5 {
-      bottom: 27%;
+      bottom: 40%;
       left: 3%;
     }
     &--6 {
-      bottom: 52%;
+      bottom: 60%;
       left: 8%;
     }
     &--7 {
-      bottom: 75%;
+      bottom: 80%;
       left: 16%;
     }
 
@@ -1097,7 +1128,7 @@
         }
       }
 
-      &:not(:checked).show-wrong ~ .picture-checkbox_label {
+      &.show-wrong ~ .picture-checkbox_label {
         background: transparent;
 
         &::before {
@@ -1127,17 +1158,17 @@
   background-image: url("./assets/buttons/blue-bg-river.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 1870px;
-  height: 220px;
-  margin: auto;
+  width: 1700px;
+  height: 150px;
+  margin: 30px auto;
   color: #000;
-  display: flex;
   font-weight: 500;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   div {
-    width: 50%;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 

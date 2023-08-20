@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = ({ gameOver, score }) => {
         </h1>
       )}
 
-      {gameOver && <div className="result">Tavo taškai: {score} iš 20</div>}
+      <div className="result">Tavo taškai: {score} iš 20</div>
 
       <button onClick={onEndClick}>
         <span className="title">Baigti</span>

@@ -30,7 +30,7 @@ export const Header: FC<HeaderProps> = ({
   return (
     <header>
       {isGameOver ? (
-        <div className="question_result question_result--shadow">
+        <div className="question_result question_result--lite">
           Iššūkis įveiktas! Taškai: {score} iš 3
         </div>
       ) : (

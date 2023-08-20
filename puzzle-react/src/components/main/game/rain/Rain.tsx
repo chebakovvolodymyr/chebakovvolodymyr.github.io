@@ -59,6 +59,10 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
     [],
   );
 
+  const removeDroppedTitle = useCallback((id: number) => {
+    setDroppedTitles(droppedTitles => droppedTitles.filter(droppedTitle => droppedTitle.id !== id))
+  }, [])
+
   const [checkedCheckboxes, setCheckedCheckboxes] = useState<number[]>([]);
   const toogleCheckbox = useCallback(
     (cloudId: number) => {
@@ -123,7 +127,7 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
         toogleCheckbox={toogleCheckbox}
         isGameOver={isGameOver}
       />
-      {!isGameOver && <Titles items={clouds} droppedTitles={droppedTitles} />}
+      {!isGameOver && <Titles items={clouds} droppedTitles={droppedTitles} removeDroppedTitle={removeDroppedTitle}/>}
     </div>
   );
 };

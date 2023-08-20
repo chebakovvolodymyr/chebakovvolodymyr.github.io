@@ -73,7 +73,8 @@ export const Picture: FC<PictureProps> = ({
         }}
         url={cloud.picture}
         alt={cloud.alt}
-        checked={isGameOver ? cloud.isCorrect : checked}
+        checked={checked}
+        isCorrect={cloud.isCorrect}
         onChange={onChange}
         onLoad={() => setImageLoaded(true)}
         isGameOver={isGameOver}
@@ -82,7 +83,7 @@ export const Picture: FC<PictureProps> = ({
         <div className="cloud-description-result">
           <span className="snowflake-caption">{cloud.title}</span>
           <div className="cloud-description">
-            <span>{cloud.description}</span>
+            <span dangerouslySetInnerHTML={{__html: cloud.description}}/>
           </div>
         </div>
       )}
