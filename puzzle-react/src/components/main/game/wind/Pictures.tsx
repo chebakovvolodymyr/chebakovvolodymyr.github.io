@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { Wind } from "../../../../data/games.types";
-import { PictureCheckbox } from "../../../picture-checkbox/PictureCheckbox";
+import { Picture } from "./Picture";
 
 interface PicturesProps {
   winds: Wind[];
@@ -19,15 +19,12 @@ export const Pictures: FC<PicturesProps> = ({
   return (
     <div className="wind-pictures">
       {winds.map((wind) => (
-        <PictureCheckbox
+        <Picture
           key={wind.id}
-          url={wind.picture}
-          alt={wind.alt}
-          checked={
-            isGameOver ? wind.isCorrect : checkedCheckboxes.includes(wind.id)
-          }
-          onChange={() => toogleCheckbox(wind.id)}
+          wind={wind}
           isGameOver={isGameOver}
+          checkedCheckboxes={checkedCheckboxes}
+          toogleCheckbox={toogleCheckbox}
         />
       ))}
     </div>

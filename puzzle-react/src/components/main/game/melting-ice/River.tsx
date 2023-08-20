@@ -245,7 +245,7 @@ export const River: FC<RiverProps> = memo(
 
     return (
       <div className="melting-ice-river">
-        <canvas ref={canvasRef} width={`${width}px`} height="700px"></canvas>
+        <canvas ref={canvasRef} width={`${width}px`} height="650px"></canvas>
       </div>
     );
   },

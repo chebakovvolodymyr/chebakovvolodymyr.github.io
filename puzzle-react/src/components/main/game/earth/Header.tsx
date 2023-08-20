@@ -36,7 +36,7 @@ export const Header: FC<HeaderProps> = ({
       ) : (
         <div className="question_title">
           <span>
-            Klimatosaugos iššūkis. Mes kiekvienas įvairias būdais galime
+            Klimatosaugos iššūkis. Mes kiekvienas įvairiais būdais galime
             prisidėti prie klimato kaitos švelninimo. Sudėk aprašymus į
             teisingas vietas ir spausk “Pateikti”.
           </span>

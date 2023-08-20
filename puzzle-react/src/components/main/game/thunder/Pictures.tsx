@@ -30,9 +30,8 @@ export const Pictures: FC<PicturesProps> = ({
           key={place.id}
           url={place.picture}
           alt={place.alt}
-          checked={
-            isGameOver ? place.isCorrect : checkedCheckboxes.includes(place.id)
-          }
+          checked={checkedCheckboxes.includes(place.id)}
+          isCorrect={place.isCorrect}
           onChange={() => toogleCheckbox(place.id)}
           isGameOver={isGameOver}
         />

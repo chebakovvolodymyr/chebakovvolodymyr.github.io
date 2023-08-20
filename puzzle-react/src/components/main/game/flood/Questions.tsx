@@ -33,13 +33,9 @@ export const Questions: FC<QuestionsProps> = ({
                     onChange={() => onRadioChange(question.id, answer.id)}
                     className={classNames({
                       "show-wrong":
-                        isGameOver && question.correctAnswerId !== answer.id,
+                        (isGameOver && question.correctAnswerId === answer.id && radio[question.id] !== answer.id) || (isGameOver && question.correctAnswerId !== answer.id && radio[question.id] === answer.id),
                     })}
-                    checked={
-                      isGameOver
-                        ? question.correctAnswerId === answer.id
-                        : radio[question.id] === answer.id
-                    }
+                    checked={radio[question.id] === answer.id}
                   />
                   <label className="picture-checkbox_label"></label>
                 </div>

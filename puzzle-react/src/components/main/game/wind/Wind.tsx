@@ -71,12 +71,8 @@ export const Wind: FC<ThunderProps> = ({
       return acc;
     }, 0);
 
-    const directionScore =
-      selectedPolygons.includes(CardinalDirections.WEST) &&
-      selectedPolygons.includes(CardinalDirections.SOUTHWEST)
-        ? 1
-        : 0;
-
+    const directionScore = (selectedPolygons.includes(CardinalDirections.WEST) ? 1 : 0) + (selectedPolygons.includes(CardinalDirections.SOUTHWEST) ? 1 : 0)
+    
     const score = checkboxesScore + directionScore;
     setScore(score);
     addScore(score);

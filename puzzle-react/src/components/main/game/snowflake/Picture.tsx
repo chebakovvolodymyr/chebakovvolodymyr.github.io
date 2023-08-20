@@ -74,7 +74,8 @@ export const Picture: FC<PictureProps> = ({
         }}
         url={snowflake.picture}
         alt={snowflake.alt}
-        checked={isGameOver ? snowflake.isCorrect : checked}
+        checked={checked}
+        isCorrect={snowflake.isCorrect}
         onChange={onChange}
         onLoad={() => setImageLoaded(true)}
         isGameOver={isGameOver}
