@@ -599,9 +599,8 @@
         grid-template-columns: repeat(4, 1fr);
         width: 1640px;
         height: 200px;
-        position: fixed;
         left: 50%;
-        top: 881px;
+        top: 0;
         transform: translateX(-50%);
 
         &.titles {
@@ -611,17 +610,21 @@
         }
       }
 
+      .earth_table {
+        position: fixed;
+        width: 1640px;
+        height: 100vh;
+        overflow: hidden;
+        top: 140px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
       .earths-places {
         display: flex;
 
         &.titles {
-          position: fixed;
-          width: 1640px;
           height: 765px;
-          overflow: hidden;
-          top: 140px;
-          left: 50%;
-          transform: translateX(-50%);
         }
 
         .earth-place {
