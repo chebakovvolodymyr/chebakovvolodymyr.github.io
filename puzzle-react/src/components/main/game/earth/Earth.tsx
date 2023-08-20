@@ -69,6 +69,10 @@ export const Earth: FC<EarthProps> = ({
     [],
   );
 
+  const removeDroppedTitle = useCallback((id: number) => {
+    setDroppedTitles(droppedTitles => droppedTitles.filter(droppedTitle => droppedTitle.id !== id))
+  }, [])
+
   const addScore = useContext(ScoreContext);
 
   const calculateResult = useCallback(() => {
@@ -103,7 +107,7 @@ export const Earth: FC<EarthProps> = ({
           answers={answers}
           isGameOver={isGameOver}
         />
-        <Titles answers={shuffledAnswers} droppedTitles={droppedTitles} />
+        <Titles answers={shuffledAnswers} droppedTitles={droppedTitles} removeDroppedTitle={removeDroppedTitle}/>
       </div>
       {isGameOver && <Result />}
     </div>

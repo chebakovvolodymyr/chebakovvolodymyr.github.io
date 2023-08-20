@@ -651,7 +651,7 @@
         }
 
         .earth-place {
-          position: fixed;
+          position: absolute;
           &:first-child {
             background-image: url("./assets/buttons/grey_bg_300.png");
             width: 300px;
