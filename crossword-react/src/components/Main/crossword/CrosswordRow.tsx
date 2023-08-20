@@ -12,7 +12,6 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
     setActiveQuestion,
     selectedAnswer,
     isFinished,
-    onAnimationFinished,
     setSelectedAnswer,
   } = useContext(ActiveQuestionContext);
 
@@ -59,7 +58,6 @@ export const CrosswordRow = (question: QuestionWithLetterPositionAndShifts) => {
         status={status}
         letterPosition={letterPosition}
         isFinished={isFinished}
-        onAnimationFinished={onAnimationFinished}
       />
       <EmptyCells amount={rightShift} />
     </tr>

@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({ gameOver, score }) => {
   const onEndClick = () => {
-    location.assign('/')
+    location.assign("/");
   };
 
   return (

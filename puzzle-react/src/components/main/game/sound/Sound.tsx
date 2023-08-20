@@ -66,8 +66,10 @@ export const Sound: FC<SoundProps> = ({
   );
 
   const removeDroppedTitle = useCallback((id: number) => {
-    setDroppedTitles(droppedTitles => droppedTitles.filter(droppedTitle => droppedTitle.id !== id))
-  }, [])
+    setDroppedTitles((droppedTitles) =>
+      droppedTitles.filter((droppedTitle) => droppedTitle.id !== id),
+    );
+  }, []);
 
   const addScore = useContext(ScoreContext);
 
@@ -103,7 +105,11 @@ export const Sound: FC<SoundProps> = ({
         isGameOver={isGameOver}
       />
       {isContinueButtonDisabled && (
-        <Titles items={sounds} droppedTitles={droppedTitles} removeDroppedTitle={removeDroppedTitle}/>
+        <Titles
+          items={sounds}
+          droppedTitles={droppedTitles}
+          removeDroppedTitle={removeDroppedTitle}
+        />
       )}
 
       {isGameOver && <Result />}

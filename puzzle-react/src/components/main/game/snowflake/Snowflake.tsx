@@ -67,8 +67,10 @@ export const Snowflake: FC<SnowflakeProps> = ({
   );
 
   const removeDroppedTitle = useCallback((id: number) => {
-    setDroppedTitles(droppedTitles => droppedTitles.filter(droppedTitle => droppedTitle.id !== id))
-  }, [])
+    setDroppedTitles((droppedTitles) =>
+      droppedTitles.filter((droppedTitle) => droppedTitle.id !== id),
+    );
+  }, []);
 
   const [checkedCheckboxes, setCheckedCheckboxes] = useState<number[]>([]);
 
@@ -135,7 +137,11 @@ export const Snowflake: FC<SnowflakeProps> = ({
         isGameOver={isGameOver}
       />
       {!isGameOver && (
-        <Titles items={snowflakes} droppedTitles={droppedTitles} removeDroppedTitle={removeDroppedTitle}/>
+        <Titles
+          items={snowflakes}
+          droppedTitles={droppedTitles}
+          removeDroppedTitle={removeDroppedTitle}
+        />
       )}
       {isGameOver && <ResultDescription />}
     </div>

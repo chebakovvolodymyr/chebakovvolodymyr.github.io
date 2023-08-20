@@ -10,25 +10,31 @@ interface TitlesProps {
 
   droppedTitles: DroppedTitle[];
 
-  removeDroppedTitle: (id: number) => void
+  removeDroppedTitle: (id: number) => void;
 }
 
-export const Titles: FC<TitlesProps> = ({ answers, droppedTitles, removeDroppedTitle }) => {
+export const Titles: FC<TitlesProps> = ({
+  answers,
+  droppedTitles,
+  removeDroppedTitle,
+}) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const { setDropElement, droppedElement } = useContext(DragContext);
 
-    
   useEffect(() => {
     if (droppedElement.element && droppedElement.element === divRef.current) {
-      removeDroppedTitle(droppedElement.params.id as number)
+      removeDroppedTitle(droppedElement.params.id as number);
     }
   }, [droppedElement, removeDroppedTitle]);
 
   return (
-    <div ref={(ref) => {
-      divRef.current = ref
-      setDropElement(ref)
-    }} className="titles earth-titles">
+    <div
+      ref={(ref) => {
+        divRef.current = ref;
+        setDropElement(ref);
+      }}
+      className="titles earth-titles"
+    >
       {answers.map((answer) => (
         <Title
           key={answer.id}

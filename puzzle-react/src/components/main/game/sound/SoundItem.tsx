@@ -1,7 +1,7 @@
 import { FC, useContext, useEffect, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 import classNames from "classnames";
-import YouTube, { YouTubeEvent, YouTubePlayer } from 'react-youtube';
+import YouTube, { YouTubeEvent, YouTubePlayer } from "react-youtube";
 
 import { Sound } from "../../../../data/games.types";
 import { DroppedTitle } from "../../titles/Titles.types";
@@ -55,73 +55,75 @@ export const SoundItem: FC<SoundItemProps> = ({
   }, [sound.id, droppedElement, setDroppedTitle]);
 
   const onReady = (evt: YouTubeEvent) => {
-    setPlayer(evt.target)
-  }
+    setPlayer(evt.target);
+  };
 
   useEffect(() => {
     if (!player) {
-      return
+      return;
     }
 
-    let timeoutId: number | undefined
-    let volumeId: number | undefined
+    let timeoutId: number | undefined;
+    let volumeId: number | undefined;
 
     const stopVideo = () => {
       if (player.getPlayerState() === 1) {
-        player.pauseVideo()
+        player.pauseVideo();
       }
-    }
+    };
 
     const reduceVolume = (count = 10) => {
-      player.setVolume(10 * count)
+      player.setVolume(10 * count);
       if (!count) {
-        stopVideo()
-        toggleSound(sound.id)
-        return
+        stopVideo();
+        toggleSound(sound.id);
+        return;
       }
       volumeId = setTimeout(() => {
         count -= 1;
-        reduceVolume(count)
-      }, 200)
-    }
+        reduceVolume(count);
+      }, 200);
+    };
 
     const increaseVolume = (count = 1) => {
-      player.setVolume(10 * count)
+      player.setVolume(10 * count);
 
       if (count > 10) {
-        return
+        return;
       }
       volumeId = setTimeout(() => {
         count += 1;
-        increaseVolume(count)
-      }, 200)
-    }
+        increaseVolume(count);
+      }, 200);
+    };
 
     if (isActive) {
-      player.seekTo(sound.start || 0)
-      player.playVideo()
-      increaseVolume()
+      player.seekTo(sound.start || 0);
+      player.playVideo();
+      increaseVolume();
 
       timeoutId = setTimeout(() => {
-        clearTimeout(timeoutId)
-        clearTimeout(volumeId)
-        reduceVolume()
-      }, 5000)
+        clearTimeout(timeoutId);
+        clearTimeout(volumeId);
+        reduceVolume();
+      }, 5000);
     } else {
-      stopVideo()
+      stopVideo();
     }
 
-      return () => {
-        clearTimeout(timeoutId)
-        clearTimeout(volumeId)
-      }
-  }, [isActive, player, sound.id, sound.start, toggleSound])
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(volumeId);
+    };
+  }, [isActive, player, sound.id, sound.start, toggleSound]);
 
   return (
     <div className="sound-item">
       <img
         src={sound.picture}
-        onClick={() => player && player.getPlayerState?.() && toggleSound(sound.id)}
+        onClick={() =>
+          player && player.getPlayerState?.() && toggleSound(sound.id)
+        }
         onLoad={() => setImageLoaded(true)}
       />
       <div
@@ -148,17 +150,15 @@ export const SoundItem: FC<SoundItemProps> = ({
             )}
       </div>
       <div className="sound-item__video">
-          <YouTube
+        <YouTube
           onReady={onReady}
-          videoId={!isGameOver
-            ? sound.soundUrl
-            : undefined}
-            opts={{
-              autoplay: 1,
-              loop: 1,
-              start: sound.start || 0,
-              end: sound.start ? sound.start + 5 : 5,
-            }}
+          videoId={!isGameOver ? sound.soundUrl : undefined}
+          opts={{
+            autoplay: 1,
+            loop: 1,
+            start: sound.start || 0,
+            end: sound.start ? sound.start + 5 : 5,
+          }}
         />
       </div>
     </div>

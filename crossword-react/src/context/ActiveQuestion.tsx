@@ -22,7 +22,7 @@ type ActiveQuestionContextProps = {
   correctedAnswersAmount: number;
   questions: QuestionWithLetterPositionAndShifts[];
   isFinished: boolean;
-  onAnimationFinished: () => void;
+  setIsFinished: (isFinished: boolean) => void;
 };
 
 export const ActiveQuestionContext = createContext<ActiveQuestionContextProps>(
@@ -36,7 +36,7 @@ export const ActiveQuestionContextProvider: FC<PropsWithChildren> = ({
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [answeredQuestionsAmount, setAnsweredQuestionsAmount] = useState(0);
   const [correctedAnswersAmount, setCorrectedAnswersAmount] = useState(0);
-  const [isAnimationFinished, setIsAnimationFinished] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   const questions = useMemo(placeQuestions, []);
 
@@ -46,7 +46,6 @@ export const ActiveQuestionContextProvider: FC<PropsWithChildren> = ({
       setAnsweredQuestionsAmount(
         (answeredQuestionsAmount) => answeredQuestionsAmount + 1,
       );
-      setIsAnimationFinished(false);
     }
   }, []);
 
@@ -67,15 +66,6 @@ export const ActiveQuestionContextProvider: FC<PropsWithChildren> = ({
     [activeQuestion],
   );
 
-  const onAnimationFinished = useCallback(() => {
-    setIsAnimationFinished(true);
-  }, []);
-
-  const isFinished =
-    answeredQuestionsAmount === questions.length &&
-    !!selectedAnswer &&
-    isAnimationFinished;
-
   return (
     <ActiveQuestionContext.Provider
       value={{
@@ -87,7 +77,7 @@ export const ActiveQuestionContextProvider: FC<PropsWithChildren> = ({
         correctedAnswersAmount,
         questions,
         isFinished,
-        onAnimationFinished,
+        setIsFinished,
       }}
     >
       {children}

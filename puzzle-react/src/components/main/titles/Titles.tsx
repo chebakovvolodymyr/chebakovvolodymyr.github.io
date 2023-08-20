@@ -14,18 +14,22 @@ interface TitlesProps {
   items: Item[];
 
   droppedTitles: DroppedTitle[];
-  removeDroppedTitle: (id: number) => void
+  removeDroppedTitle: (id: number) => void;
 }
 
-export const Titles: FC<TitlesProps> = ({ items, droppedTitles, removeDroppedTitle }) => {
+export const Titles: FC<TitlesProps> = ({
+  items,
+  droppedTitles,
+  removeDroppedTitle,
+}) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const { setDropElement, droppedElement } = useContext(DragContext);
 
   useEffect(() => {
     if (droppedElement.element && droppedElement.element === divRef.current) {
-      removeDroppedTitle(droppedElement.params.id as number)
+      removeDroppedTitle(droppedElement.params.id as number);
     }
-  }, [droppedElement, removeDroppedTitle])
+  }, [droppedElement, removeDroppedTitle]);
 
   const randomPositions = useMemo(
     () => getRandomPositions(items.length),
@@ -33,10 +37,13 @@ export const Titles: FC<TitlesProps> = ({ items, droppedTitles, removeDroppedTit
   );
 
   return (
-    <div ref={(ref) => {
-      divRef.current = ref
-      setDropElement(ref)
-    }} className="titles">
+    <div
+      ref={(ref) => {
+        divRef.current = ref;
+        setDropElement(ref);
+      }}
+      className="titles"
+    >
       {items.map((item, index) => (
         <Title
           key={item.id}

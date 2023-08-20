@@ -83,7 +83,7 @@ export const Picture: FC<PictureProps> = ({
         <div className="cloud-description-result">
           <span className="snowflake-caption">{cloud.title}</span>
           <div className="cloud-description">
-            <span dangerouslySetInnerHTML={{__html: cloud.description}}/>
+            <span dangerouslySetInnerHTML={{ __html: cloud.description }} />
           </div>
         </div>
       )}

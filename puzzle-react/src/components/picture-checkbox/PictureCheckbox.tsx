@@ -7,14 +7,17 @@ interface PictureCheckboxProps {
 
   checked: boolean;
   isGameOver: boolean;
-  isCorrect: boolean
+  isCorrect: boolean;
 
   onChange: () => void;
   onLoad?: () => void;
 }
 
 export const PictureCheckbox = forwardRef<HTMLDivElement, PictureCheckboxProps>(
-  ({ url, alt, checked, onChange, onLoad, isGameOver, isCorrect }, forwardedRef) => {
+  (
+    { url, alt, checked, onChange, onLoad, isGameOver, isCorrect },
+    forwardedRef,
+  ) => {
     return (
       <div className="picture-checkbox" ref={forwardedRef}>
         <img src={url} alt={alt} onLoad={onLoad} />
@@ -24,7 +27,9 @@ export const PictureCheckbox = forwardRef<HTMLDivElement, PictureCheckboxProps>(
             checked={checked}
             onChange={onChange}
             className={classNames({
-              "show-wrong": (isGameOver && isCorrect && !checked) || (isGameOver && !isCorrect && checked),
+              "show-wrong":
+                (isGameOver && isCorrect && !checked) ||
+                (isGameOver && !isCorrect && checked),
             })}
           />
           <label className="picture-checkbox_label"></label>
