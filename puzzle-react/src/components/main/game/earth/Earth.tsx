@@ -96,13 +96,15 @@ export const Earth: FC<EarthProps> = ({
         calculateResult={calculateResult}
         score={score}
       />
-      <Places
-        setDroppedTitle={setDroppedTitle}
-        droppedTitles={droppedTitles}
-        answers={answers}
-        isGameOver={isGameOver}
-      />
-      <Titles answers={shuffledAnswers} droppedTitles={droppedTitles} />
+      <div className="earth_table">
+        <Places
+          setDroppedTitle={setDroppedTitle}
+          droppedTitles={droppedTitles}
+          answers={answers}
+          isGameOver={isGameOver}
+        />
+        <Titles answers={shuffledAnswers} droppedTitles={droppedTitles} />
+      </div>
       {isGameOver && <Result />}
     </div>
   );
