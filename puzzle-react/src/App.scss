@@ -334,11 +334,6 @@
           }
         }
 
-        .picture-checkbox {
-          width: 370px;
-          height: 300px;
-        }
-
         .picture-checkbox_customized {
           top: 15px;
         }
@@ -1089,6 +1084,8 @@
 
 .picture-checkbox {
   position: relative;
+  width: 370px;
+  height: 300px;
   img {
     width: 370px;
     height: 300px;
