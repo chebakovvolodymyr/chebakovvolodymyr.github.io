@@ -9,7 +9,7 @@ export const Result = () => {
           greitis matuojamas m/s (kartais – km/h), kryptis įvardijama pagal tai,
           iš kurios krypties jis pučia (šiaurės vakarų, pietų, pietryčių ir t.
           t.). Nors stiprūs vėjai padaro daug žalos, tačiau vėjo galia taip pat
-          naudojama elektros energijos gamybai. Pagal stiprumą ir trukmę vėjas
+          naudojama elektros energijos gamybai. <p>Pagal stiprumą ir trukmę vėjas
           gali būti skirstomas į brizą, škvalą, uraganą, viesulą. Brizas –
           švelnus vietinis vėjas jūrų ir ežerų pakrantėse, keičiantis kryptį du
           kartus per parą dėl atmosferos slėgio kaitos. Škvalas – tai staigus ir
@@ -21,7 +21,7 @@ export const Result = () => {
           ir pasižymintis labai dideliu sukimosi greičiu. Vėjas pučia nuolat,
           tačiau kartais jis būna toks silpnas, kad atrodo, lyg aplinka yra
           bevėjė – tai vadinama tyka (≤0,5 m/s). Dažniausiai tyka susidaro
-          anticiklono metu, taip pat slėniuose, duburiuose.
+          anticiklono metu, taip pat slėniuose, duburiuose.</p>
         </span>
       </div>
       <div className="wind-result-letters">
