@@ -38,6 +38,7 @@ const drawCircle = (
   x: number,
   y: number,
   isSelected: boolean,
+  isLastSelected = false,
 ) => {
   const radius = 60;
   const circle = new Path2D();
@@ -45,7 +46,7 @@ const drawCircle = (
   circle.arc(x, y, radius, 0, 2 * Math.PI);
   context.lineWidth = 6;
   context.fillStyle = "white";
-  context.strokeStyle = "#3AAA35";
+  context.strokeStyle = isLastSelected && !isSelected ? "#FE2118" : "#3AAA35";
   context.fill(circle);
   context.stroke(circle);
 
@@ -58,6 +59,18 @@ const drawCircle = (
     context.lineTo(x + 20, y - 20);
     context.stroke();
   }
+
+  if (isLastSelected && !isSelected) {
+    context.strokeStyle = "#FE2118";
+    context.lineWidth = 8;
+    context.beginPath();
+    context.moveTo(x - 20, y - 20);
+    context.lineTo(x + 20, y + 20);
+    context.moveTo(x - 20, y + 20);
+    context.lineTo(x + 20, y - 20);
+    context.stroke();
+  }
+
   return circle;
 };
 
@@ -143,6 +156,8 @@ const redrawCircles = (
   canvas: HTMLCanvasElement,
   ctx: CanvasRenderingContext2D,
   selectedPoint: number,
+  isGameOver = false,
+  selectedPointId = -1,
 ) => {
   const centerX = canvas.width / 3;
   const centerY = canvas.height / 2;
@@ -166,7 +181,13 @@ const redrawCircles = (
 
   return circleCoords.map(({ x, y }, index) => {
     ctx.beginPath();
-    const circle = drawCircle(ctx, x, y, selectedPoint === index);
+    const circle = drawCircle(
+      ctx,
+      x,
+      y,
+      selectedPoint === index,
+      isGameOver && selectedPointId - 1 === index,
+    );
     ctx.stroke();
     return circle;
   });
@@ -239,9 +260,15 @@ export const River: FC<RiverProps> = memo(
         return;
       }
 
-      const newCircles = redrawCircles(canvas, context, 0);
+      const newCircles = redrawCircles(
+        canvas,
+        context,
+        0,
+        isGameOver,
+        selectedPointId,
+      );
       setCircles(newCircles);
-    }, [isGameOver]);
+    }, [isGameOver, selectedPointId]);
 
     return (
       <div className="melting-ice-river">
