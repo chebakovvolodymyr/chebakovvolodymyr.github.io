@@ -9,7 +9,7 @@ interface GameProps {
 }
 
 export const Game: FC<GameProps> = ({ correctFlippedCards }) => {
-  const [lastGame, setLastGame] = useState<Card | null>();
+  const [lastGame, setLastGame] = useState<Card | null>(null);
   const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {

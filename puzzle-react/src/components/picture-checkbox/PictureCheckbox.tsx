@@ -24,12 +24,10 @@ export const PictureCheckbox = forwardRef<HTMLDivElement, PictureCheckboxProps>(
         <div className="picture-checkbox_customized">
           <input
             type="checkbox"
-            checked={checked}
+            checked={isGameOver ? isCorrect : checked}
             onChange={onChange}
             className={classNames({
-              "show-wrong":
-                (isGameOver && isCorrect && !checked) ||
-                (isGameOver && !isCorrect && checked),
+              "show-wrong": isGameOver && !isCorrect && checked,
             })}
           />
           <label className="picture-checkbox_label"></label>
