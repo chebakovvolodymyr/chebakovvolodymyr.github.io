@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useState } from "react";
+import { FC, useCallback, useContext, useMemo, useState } from "react";
 
 import { games } from "../../../../data/games";
 import { Header } from "./Header";
@@ -24,41 +24,59 @@ export const Wind: FC<ThunderProps> = ({
     wind: { winds },
   } = games;
 
+  const correctAnswersNumber = useMemo(
+    () => winds.filter((wind) => wind.isCorrect).length,
+    [],
+  );
+  const correctAnswersNumberCompass = 2;
+
   const [score, setScore] = useState(0);
 
   const [checkedCheckboxes, setCheckedCheckboxes] = useState<number[]>([]);
   const toogleCheckbox = useCallback(
-    (placeId: number) => {
+    (windId: number) => {
       if (isGameOver) {
         return;
       }
 
-      setCheckedCheckboxes((checkedCheckboxes) =>
-        checkedCheckboxes.includes(placeId)
-          ? checkedCheckboxes.filter(
-              (checkedCheckbox) => checkedCheckbox !== placeId,
-            )
-          : [...checkedCheckboxes, placeId],
-      );
+      setCheckedCheckboxes((checkedCheckboxes) => {
+        if (checkedCheckboxes.includes(windId)) {
+          return checkedCheckboxes.filter(
+            (checkedCheckbox) => checkedCheckbox !== windId,
+          );
+        }
+
+        if (checkedCheckboxes.length >= correctAnswersNumber) {
+          checkedCheckboxes.shift();
+        }
+        return [...checkedCheckboxes, windId];
+      });
     },
-    [isGameOver],
+    [correctAnswersNumber, isGameOver],
   );
 
   const [selectedPolygons, setSelectedPolygons] = useState<
     CardinalDirections[]
   >([]);
 
-  const toggleSelectedPolygon = useCallback((direction: CardinalDirections) => {
-    setSelectedPolygons((selectedPolygons) => {
-      if (selectedPolygons.includes(direction)) {
-        return selectedPolygons.filter(
-          (selectedPolygon) => selectedPolygon !== direction,
-        );
-      }
+  const toggleSelectedPolygon = useCallback(
+    (direction: CardinalDirections) => {
+      setSelectedPolygons((selectedPolygons) => {
+        if (selectedPolygons.includes(direction)) {
+          return selectedPolygons.filter(
+            (selectedPolygon) => selectedPolygon !== direction,
+          );
+        }
 
-      return [...selectedPolygons, direction];
-    });
-  }, []);
+        if (selectedPolygons.length >= correctAnswersNumberCompass) {
+          selectedPolygons.shift();
+        }
+
+        return [...selectedPolygons, direction];
+      });
+    },
+    [correctAnswersNumberCompass],
+  );
 
   const addScore = useContext(ScoreContext);
 

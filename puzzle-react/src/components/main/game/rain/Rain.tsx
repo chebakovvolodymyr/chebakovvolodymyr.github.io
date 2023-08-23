@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useState } from "react";
+import { FC, useCallback, useContext, useMemo, useState } from "react";
 
 import { games } from "../../../../data/games";
 import { Pictures } from "./Pictures";
@@ -18,6 +18,11 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
   const {
     rain: { clouds },
   } = games;
+
+  const correctAnswersNumber = useMemo(
+    () => clouds.filter((cloud) => cloud.isCorrect).length,
+    [],
+  );
 
   const [droppedTitles, setDroppedTitles] = useState<DroppedTitle[]>([]);
   const [score, setScore] = useState(0);
@@ -72,15 +77,20 @@ export const Rain: FC<RainProps> = ({ isGameOver, closeGame, finishGame }) => {
         return;
       }
 
-      setCheckedCheckboxes((checkedCheckboxes) =>
-        checkedCheckboxes.includes(cloudId)
-          ? checkedCheckboxes.filter(
-              (checkedCheckbox) => checkedCheckbox !== cloudId,
-            )
-          : [...checkedCheckboxes, cloudId],
-      );
+      setCheckedCheckboxes((checkedCheckboxes) => {
+        if (checkedCheckboxes.includes(cloudId)) {
+          return checkedCheckboxes.filter(
+            (checkedCheckbox) => checkedCheckbox !== cloudId,
+          );
+        }
+
+        if (checkedCheckboxes.length >= correctAnswersNumber) {
+          checkedCheckboxes.shift();
+        }
+        return [...checkedCheckboxes, cloudId];
+      });
     },
-    [isGameOver],
+    [isGameOver, correctAnswersNumber],
   );
 
   const addScore = useContext(ScoreContext);

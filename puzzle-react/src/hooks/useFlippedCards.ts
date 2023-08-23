@@ -6,14 +6,25 @@ export const useFlippedCards = () => {
   const [flippedCards, setFlippedCards] = useState<Card[]>([]);
   const [correctFlippedCards, setCorrectFlippedCards] = useState<Card[]>([]);
 
-  const flipCard = useCallback((card: Card) => {
-    setFlippedCards((flippedCards) => {
-      if (flippedCards.find((flippedCard) => flippedCard.id === card.id)) {
-        return flippedCards;
+  const flipCard = useCallback(
+    (card: Card) => {
+      const flippedCard = correctFlippedCards.find(
+        (correctFlippedCard) => correctFlippedCard.id === card.id,
+      );
+
+      if (flippedCard) {
+        return;
       }
-      return [...flippedCards, card];
-    });
-  }, []);
+
+      setFlippedCards((flippedCards) => {
+        if (flippedCards.find((flippedCard) => flippedCard.id === card.id)) {
+          return flippedCards;
+        }
+        return [...flippedCards, card];
+      });
+    },
+    [correctFlippedCards],
+  );
 
   useEffect(() => {
     if (flippedCards.length < 2) {

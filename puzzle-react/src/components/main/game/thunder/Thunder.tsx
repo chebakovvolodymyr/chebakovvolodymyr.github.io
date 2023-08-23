@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useState } from "react";
+import { FC, useCallback, useContext, useMemo, useState } from "react";
 import { Header } from "./Header";
 import { games } from "../../../../data/games";
 import { Pictures } from "./Pictures";
@@ -21,6 +21,11 @@ export const Thunder: FC<ThunderProps> = ({
     thunder: { places, detections },
   } = games;
 
+  const correctAnswersNumber = useMemo(
+    () => places.filter((place) => place.isCorrect).length,
+    [],
+  );
+
   const [score, setScore] = useState(0);
   const [activeButton, setActiveButton] = useState(0);
 
@@ -31,15 +36,20 @@ export const Thunder: FC<ThunderProps> = ({
         return;
       }
 
-      setCheckedCheckboxes((checkedCheckboxes) =>
-        checkedCheckboxes.includes(placeId)
-          ? checkedCheckboxes.filter(
-              (checkedCheckbox) => checkedCheckbox !== placeId,
-            )
-          : [...checkedCheckboxes, placeId],
-      );
+      setCheckedCheckboxes((checkedCheckboxes) => {
+        if (checkedCheckboxes.includes(placeId)) {
+          return checkedCheckboxes.filter(
+            (checkedCheckbox) => checkedCheckbox !== placeId,
+          );
+        }
+
+        if (checkedCheckboxes.length >= correctAnswersNumber) {
+          checkedCheckboxes.shift();
+        }
+        return [...checkedCheckboxes, placeId];
+      });
     },
-    [isGameOver],
+    [isGameOver, correctAnswersNumber],
   );
 
   const addScore = useContext(ScoreContext);

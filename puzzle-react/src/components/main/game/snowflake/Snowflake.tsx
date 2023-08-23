@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useState } from "react";
+import { FC, useCallback, useContext, useMemo, useState } from "react";
 
 import { games } from "../../../../data/games";
 
@@ -24,6 +24,11 @@ export const Snowflake: FC<SnowflakeProps> = ({
   const {
     snowflake: { snowflakes },
   } = games;
+
+  const correctAnswersNumber = useMemo(
+    () => snowflakes.filter((snowflake) => snowflake.isCorrect).length,
+    [],
+  );
 
   const [droppedTitles, setDroppedTitles] = useState<DroppedTitle[]>([]);
   const [score, setScore] = useState(0);
@@ -75,20 +80,26 @@ export const Snowflake: FC<SnowflakeProps> = ({
   const [checkedCheckboxes, setCheckedCheckboxes] = useState<number[]>([]);
 
   const toogleCheckbox = useCallback(
-    (cloudId: number) => {
+    (snowflakeId: number) => {
       if (isGameOver) {
         return;
       }
 
-      setCheckedCheckboxes((checkedCheckboxes) =>
-        checkedCheckboxes.includes(cloudId)
-          ? checkedCheckboxes.filter(
-              (checkedCheckbox) => checkedCheckbox !== cloudId,
-            )
-          : [...checkedCheckboxes, cloudId],
-      );
+      setCheckedCheckboxes((checkedCheckboxes) => {
+        if (checkedCheckboxes.includes(snowflakeId)) {
+          return checkedCheckboxes.filter(
+            (checkedCheckbox) => checkedCheckbox !== snowflakeId,
+          );
+        }
+
+        if (checkedCheckboxes.length >= correctAnswersNumber) {
+          checkedCheckboxes.shift();
+        }
+
+        return [...checkedCheckboxes, snowflakeId];
+      });
     },
-    [isGameOver],
+    [isGameOver, correctAnswersNumber],
   );
 
   const addScore = useContext(ScoreContext);
