@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { Card, cards } from "../../../data/cards";
+import { Card } from "../../../data/cards";
 import { ActiveGame } from "./ActiveGame";
 
 interface GameProps {
@@ -9,7 +9,7 @@ interface GameProps {
 }
 
 export const Game: FC<GameProps> = ({ correctFlippedCards }) => {
-  const [lastGame, setLastGame] = useState<Card | null>(cards[4]);
+  const [lastGame, setLastGame] = useState<Card | null>(null);
   const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
