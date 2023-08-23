@@ -9,11 +9,13 @@ export const Result = () => {
         tokių kaip antrinis panaudojimas, atliekų rūšiavimas, taupių elektros
         prietaisų ar lempučių pasirinkimas, išmetamų atliekų kiekio mažinimas,
         gali padėti.
-        <p>Ar kada susimąstėte: jeigu popierių įmesite į bendrųjų atliekų
-        konteinerį ir ant jo pateks organinių atliekų, tokio popieriaus
-        perdirbti nebebus įmanoma? Dėl šios ir kitų panašių priežasčių elgtis
-        atsakingai ir sąmoningai yra labai svarbu. Planetą, kurioje gyvename,
-        turime tik vieną.</p>
+        <p>
+          Ar kada susimąstėte: jeigu popierių įmesite į bendrųjų atliekų
+          konteinerį ir ant jo pateks organinių atliekų, tokio popieriaus
+          perdirbti nebebus įmanoma? Dėl šios ir kitų panašių priežasčių elgtis
+          atsakingai ir sąmoningai yra labai svarbu. Planetą, kurioje gyvename,
+          turime tik vieną.
+        </p>
       </span>
     </div>
   );
