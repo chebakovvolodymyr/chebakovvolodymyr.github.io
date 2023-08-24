@@ -65,7 +65,7 @@ export const Thunder: FC<ThunderProps> = ({
 
     const detectionScore = detections.reduce((acc, detection) => {
       if (detection.id === activeButton) {
-        return 1;
+        return detection.isCorrect ? 1 : 0;
       }
       return acc;
     }, 0);

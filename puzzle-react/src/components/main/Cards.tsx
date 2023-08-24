@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo } from "react";
+import { FC, useCallback, useMemo } from "react";
 
 import {
   cards,
@@ -30,12 +30,6 @@ export const Cards: FC<CardsProps> = ({ setGameOver }) => {
     [flipCard, inProgress],
   );
 
-  useEffect(() => {
-    if (memoisedCards.length <= correctFlippedCards.length) {
-      setGameOver();
-    }
-  }, [memoisedCards, correctFlippedCards, setGameOver]);
-
   return (
     <div className="cards">
       {memoisedCards.map((card) => {
@@ -50,7 +44,11 @@ export const Cards: FC<CardsProps> = ({ setGameOver }) => {
           />
         );
       })}
-      <Game correctFlippedCards={correctFlippedCards} />
+      <Game
+        correctFlippedCards={correctFlippedCards}
+        setGameOver={setGameOver}
+        cardNumber={memoisedCards.length}
+      />
     </div>
   );
 };

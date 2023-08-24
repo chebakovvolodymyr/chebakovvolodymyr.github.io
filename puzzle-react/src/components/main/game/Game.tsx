@@ -5,10 +5,17 @@ import { Card } from "../../../data/cards";
 import { ActiveGame } from "./ActiveGame";
 
 interface GameProps {
+  cardNumber: number;
   correctFlippedCards: Card[];
+
+  setGameOver: () => void;
 }
 
-export const Game: FC<GameProps> = ({ correctFlippedCards }) => {
+export const Game: FC<GameProps> = ({
+  correctFlippedCards,
+  setGameOver,
+  cardNumber,
+}) => {
   const [lastGame, setLastGame] = useState<Card | null>(null);
   const [isGameOver, setIsGameOver] = useState(false);
 
@@ -29,7 +36,11 @@ export const Game: FC<GameProps> = ({ correctFlippedCards }) => {
   const closeGame = useCallback(() => {
     setLastGame(null);
     setIsGameOver(false);
-  }, []);
+
+    if (cardNumber <= correctFlippedCards.length) {
+      setGameOver();
+    }
+  }, [cardNumber, correctFlippedCards.length, setGameOver]);
 
   const finishGame = useCallback(() => {
     setIsGameOver(true);

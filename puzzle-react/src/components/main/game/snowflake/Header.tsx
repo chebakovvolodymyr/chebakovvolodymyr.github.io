@@ -37,7 +37,7 @@ export const Header: FC<HeaderProps> = ({
         <div className="question_title">
           <span>
             Sniego iššūkis. Priskirk snaigėms jų tipų pavadinimus, pažymėk,
-            kurių iš šių snaigių galima tikėtis lauko temperatūrai esant nuo -3
+            kurios iš šių snaigių galima tikėtis lauko temperatūrai esant nuo -3
             °C iki -8 °C ir spausk „Pateikti“.
           </span>
         </div>
