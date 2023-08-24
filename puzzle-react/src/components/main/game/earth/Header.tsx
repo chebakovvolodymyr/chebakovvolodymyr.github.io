@@ -38,7 +38,7 @@ export const Header: FC<HeaderProps> = ({
           <span>
             Klimatosaugos iššūkis. Mes kiekvienas įvairiais būdais galime
             prisidėti prie klimato kaitos švelninimo. Sudėk aprašymus į
-            teisingas vietas ir spausk “Pateikti”.
+            teisingas vietas ir spausk „Pateikti“.
           </span>
         </div>
       )}
