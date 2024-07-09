@@ -69,10 +69,14 @@ a {
 
 .map {
     width: 100%;
+    border-top: 3px solid #554B40;
+    border-bottom: 3px solid #554B40;
+    margin-top: 5px;
+    max-height: 70%;
 }
 
 .back-button {
-    position: absolute;
+    /* position: absolute;
     bottom: 7vh;
     font-size: 60px;
     background-image: url("./images/button_back.svg");
@@ -80,5 +84,62 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;
-    font-family: 'Moonglow';
+    font-family: 'Moonglow'; */
+    width: 10%;
 }
+
+.languages img {
+    width: 75px;
+    height: auto;
+    margin: 0 10px;
+}
+
+.header {
+    max-height: 10%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #554B40;
+}
+
+.header img {
+    max-width: 50%;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    border-top: 3px solid #554B40;
+    margin-top: 5px;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.footer img {
+    height: auto;
+    max-width: 100%;
+}
+
+.footer .image-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.footer .languages {
+    display: flex;
+    width: 20%;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.steps img {
+    height: 130px;
+    width: auto;
+}
+

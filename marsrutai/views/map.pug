@@ -8,6 +8,31 @@ html
     link(rel='icon', type="image/x-icon", href='./images/favicon.ico')
   body
     main#content
+        div.header
+          img(src='images/Top_title_velo.png', class='')
         img(src='images/map.svg', class='map')
-        a.back-button(href='/') Atgal
+        div.footer
+          a(href='/en', class='image-wrapper back-button')
+            img(src='images/Pradzia_passive.png', class='image')
+            img(src='images/Pradzia_active.png', class='active-image')
+          div.languages
+            a(href='/lt', class='language image-wrapper')
+              img(src='images/LT_lang_passive.png', class='image')
+              img(src='images/LT_lang_active.png', class='active-image')
+            a(href='/en', class='language image-wrapper')
+              img(src='images/EN_lang_passive.png', class='image')
+              img(src='images/EN_lang_active.png', class='active-image')
+          div.steps
+            a(href='/', class='image-wrapper')
+              img(src='images/Place_passive.png', class='image')
+              img(src='images/Place_active.png', class='active-image')
+            a(href='/', class='image-wrapper')
+              img(src='images/Peshehod_passive.png', class='image')
+              img(src='images/Peshehod_active.png', class='active-image')
+            a(href='/', class='image-wrapper')
+              img(src='', class='image')
+              img(src='', class='active-image')
+            a(href='/', class='image-wrapper')
+              img(src='images/Kayak_passive.png', class='image')
+              img(src='images/Kayak_active_Big.png', class='active-image')
     script(src='./htmx.min.js')
