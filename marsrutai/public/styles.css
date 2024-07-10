@@ -75,19 +75,6 @@ a {
     max-height: 78%;
 }
 
-.back-button {
-    /* position: absolute;
-    bottom: 7vh;
-    font-size: 60px;
-    background-image: url("./images/button_back.svg");
-    width: 440px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    text-align: center;
-    font-family: 'Moonglow'; */
-    width: 10%;
-}
-
 .languages img {
     width: 75px;
     height: auto;
@@ -112,6 +99,7 @@ a {
     border-top: 3px solid #554B40;
     margin-top: 5px;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 10px;
     box-sizing: border-box;
 }
@@ -144,3 +132,11 @@ a {
     width: auto;
 }
 
+.language.image-wrapper {
+    height: 75px;
+}
+
+.footer .back-button {
+    width: 98px;
+    height: 98px;
+}
