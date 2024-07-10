@@ -1,4 +1,4 @@
-const PRECACHE = 'precache-v2';
+const PRECACHE = 'precache-v3';
 const RUNTIME = 'runtime';
 
 self.addEventListener('install', event => {
@@ -22,7 +22,9 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Check if the request is for an image
+  if (!event.request.url.startsWith(self.location.origin)) {
+    return
+  }
   if (event.request.destination === 'image' || event.request.destination === 'font') {
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
