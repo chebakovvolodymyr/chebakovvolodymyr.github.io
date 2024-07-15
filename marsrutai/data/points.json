@@ -1,0 +1,578 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Šeimaties akmenys Mokas ir Mokiukas",
+        "coords": {
+            "lat": 55.455972,
+            "lng": 25.895169
+        },
+        "description": "Tauragnų apylinkėje prie Šeimaties kaimo stūkso akmuo, lankytojus stebinantis savo dydžiu. Šį akmenį žmonės vadina Moku. Šalimais guli mažesnis akmuo – Mokiukas. Legenda byloja, kad tai suakmenėjusi Mokų šeima. Iš tikrųjų šiuos akmenis į Lietuvą maždaug prieš 50 tūkst. metų iš Skandinavijos atitempė ledynas. Akmenys Mokas ir Mokiukas yra vienintelis Aukštaitijos nacionaliniame parke esantis geologinis gamtos paminklas, kartu ir valstybės saugomas mitologinis kultūros paveldo objektas."
+    },
+    "2": {
+        "id": 2,
+        "name": "Vyžių (Kauprinės) akmuo",
+        "coords": {
+            "lat": 55.43046,
+            "lng": 25.984673
+        },
+        "description": "Šalia pailgos piliakalnį primenančios Kauprinių kalvos kaip kupeta guli didelis riedulys. Beveik 2 m aukščio, daugiau nei 3 m ilgio ir 2 m pločio akmuo – viena didžiausių ledynmečio dovanų Aukštaitijos nacionaliniame parke. Žmonės pasakoja, kad po žeme turėtų būti dar dvigubai tiek akmens. Kaip akmuo atkeliavo, juk kojų jis neturi? Nuolat ir ilgai zulinama didelė uolienos atplaiša su žemyniniais ledynais buvo atvilkta iš šiauriau, atokiau nuo Lietuvos esančių kraštų (daugiausia Skandinavijos) ir palikta tūnoti paslaptingai įstrigusi gūbrio viršuje. Savitas granito pavadinimas rapakivis (suomiškai rapa – sutrūnijęs, o kivi – akmuo) išduoda, jog šio riedulio gimtinė – Suomija."
+    },
+    "3": {
+        "id": 3,
+        "name": "Pakretuonės akmuo",
+        "coords": {
+            "lat": 55.261925,
+            "lng": 26.064757
+        },
+        "description": ""
+    },
+    "4": {
+        "id": 4,
+        "name": "Žigo liepa",
+        "coords": {
+            "lat": 55.465335,
+            "lng": 25.954475
+        },
+        "description": "Masyvaus kamieno, buvusioje Žigų sodybos vietoje netoli Žiežulnio ežero auga įspūdingo dydžio mažalapė liepa (Tilia cordata) su didžiule dreve. Senolei 200 metų. Liepa apie 25 metrų aukščio, kamieno plotis – 4,2 metrai. Drevės aukštis apie 5, plotis – 0,7 metro."
+    },
+    "5": {
+        "id": 5,
+        "name": "Varniškių II-asis ąžuolas",
+        "coords": {
+            "lat": 55.385173,
+            "lng": 26.098434
+        },
+        "description": "Paprastasis ąžuolas (Quercus robur). Kamieno apimtis – 5,7 m, aukštis – 22 m, amžius – daugiau kaip 400 m."
+    },
+    "6": {
+        "id": 6,
+        "name": "Varniškių liepa",
+        "coords": {
+            "lat": 55.419247,
+            "lng": 25.960331
+        },
+        "description": "Varniškių liepa yra valstybės saugomas botaninis gamtos paveldo objektas.Mažalapė liepa (Tilia cordata Mill.) auga Varniškių II kaimo pakraštyje, šalia sodybos. Jos apimtis - 3,1 m, aukštis - 25 m, amžius - apie 200 metų. Liepos būklė patenkinama, tačiau stambi kamieno rytinės dalies atšaka nulaužta."
+    },
+    "7": {
+        "id": 7,
+        "name": "Šuminų pušis",
+        "coords": {
+            "lat": 55.399148,
+            "lng": 26.039631
+        },
+        "description": "Šuminų pušis - valstybės saugomas botaninis gamtos paveldo objektas. Pušies kamieno apimtis -1,3 m, aukštis - 18 m, amžius - apie 250 metų."
+    },
+    "8": {
+        "id": 8,
+        "name": "Asalnų pušis",
+        "coords": {
+            "lat": 55.355133,
+            "lng": 26.060992
+        },
+        "description": "Asalnų pusiasalyje auganti didinga pušis pasitinka keleivius savo plačiu kamienu ir gražiomis vingiuotomis šakomis. Paprastoji pušis (Pinus silvestris). Kamieno apimtis – 3,7 m, aukštis – 20 m, amžius – apie 320 m. Žmonės pasakodavo, kad prie šios pušies „prisduodavo“ (vaidendavosi) toje vietoje nusiskandinusi moteris."
+    },
+    "9": {
+        "id": 9,
+        "name": "Vaišniūnų ąžuolas",
+        "coords": {
+            "lat": 55.385173,
+            "lng": 26.098434
+        },
+        "description": "Vaišniūnų ąžuolas – išskirtinis ąžuolas, kurio aukštis – 17,1 m, apimtis – 3,33 m. Medis paskelbtas saugomu 2004 m. Tarpukaryje pro ąžuolą ėjo Lietuvos ir Lenkijos demarkacinė linija, buvo įrengtas pasienio postas."
+    },
+    "10": {
+        "id": 10,
+        "name": "Palūšės ąžuolas",
+        "coords": {
+            "lat": 55.327817,
+            "lng": 26.103746
+        },
+        "description": "Paprastasis ąžuolas. Kamieno apimtis – 4,5 m, aukštis – 30 m, amžius – apie 400 m. Pasakojama, kad kunigas norėjo ąžuolą nukirsti, bet perkūnijos metu ąžuolas nukreipė žaibą nuo bažnyčios. Kunigas medžio pasigailėjo, taip jis ir iki šiol saugo bažnyčią."
+    },
+    "11": {
+        "id": 11,
+        "name": "Trainiškio ąžuolas",
+        "coords": {
+            "lat": 55.389055,
+            "lng": 26.043558
+        },
+        "description": "Trainiškio ąžuolas augo ant Baluošo ežero kranto įsikūrusiame Trainiškio kaimelyje. Specialistų manymu, jam galėjo būti 700–800 metų. Kamieno apimtis – 6,1 m, aukštis – 23 m. Trainiškio ąžuolas minė laikus, kai Lietuvoje ošė šventų ąžuolų giraitės. Deja, 2016 m. spalį ažuolą nulaužė vėtra. 2017 metų pavasarį greta senolio kelmo pasodintas jaunas ąžuoliukas, išaugintas Kėdainių miškų urėdijos medelyne iš įskiepyto Trainiškio ąžuolo ūglio."
+    },
+    "12": {
+        "id": 12,
+        "name": "Labakaršio pušis",
+        "coords": {
+            "lat": 55.298894,
+            "lng": 26.003152
+        },
+        "description": "Tarp Prūdo ir Labakaršio ežerų, supama mišraus miško auga viena aukščiausių parko pušų. Labakaršio paprastosios pušies (Pinus silvestris) aukštis 24 metrai. Kamieno apimtis – 3,3 metrai, amžius – apie 250 metų."
+    },
+    "13": {
+        "id": 13,
+        "name": "Obelų rago kadagys",
+        "coords": {
+            "lat": 55.286201,
+            "lng": 26.045713
+        },
+        "description": "Obelų rago kadagiai yra valstybės saugomas botaninis objektas. Tai -14 kadagių grupė, auganti pievoje į pietus nuo Žeimenio ežero. Kamienų apimtis - nuo 12 iki 22 cm, aukštis - 7 m. Kadagiai gyvybingi, jų amžius - apie 200 metų"
+    },
+    "14": {
+        "id": 14,
+        "name": "Obelų rago ąžuolas",
+        "coords": {
+            "lat": 55.287349,
+            "lng": 26.047083
+        },
+        "description": ""
+    },
+    "15": {
+        "id": 15,
+        "name": "Pakretuonės juodalksnis milžinas",
+        "coords": {
+            "lat": 55.260301,
+            "lng": 26.063287
+        },
+        "description": "Pakretuonės miške, netoli geležinkelio auga įspūdingo dydžio juodalksnis. Jo kamienas 3,5 metrų apimties, aukštis – 24 metrai. Nors juodalksniai nėra ilgaamžiai, šis turėtų būti sulaukęs arti 100 metų."
+    },
+    "16": {
+        "id": 16,
+        "name": "Kretuonų II-asis ąžuolas",
+        "coords": {
+            "lat": 55.231028,
+            "lng": 26.050699
+        },
+        "description": ""
+    },
+    "17": {
+        "id": 17,
+        "name": "Varniškių (Aptiekos) šaltinis",
+        "coords": {
+            "lat": 55.429831,
+            "lng": 25.952084
+        },
+        "description": "Varniškių (Aptiekos) šaltinis – savivaldybės saugomas hidrologinis gamtos paveldo objektas Utenos rajone, Tauragnų seniūnijoje, ties Varniškėmis III. Šaltinis trykšta miške netoli Pliaušės upelio, dešiniajame krante. Jis unikalus tuo, kad prasideda vandens išplautoje daubelėje, kurios dugne smėlis „verda“, kunkuliuoja, lyg dideliame puode. Šaltinis iki šiol gyvas: dar ir dabar išneša į paviršių mineralines daleles, todėl šaltinio kraštai įgriūna, pasitaiko įdubimų. Vanduo gėlas, turi mažai mineralinių medžiagų, neužterštas azoto junginiais. Pasakojama, kad šaltinis turėjęs gydomųjų savybių ir jame žmonės prausdavo akis, esą „labai sveika būdavo“, todėl ir vadino Aptiekos versme."
+    },
+    "19": {
+        "id": 19,
+        "name": "Almajo (Papliaušio) šaltinis",
+        "coords": {
+            "lat": 55.39891,
+            "lng": 25.983238
+        },
+        "description": "Šaltinis yra šalia Almajo stovyklavietės, miškingoje vietovėje šalia Almajo ežero. Iš šaltinio į Pliaušės upę įteka upelis. Prie šaltinio veda takas iš Almajo stovyklavietės. Šaltiniui būdingas nuolatinio veikimo režimas, jis neišdžiūna net ir kaitriausią vasarą. Vanduo skaidrus, bekvapis, nėra geležies nuosėdų. Turi mažai mineralinių medžiagų, neužterštas azoto junginiais."
+    },
+    "20": {
+        "id": 20,
+        "name": "Medžiukalnio šaltinis",
+        "coords": {
+            "lat": 55.38432,
+            "lng": 26.070115
+        },
+        "description": "Medžiukalnio šaltinis trykšta išties su didele energija, nes į žemės paviršių jis prasimuša beveik pačioje kalvos viršūnėje. Šį šaltinį vietiniai žinojo nuo seno. Jie pasakoja, jog užtekdavę išgerti vieną stiklinę ir visą dieną nejausdavai nei troškulio, nei alkio. Versmė yra maždaug 160 m virš jūros lygio, o vandens lygis artimiausiame Dringio ežere – tik 138,5 m virš jūros lygio."
+    },
+    "21": {
+        "id": 21,
+        "name": "Tauragnų piliakalnis",
+        "coords": {
+            "lat": 55.43968,
+            "lng": 25.830576
+        },
+        "description": "Piliakalnis įrengtas pietiniame Tauragno ežero krante, palei jo rytinį šlaitą teka Šventės upelis. Nuo gretimų pievų piliakalnį saugo pelkėta dauba, statūs šlaitai ir pylimai. Piliakalnis naudotas II tūkstantmečio po Kristaus pradžioje. Šaltiniai teigia, jog iki XX a. vidurio ant Tauragnų piliakalnio buvo švenčiamos Joninės: prie kalno buvo kuriami laužai, jaunimas prie laužo šokdavo, žaisdavo, eidavo ieškoti paparčio žiedo."
+    },
+    "22": {
+        "id": 22,
+        "name": "Taurapilio piliakalnis",
+        "coords": {
+            "lat": 55.448137,
+            "lng": 25.869502
+        },
+        "description": "Taurapilio piliakalnis stūkso ant pietinio Tauragnų ežero kranto. Prie jo šliejasi to paties vardo kaimelis. Iš trijų pusių piliakalnį saugo vandenys, o iš ketvirtosios pusės seniau saugojo specialūs gynybiniai įrenginiai. Seni žmonės pasakoja, kad kitados kalno viršūnėje augęs storas ąžuolas, jo šovoje gyvenęs vaidila, vaidilutės kūrenusios ugnį. Įvedus krikščionybę, jo viršūnėje buvusi pastatyta bažnyčia, tačiau po kiek laiko išnykusi ir dabar esanti kalno viduje. Legenda byloja, kad kartą vienas drąsuolis atidžiau pažvelgęs į tą duobę ir pamatęs kalno gelmėse apleistą bažnyčią su išgriuvusiais altoriais, o viduje groję apdulkėję vargonai. Tačiau šv. Jono naktį, lygiai 12 valandą, piliakalnis atsidengiąs, deja, tik vienai sekundei. Kas turi geras akis, galįs pamatyti bažnyčią ir grojančius vargonus."
+    },
+    "23": {
+        "id": 23,
+        "name": "Ginučių, Papiliakalnės piliakalnis",
+        "coords": {
+            "lat": 55.373885,
+            "lng": 25.985071
+        },
+        "description": "IX–XII a. archeologijos paminklas, įrengtas ir naudotas gynybai jau I mūsų eros tūkstantmetyje. Piliakalnių kompleksas įrengtas aukšto, masyvaus, pailgo Šiliniškių gūbrio vidurinėje dalyje. Čia  XIII–XV a. stovėjusi garsioji Linkmenų pilis, H.Vartbergės aprašyta dar 1373 m. Spėjama, kad XIII a. pilį valdė Mindaugo seserėnas Lengvenis. Ant piliakalnio stovi paminklinis akmuo, bylojantis, kad 1934 m. čia buvo pasodintas ąžuolas pirmojo Lietuvos prezidento Antano Smetonos garbei."
+    },
+    "24": {
+        "id": 24,
+        "name": "Puziniškio piliakalnis",
+        "coords": {
+            "lat": 55.360969,
+            "lng": 26.013766
+        },
+        "description": "Piliakalnis įrengtas Linkmenų miške, šalia protakos tarp Linkmeno ir Asalnykščio ežerų. Piliakalnis – tai aukštumos iškyšulys, susisiekiantis su gretimomis aukštumomis, juosiamas griovio ir pylimo. Naudotas  I tūkstantmetyje po Kristaus."
+    },
+    "25": {
+        "id": 25,
+        "name": "Vyžių (Ripelialaukio) pilkapynas",
+        "coords": {
+            "lat": 55.41456,
+            "lng": 26.0027
+        },
+        "description": "Pilkapynas datuojamas VI – VIII a. 70 sampilų 0,5 – 1,5 metro aukščio. Keli 1980 – 1982 metais tyrinėti pilkapiai yra degintiniai. Tyrinėjimų metu rasta nemažai radinių, būdingų šiam laikotarpiui. Tai pentiniai siauraašmeniai kirviai, įmoviniai ietigaliai, antskydžiai, peiliai, ovalinės ir keturkampės sagtelės, žalvario apyrankės, mėlyno stiklo karoliukai, ylos."
+    },
+    "26": {
+        "id": 26,
+        "name": "Palūšės pilkapynas",
+        "coords": {
+            "lat": 55.327345,
+            "lng": 26.114366
+        },
+        "description": "Pilkapyne suskaičiuoti 62 pilkapiai. Daugiau pilkapių yra pilkapyno viduryje, pakraščiuose pilkapiai nutolę vienas nuo kito per 25–30 m. Sampilai paplokščio pusrutulio formos, 6–12 m skersmens, 0,5–1,0 metro aukščio. Jų pagrindus supa duobės arba juosia grioviai. Pilkapynas datuojamas VIII–IX a."
+    },
+    "27": {
+        "id": 27,
+        "name": "Šakarvos pilkapynas",
+        "coords": {
+            "lat": 55.30926,
+            "lng": 26.06514
+        },
+        "description": "Miško apsuptyje suskaičiuojama 40 pilkapių. Sampilai 0,5 - 1,2 metro aukščio. Žmonės čia pradėti laidoti daugiau nei prieš 1400 metų. Kadangi šioje vietoje laidota papročių virsmo metu, pilkapyne esama ir nedegintų, ir sudegintų mirusiųjų kapų. Vienas griautinis kapas su įkapėmis 1906 m. ištirtas Rytų Lietuvos pilkapių tyrinėtojo Vladimiro Kaširskio. Duomenų apie radinius neišliko. Jie kartu su archeologu iškeliavo į Sankt Peterburgą."
+    },
+    "28": {
+        "id": 28,
+        "name": "Palūšės šv. Juozapo bažnyčia",
+        "coords": {
+            "lat": 55.328111,
+            "lng": 26.103541
+        },
+        "description": "Palūšės bažnyčia, pastatyta 1750 m., kartu su varpine, koplytėle bei medine tvora, juosiančia šventorių, sudaro vieną gražiausių ir seniausių medinės architektūros ansamblių Lietuvoje. Pastatyti bažnyčią iš tėvų paveldėtoje žemėje sumanė kunigas Juozapas Baziliauskas. Aštuonkampė varpinė, primenanti lietuvių senovinių medinių pilių sargybos bokštą, yra vienintelė tokia Lietuvoje."
+    },
+    "29": {
+        "id": 29,
+        "name": "Kaltanėnų Švč. Mergelės Marijos Angeliškosios bažnyčia",
+        "coords": {
+            "lat": 55.252037,
+            "lng": 25.992400
+        },
+        "description": "Pirmoji medinė Kaltanėnų Švč. Mergelės Marijos Angeliškosios bažnyčia ir pranciškonų vienuolynas pastatyti 1633 metais. Fundatoriumi buvo Jonas Narbutas. 1772 metais pastatytas dviaukštis mūrinis vienuolynas. 1903 – 1909 metais vienuolyno pastatas perstatytas į dabartinę mūrinę bažnyčią. Bažnyčia neogotikinė, stačiakampio plano, vienabokštė. Po bažnyčia yra skliautuotas rūsys. Viduje yra 2 XVIII amžiaus barokiniai altoriai, į dabartinę bažnyčią perkelti iš senosios, statytos 1740 metais."
+    },
+    "30": {
+        "id": 30,
+        "name": "Reškutėnų šv. Izidoriaus bažnyčia",
+        "coords": {
+            "lat": 55.24958,
+            "lng": 26.117162
+        },
+        "description": "Reškutėnai buvo toli nuo miestelių, toli nuo bažnyčios – visos kaimyninės bažnyčios buvo toliau kaip 10 kilometrų. Kaltanėnų parapijos Reškutėnų kaimo gyventojai savo iniciatyva ir lėšomis pastatė medinę koplyčią. 1924 m. gyventojai kreipėsi į vyskupą, prašydami koplyčią pripažinti vieša, pašventinti ir leisti laikyti joje pamaldas.1924 m. gegužės 18 d. koplyčią pašventino Palūšės klebonas Petras Prunskis. Bažnyčia – didesnė kaimiško stiliaus koplyčia – liaudies architektūros formų, primena tradicinį gyvenamąjį namą, su trisiene apside, žema šonine zakristija, prieangiu ir bokšteliu. Altorius tik vienas – didysis, kurio centre kabo Aušros Vartų švč. Dievo Motinos kopija. Šventoriuje stovi medinė varpinė."
+    },
+    "31": {
+        "id": 31,
+        "name": "Daunorių Švč. Jėzaus Širdies bažnyčia",
+        "coords": {
+            "lat": 55.442137,
+            "lng": 25.949503
+        },
+        "description": "Istorija pasakoja, jog 82-ejų metų itin pamaldus kaimo ūkininkas Justinas Vitkauska būsimiems maldos namams dovanojo 39 hektarus žemės. 1933–1934 m. pastatyta medinė bažnyčia – liaudies architektūros formų, stačiakampio plano, vienabokštė, modernaus stiliaus. Bažnyčios vidus įrengtas 1935 m. Pagrindinis altorius – Lietuvoje retas art deco stilistikos su ankstyvosios kūrybos lietuvių skulptoriaus Bernardo Bučo skulptūra „Jėzaus širdis“. Šventoriuje stovi 2000 m. atidengtas dr. Romualdo Šimkūno stogastulpis, skirtas žuvusiems partizanams atminti."
+    },
+    "32": {
+        "id": 32,
+        "name": "Kirdeikių šv. Jono Krikštytojo bažnyčia",
+        "coords": {
+            "lat": 55.377315,
+            "lng": 25.941835
+        },
+        "description": "Kirdeikių Šv. Jono krikštytojo parapijos bažnyčia, pastatyta ir įšventinta 1927 metais pirmojo jos klebono Juozo Breivos iniciatyva. Bažnyčia eklektinės architektūros, su 12 langų ir trisiene apside. Vidus padalintas į tris navas, paremtas kolonomis. Sienos ir lubos lentinės. Didysis altorius su keturiomis skulptūromis ir paveikslais."
+    },
+    "33": {
+        "id": 33,
+        "name": "Minčios malūnas",
+        "coords": {
+            "lat": 55.476385,
+            "lng": 25.980271
+        },
+        "description": "Rašytiniai šaltiniai byloja, kad Minčios kaimelyje, ant Minčios upės kranto, vandens malūnas pastatytas 1792 m., grūdus pradėjo malti daugiau kaip prieš 200 metų. Dvare, naudojant vandenį, buvo pjaunami rąstai ir lentos, veikė netgi vario kalykla, kurioje vario gabalus išplodavo Minčios upelio vandens kilnojamas blokas – kūjis. Malūne buvo įrengtos 4 girnos ir vilnų vėlykla. Vietiniai gyventojai pasakoja, kad malūne kadaise netgi buvo spąstai velniams ir laumėms gaudyti. 1863 m. sukilėliai Minčios malūne sau ginklus kalė."
+    },
+    "34": {
+        "id": 34,
+        "name": "Ginučių malūnas",
+        "coords": {
+            "lat": 55.385361,
+            "lng": 25.994834
+        },
+        "description": "Pirmasis vandens malūnas Ginučiuose minimas jau 1738 m. XIX a. pradžioje buvo perstatytas ir  patobulintas. Ginučių vandens malūnas veikė iki 1968 m. Jame ne tik miltus malė – metalinės turbinos sukimosi jėgą Ginučių kaimo gyventojai naudojo ir lentpjūvei, milo vėlyklai ir net elektros gamybai 1978 m. parko administracija restauravo malūną: perstatė sienas ir perdengė stogą išsaugodami visą autentišką įrangą. Ekspozicija antrame aukšte pasakoja apie duonos kelionę, o buvusiuose malūnininko apartamentuose įrengti poilsiautojams skirti kambariai, kuriuose dažnai apsilanko pats Ginučių malūno „biesiokas“."
+    },
+    "35": {
+        "id": 35,
+        "name": "Gaveikėnų malūnas",
+        "coords": {
+            "lat": 55.34957,
+            "lng": 26.112099
+        },
+        "description": "1800 m. Gaveikėnų kaimo šiaurės rytiniame pakraštyje, miško apsuptame slėnyje užtvenkus tarp dviejų ežerų tekantį mažą Palaukinio upelį, pastatytas vandens malūnas. Kad tik 0,2 m3 vandens per sekundę nešanti upelio srovė suktų du 15 AJ vandens ratus,  teko pastatyti 4,6 m aukščio, 5,4 m pločio viršuje žemių užtvanką, sukuriant 6 ha tvenkinį. Kad neižlaužtų užtvankos, pralaidos pagrindas padarytas betoninis su mediniais skydais vandens lygiui tvenkinyje reguliuoti. Vandens tiekimui į darbinius ratus buvo pastatytas medinis latakas. Malūno pastatas vieno aukšto, su rūsiu ir pastogės patalpomis. Jame išliko dalis senosios malūno įrangos. Nuo 2007 m. malūno pastatas priklauso Vilniaus archivyskupijai."
+    },
+    "36": {
+        "id": 36,
+        "name": "Borovkos malūnas",
+        "coords": {
+            "lat": 55.219162,
+            "lng": 25.989825
+        },
+        "description": "Borovkos (Bruknynės) vandens malūnas pastatytas 1827 metais. Malūno pastatas vieno aukšto, su pastogės patalpomis, medinis. Jo patalpose išlikę senieji malūno įrengimai. Šiuo metu malūno pastatas yra privatus."
+    },
+    "38": {
+        "id": 38,
+        "name": "Varniškių etnografinis kaimas",
+        "coords": {
+            "lat": 55.420428,
+            "lng": 25.959744
+        },
+        "description": "Kaimo pradžia siekia XVIII a. antrąją pusę. Kaime yra keletas žaliųjų galiūnų ąžuolų, liepų. 1971 m. kaimas įrašytas į architektūros paminklų sąrašą. Įdomus tvartų kompleksas yra buvusioje Juozo Šinkūno sodyboje. Karvidė su malkine, kiaulidė, arklidė sustatytos taip, kad sudarė nedidelį kiemelį – diendaržį. Kaime buvo filmuojamas lietuviškas meninis filmas „Velnio sėkla“."
+    },
+    "39": {
+        "id": 39,
+        "name": "Strazdų etnografinis kaimas",
+        "coords": {
+            "lat": 55.410573,
+            "lng": 26.030372
+        },
+        "description": "Manoma, kad Strazdai pirmą kartą paminėti Breslaujos dekano bažnyčių vizitacijos knygoje 1783 m. Balošekulio vardu. 1798 m. Ažvinčių dvaro inventoriuje jau aprašyta gausi miško sargo Jurgio Strazdo šeima. Šios pareigos buvo perduodamos iš kartos į kartą, o kaimelis gavo dabartinį pavadinimą. Apylinkėje kaimas garsėjo savo klojimo teatru. Vienu metu tai buvo netgi savotiškas „kultūros centras“. Strazdų kaime 1951 m. balandžio 11 d. žuvo 7 Vytauto apygardos „Lokio“ rinktinės partizanai, vadovaujami Balio Vaičėno-Liubarto. Jiems atminti Strazdų kaime pastatytas paminklas."
+    },
+    "40": {
+        "id": 40,
+        "name": "Šuminų etnografinis kaimas",
+        "coords": {
+            "lat": 55.399667,
+            "lng": 26.041365
+        },
+        "description": "Istoriniuose šaltiniuose Šuminai pirmą kartą paminėti 1784 m. Pabaluošės vardu. Spėjama, kad pirmoji sodyba čia atsirado daug anksčiau, nes kaimas dar 1554 m. priklausė Ažvinčių dvarui. Dar kaimas vadintas Užbaluošiu, Smalaiškėmis, Smalgiškėmis. Vėliau kaimą imta vadinti jau pagal jame gyvenusių šeimų pavardę. Kaime auga apie 200–300 m. senumo pušis, daugybė klevų, todėl kaimas ypač gražus rudenį. Šuminų kaimelis įžymus dar ir tuo, kad jame 1972 m. buvo filmuojamas garsusis filmas apie Tadą Blindą"
+    },
+    "41": {
+        "id": 41,
+        "name": "Vaišnoriškės etnogr. kaimas",
+        "coords": {
+            "lat": 55.425793,
+            "lng": 26.026826
+        },
+        "description": "Šios gyvenvietės įsikūrimą lėmė savotiška tuometinė jos geografinė padėtis. Per kaimą ėjo senasis Tauragnų – Braslavo vieškelis. Ten, kur vieškelis kerta Būkos upę, dešiniajame krante stovėjo sena smuklė, minima jau 1765 m. Pirmoji gyvenamoji sodyba čia įsikūrė 1830 m., vėliau išaugo dar keturios. Kompaktiškos sodybos išdėstytos Būkos upelio kairiajame krante."
+    },
+    "42": {
+        "id": 42,
+        "name": "Salų etnoarchitektūrinis kaimas",
+        "coords": {
+            "lat": 55.356751,
+            "lng": 25.992435
+        },
+        "description": "Tai regioninis Lietuvos liaudies buities muziejaus veikiantis padalinys pagal ekomuziejaus modelį. Tokio muziejaus tikslas – skatinti vietos bendruomenių gerovę ir darnią plėtrą, todėl jo veikla pirmiausia yra grįsta vietos gyventojų dalyvavimu. Išskirtinis etnoarchitektūrinės sodybos-muziejaus Salų II kaime bruožas –  autentiškai atkurta ir interpretuojama tradicinė buitis ir pristatoma daugiafunkcė ūkinė veikla."
+    },
+    "43": {
+        "id": 43,
+        "name": "Kretuonų etnografinis. kaimas",
+        "coords": {
+            "lat": 55.226026,
+            "lng": 26.053696
+        },
+        "description": "Kretuonys, įsikūrę galbūt dar iki Valakų reformos, priskiriami gatviniams rėžiniams kaimams. Gyvenvietės planas ir žemių ribos nusistovėjo Valakų reformos metu XVI–XVII a., nuo tol laikytas karališkuoju. Vėliau dėl karų, maro, bado kaimas ištuštėjo, po to vėl atsistatė senoje vietoje. Kaime auga ąžuolų, uosių, kurių skersmuo nuo 1 iki 1,5 metro. Keletas ypač senų ąžuolų auga paežerės pievoje. Seniausiam kaimo ąžuolui apie 450 metų."
+    },
+    "44": {
+        "id": 44,
+        "name": "Bitininkystės muziejus",
+        "coords": {
+            "lat": 55.408444,
+            "lng": 25.944891
+        },
+        "description": "Bitininkystės istoriją ir bitės gyvenimą atsleidžianti unikalus Bitininkystės muziejus lankytojams duris atvėrė 1984 m. Nuo to laiko jis tapo žinomas ne tik visoje Lietuvoje. Smalsuoliai čia gali sužinoti apie Lietuvos bitininkavimo istoriją ir bitučių gyvenimo ypatumus, o smaližių čia laukia saldžios pramogos. Bitininkystės muziejuje galite užsisakyti unikalias su bitininkystę susijusias edukacines programas, stebėti bičių pasaulį pro stiklinį avilio langą. Mėgautis ypatinga gamta ir atmosfera, išlaisvinti savo jusles ir mintis."
+    },
+    "45": {
+        "id": 45,
+        "name": "Nalšios muziejaus Reškutėnų filialas",
+        "coords": {
+            "lat": 55.255706,
+            "lng": 26.120042
+        },
+        "description": "Nalšios muziejaus filialą Reškutėnų muziejų įkūrė mokytojas Izidorius Kazakevičius „Ryto“ draugijos Reškutėnų pradžios mokykloje. Per kelias dešimtis metų kaupti eksponatai atspindi šio krašto istoriją. Čia galima susipažinti su įvairių laikų lietuviškais leidiniais, pamatyti muzikos instrumentų, senųjų namų apyvokos daiktų, archeologinių radinių, akmenų kolekciją, netgi meteoritą."
+    },
+    "46": {
+        "id": 46,
+        "name": "Almajo stovyklavietė",
+        "coords": {
+            "lat": 55.393373,
+            "lng": 25.985193
+        }
+    },
+    "47": {
+        "id": 47,
+        "name": "Linkmeno stovyklavietė",
+        "coords": {
+            "lat": 55.373415,
+            "lng": 25.990396
+        }
+    },
+    "48": {
+        "id": 48,
+        "name": "Ineigos stovyklavietė",
+        "coords": {
+            "lat": 55.437144,
+            "lng": 26.000766
+        }
+    },
+    "49": {
+        "id": 49,
+        "name": "Vaišniūnų stovyklavietė",
+        "coords": {
+            "lat": 55.383167,
+            "lng": 26.08176
+        }
+    },
+    "50": {
+        "id": 50,
+        "name": "Gaveikėnų stovyklavietė",
+        "coords": {
+            "lat": 55.354314,
+            "lng": 26.103599
+        }
+    },
+    "51": {
+        "id": 51,
+        "name": "Meironų stovyklavietė",
+        "coords": {
+            "lat": 55.345078,
+            "lng": 26.063303
+        }
+    },
+    "52": {
+        "id": 52,
+        "name": "Šakarvos stovyklavietė",
+        "coords": {
+            "lat": 55.311811,
+            "lng": 26.063582
+        }
+    },
+    "53": {
+        "id": 53,
+        "name": "Palūšės I stovyklavietė",
+        "coords": {
+            "lat": 55.331791,
+            "lng": 26.105942
+        }
+    },
+    "54": {
+        "id": 54,
+        "name": "Palūšės II stovyklavietė",
+        "coords": {
+            "lat": 55.32704,
+            "lng": 26.094807
+        }
+    },
+    "55": {
+        "id": 55,
+        "name": "Pakretuonės stovyklavietė",
+        "coords": {
+            "lat": 55.275551,
+            "lng": 26.053723
+        }
+    },
+    "56": {
+        "id": 56,
+        "name": "Šiliniškių gūbrio apžvalgos bokštas",
+        "coords": {
+            "lat": 55.393373,
+            "lng": 25.985193
+        },
+        "description": "2004 metais ant Šiliniškių gūbrio buvo pastatytas 60 m aukščio telekomunikacijų bokštas. 30 m aukštyje buvo įrengta apžvalgos aikštelė, iš kurios galima apžvelgti maždaug 280 laipsnių įspūdingą Šiliniškių gūbrio ir ežerų grandinės kraštovaizdžio panoramą."
+    },
+    "57": {
+        "id": 57,
+        "name": "Lygumų kalno apžvalgos bokštas",
+        "coords": {
+            "lat": 55.270762,
+            "lng": 26.122377
+        },
+        "description": "Lygumų kalnas yra pietrytiniame nacionalinio parko pakraštyje, pietiniame Vajuonio ežero krante. Ši, trijų ežerų supama stačiašlaitė, 180 m aukščio virš jūros lygio siekianti plokštikalnė yra tarsi milžiniška apžvalgos aikštelė. Į šiaurę tyvuliuoja Vajuonis, į pietus nuo Akmeniškių kaimo atsiveria panorama į Kretuonykštį. Ten, kur į vakarinį kalno šlaitą kyla kelias, senojo trianguliacijos bokšto vietoje pastatytas naujas 15 m apžvalgos bokštas. Ši vieta buvo pasirinkta neatsitiktinai – iš čia visas Kretuono ežeras matosi kaip ant delno. Kalno papėdėje auganti senų medžių alėja žymi kadaise čia buvusio dvaro vietą."
+    },
+    "58": {
+        "id": 58,
+        "name": "Žemaitiškės  pievų paukščių stebėjimo bokštelis",
+        "coords": {
+            "lat": 55.262376,
+            "lng": 26.109062
+        },
+        "description": "Rytinėje Kretuono ežero pakrantėje nusidriekusios užliejamos Žemaitiškės pievos pasižymi gausybe čia perinčių saugomų paukščių rūšių, tokių kaip: juodakaklis kragas (Podiceps nigricollis), juodoji žuvėdra (Chlidonias niger), pilkoji antis (Anas strepera), putpelė (Coturnix coturnix), švygžda (Porzana porzana), griežlė (Crex crex), stulgys (Gallinago media), griciukas (Limosa limosa) ir kiti. Tai naujai besiformuojanti gamtinė teritorija – paukščių buveinė, atsiradusi kadaise numelioruotų pievų vietoje. Laikui bėgant žmogaus sukurtos sausinimo sistemos pradėjo griūti, todėl buvusios Vajuonėlės upelio vagos vietoje susiformavo užpelkėjusių pievų plotai. Šią teritoriją patogiausia apžvelgti nuo stebėjimo bokšto, specialiai įrengto prie Reškutėnų kaimo."
+    },
+    "59": {
+        "id": 59,
+        "name": "Ladakalnis",
+        "coords": {
+            "lat": 55.366342,
+            "lng": 25.990614
+        },
+        "description": "Legendomis apipintas Ladakalnis – tai žinomiausia apžvalgos vieta Aukštaitijos nacionaliniame parke. Kalnas virš jūros lygio iškilęs 176 metrus ir yra Šiliniškių gūbrio kalvų grandinės dalis. Nuo Ladakalnio atsiveria nuostabi panorama: matosi net 6 ežerai. Manoma, kad ant šio kalno buvo aukojamos aukos baltų deivei Ladai – didžiajai Motinai, viso pasaulio gimdytojai. Ladakalnis paskelbtas geomorfologiniu gamtos paminklu."
+    },
+    "60": {
+        "id": 60,
+        "name": "Kaukiškė",
+        "coords": {
+            "lat": 55.338944,
+            "lng": 26.014223
+        },
+        "description": "Trumpalaikio atokvėpio vieta keliaujantiems automobiliu, autobusu ar kita kelių transporto priemone. Nuo aikštelės atsiveria graži Lūšykščio ir Lūšių ežerų panorama. Esant palankioms oro sąlygoms iš čia galima pamatyti netgi Palūšės bažnyčią. Sutvarkytoje aikštelėje įrengti suolai ir stalai atsikvėpti ir užkąsti. Atvykstančius pasitinka Ignalinos krašto tautodailininkų Jono Grundos ir Raimundo Žievio skulptūra „Kelininkas“."
+    },
+    "61": {
+        "id": 61,
+        "name": "Šiliniškių gūbrys",
+        "coords": {
+            "lat": 55.385006,
+            "lng": 25.966799
+        }
+    },
+    "62": {
+        "id": 62,
+        "name": "Kaltanėnų dvaro sodyba su parku",
+        "coords": {
+            "lat": 55.252761,
+            "lng": 25.985562
+        },
+        "description": "Kaltanėnų miestelio istorija neatsiejama nuo dvaro. Senoji dvarvietė sunaikinta Šiaurės karo metu. Vėliau ji persikėlė iš dešiniojo į kairįjį Žeimenos upės krantą. Iki šių dienų išliko tik dviaukštis dvaro svirnas – XIX a. pirmosios pusės liaudies architektūros ir klasicizmo stiliaus bruožų turintis pastatas. Likę ir dvaro parko fragmentų: senoji mažalapių liepų alėją, senųjų medžių.  Būnant Kaltanėnuose, vaikštant parke neįmanoma nesigrožėti viena švariausių Lietuvos upių – Žeimena."
+    },
+    "63": {
+        "id":63,
+        "name":"1863 m. sukilėlių kapai",
+        "coords":{
+            "lat":55.467080,
+            "lng":25.956602
+        },
+        "description":"Sukilėlių, žuvusių mūšyje su caro kariuomene Minčios miške, kapinės Per 1863 metų sukilimą Minčios apylinkėse laikėsi K. Maleckio vadovaujamas 300 sukilėlių būrys. 1863 metų gegužės 4 dieną caro kariuomenės dalinys užpuolė ir išblaškė sukilėlių būrį. Žuvę šeši sukilėliai buvo palaidoti miške netoli Minčios kaimo esančiose kapinėse."
+    },
+    "64": {
+        "id": 64,
+        "name": "Medinių skulptūrų takas",
+        "coords": {
+            "lat": 55.334008,
+            "lng": 26.094034
+        },
+        "description": "Lūšių ežero pakrantėje tarp Palūšės ir  Meironų kaimo pakeleivius pasitinka 16 medinių skulptūrų. Keturiolika iš jų  1977 metais kūrybinės stovyklos metu tautodailininkai jose įamžino gamtos grožį bei Ignalinos krašto legendas. Skulptūros išlaikė laiko ir išbandymus ir 2021 m. buvo renovuotos bei papildyto dar dviejomis naujomis skulptūromis įkūnijančiomis žvėrelių globėją Medeiną ir Meironų kaimo legendą. O senosios skulptūros jums papasakos apie šv. Florijoną sovietmečiu pervadintą ugniagesiu, knygnešių istoriją, Laumių pasaką ir daug kitų šio krašto istorijų bei legendų."
+    },
+    "65": {
+        "id": 65,
+        "name": "Rėkučių-Pavajuonio senovės gynybinis įtvirtinimas",
+        "coords": {
+            "lat": 55.290063,
+            "lng": 26.094390
+        },
+        "description": "Tai visoje Lietuvoje unikalus gynybinis įtvirtinimas, saugojęs praėjimą tarp Žeimenų ir Vajuonio ežerų. Iki šių dienų iš 2 km ilgio įrenginio išliko apie 830 metrų. Tyrimai parodė, kad įtvirtinimą sudarė kelių metrų gylio griovys ir 2-3 metrų aukščio siena, skirta gintis nuo raitelių. Pylimas naudotas XII – XIII amžiuose. Virš pelkėtų ežeringų vietovių iškilusias kalvas žmonės pritaikė savo poreikiams: gyvenimui ir gynybai nuo priešų. Turbūt todėl čia, ant nalšėnų ir sėlių žemių ribos, karaliaus Mindaugo laikais iškilo Rėkučių gynybinis įtvirtinimas, archeologo prof. A.Girininko pavadintas besiformuojančios Lietuvos valstybės gynybiniu įrenginiu. 2 km siena, pastatyta iš rąstų su giliu grioviu, buvo tik dalis apie 50 km.gynybinės linijos, kuri tęsėsi nuo Tauragnų iki Daugėliškio kalvyno. Iki šių dienų iš 2 km ilgio įrenginio išliko apie 830 metrų. Tyrimai parodė, kad įtvirtinimą sudarė kelių metrų gylio griovys ir 2-3 metrų aukščio siena, skirta gintis nuo raitelių."
+    },
+    "66":
+    {
+        "id": 66,
+        "name": "Aukštaitijos nacionalinio parko Lankytojų centras",
+        "coords": {
+            "lat": 55.328929,
+            "lng": 26.102240
+        },
+        "description": "Pagrindinė ekspozicijos tema – „Ežerų žmonės“. Joje galima sužinoti tiek apie senuosius, tiek apie dabartinius žvejybos būdus, apie sielių ir karvių plukdymą. Aukštaitijos nacionalinio parko lankytojų centro ekspozicija orientuota į įvairaus amžiaus lankytojus. Čia apsilankius bus lengviau pasirinkti maršrutą tolimesnei pažinčiai su parku. Aukštaitijos nacionalinio parko lankytojų centre galite patogiai susiplanuoti sako kelionę po parką: pasirinkti norimą maršrutą pagal keliavimo būdą ar norimus aplankyti lankytinus objektus. O gal ir pakeisti savo kelionės planą ir paviešėti bei pamatyti daugiau. Taip pat Lankytojų centro ekspozicijoje „Ežerų žmonės“ sužinosite, kokias gamtos ir kultūros vertybes sukūrė gamta ir žmonės gyvenantys tarp ežerų ir kalvų."
+    },
+    "67":
+    {
+        "id": 67,
+        "name": "Aukštaitijos nacionalinio parko Gamtos mokykla",
+        "coords": {
+            "lat": 55.33517,
+            "lng": 26.09226
+        },
+        "description": "Jei norite ne tik pakeliauti, bet ir atidžiau susipažinti su Aukštaitijos nacionalinio parko gamtos ir kultūros vertybėmis, turite galimybę išsirinkti ir užsisakyti labiausiai jums tinkamą edukacinę programą ar visą jų puokštę, dar ir su nakvyne jaukiuose Aukštaitijos nacionalinio parko gamtos mokyklos kambariuose. Edukacines programas jums ves patyrę ir savo darbą mylintys bei išmanantys Aukštaitijos nacionalinio parko gamtos ir etnokultūros specialistai. Yra galimybė rengti vasaros stovyklas mokiniams ir studentams. Yra 50 vietų konferencijų salė, laboratorija, 35 miegamosios vietos, virtuvė, lauko kepsninė, šalia ežeras. Visas kompleksas pritaikytas neįgaliesiems."
+    }
+}
