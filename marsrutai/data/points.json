@@ -435,7 +435,8 @@
         },
         "description": "Tai regioninis Lietuvos liaudies buities muziejaus veikiantis padalinys pagal ekomuziejaus modelį. Tokio muziejaus tikslas – skatinti vietos bendruomenių gerovę ir darnią plėtrą, todėl jo veikla pirmiausia yra grįsta vietos gyventojų dalyvavimu. Išskirtinis etnoarchitektūrinės sodybos-muziejaus Salų II kaime bruožas –  autentiškai atkurta ir interpretuojama tradicinė buitis ir pristatoma daugiafunkcė ūkinė veikla.",
         "x": 520,
-        "y": 670
+        "y": 670,
+        "icon": "./images/icons/38.png"
     },
     "43": {
         "id": 43,

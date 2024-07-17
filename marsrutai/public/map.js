@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastPos = { x: 0, y: 0 };
     let doubleClickCount = 0;
     const maxDoubleClickCount = 5;
+    const canvas = document.getElementById('mapCanvas');
+
   
     function initializeMap() {
-      const canvas = document.getElementById('mapCanvas');
       const ctx = canvas.getContext('2d');
       
       canvas.width = window.innerWidth;
@@ -87,17 +88,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     function addPoints(ctx) {
-      const pointsForRwnder = Object.values(points);
+      const pointsForRender = Object.values(points);
   
       ctx.fillStyle = 'red';
       ctx.strokeStyle = 'black';
       ctx.lineWidth = 2;
   
-      pointsForRwnder.forEach(point => {
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, 5, 0, Math.PI * 2, true);
-        ctx.fill();
-        ctx.stroke();
+      pointsForRender.forEach(point => {
+        if (point.icon) {
+          const icon = new Image();
+          icon.src = point.icon;
+          icon.onload = () => {
+            if (icon.complete) {
+              ctx.drawImage(icon, point.x - icon.width / 2, point.y - icon.height / 2, '100', '100');
+            }
+          };
+        } else {
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, 5, 0, Math.PI * 2, true);
+          ctx.fill();
+          ctx.stroke();
+        }
       });
     }
   
