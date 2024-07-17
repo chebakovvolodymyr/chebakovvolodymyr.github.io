@@ -23,9 +23,9 @@ html
         a(href='/kayak', class='image-wrapper kayak')
             img(src='images/kayak_2.svg', class='image')
             img(src='images/kayak_1.svg', class='active-image')
-        div.languages(data-lg=`${language}`)
+        div.languages
             if isEnglish()
-                a(href='/' class='language image-wrapper')
+                a(href='/map' class='language image-wrapper')
                     img(src='images/LT_lang_passive.png', class='image')
                     img(src='images/LT_lang_active.png', class='active-image')
                 span(class='language image-wrapper')
@@ -33,7 +33,7 @@ html
             else 
                 span(class='language image-wrapper')
                     img(src='images/LT_lang_active.png', class='image')
-                a(href='/en', class='language image-wrapper')
+                a(href='/map/en', class='language image-wrapper')
                     img(src='images/EN_lang_passive.png', class='image')
                     img(src='images/EN_lang_active.png', class='active-image')
     script(src='./htmx.min.js')

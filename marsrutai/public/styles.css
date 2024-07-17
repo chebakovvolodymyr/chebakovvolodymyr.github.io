@@ -67,12 +67,27 @@ a {
     margin-bottom: 3vh;
 }
 
-.map {
+.map-wrapper {
+    position: relative;
     width: 100%;
     border-top: 3px solid #554B40;
     border-bottom: 3px solid #554B40;
     margin-top: 5px;
     max-height: 78%;
+}
+
+.map {
+    max-height: 100%;
+    width: 100%;
+}
+
+.map-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #7f756b;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .languages img {

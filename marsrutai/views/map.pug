@@ -1,37 +1,49 @@
+- isEnglish = () => language === 'en';
+- const jsonPoints = points
 doctype html
 html
   head
     meta(charset='UTF-8')
     title Maršrutai
+    script(src="https://hammerjs.github.io/dist/hammer.min.js")
+    script.
+      const points = !{JSON.stringify(points)};
+    script(src='./map.js')
 
-    link(rel='stylesheet', href='./styles.css')
-    link(rel='icon', type="image/x-icon", href='./images/favicon.ico')
+    link(rel='stylesheet', href='../styles.css')
+    link(rel='icon', type="image/x-icon", href='../images/favicon.ico')
   body
     main#content
         div.header
-          img(src='images/Top_title_mesto.png', class='')
-        img(src='images/map.svg', class='map')
+          img(src='/images/Top_title_mesto.png', class='')
+        canvas#mapCanvas
         div.footer
           a(href='/', class='image-wrapper back-button')
-            img(src='images/Pradzia_passive.png', class='image')
-            img(src='images/Pradzia_active.png', class='active-image')
-          div.languages
-            a(href='/lt', class='language image-wrapper')
-              img(src='images/LT_lang_passive.png', class='image')
-              img(src='images/LT_lang_active.png', class='active-image')
-            a(href='/en', class='language image-wrapper')
-              img(src='images/EN_lang_passive.png', class='image')
-              img(src='images/EN_lang_active.png', class='active-image')
+            img(src='/images/Pradzia_passive.png', class='image')
+            img(src='/images/Pradzia_active.png', class='active-image')
+          div.languages(data-lg=`${language}`)
+            if isEnglish()
+                a(href='/map' class='language image-wrapper')
+                    img(src='/images/LT_lang_passive.png', class='image')
+                    img(src='/images/LT_lang_active.png', class='active-image')
+                span(class='language image-wrapper')
+                    img(src='/images/EN_lang_active.png', class='image')
+            else 
+                span(class='language image-wrapper')
+                    img(src='/images/LT_lang_active.png', class='image')
+                a(href='/map/en', class='language image-wrapper')
+                    img(src='/images/EN_lang_passive.png', class='image')
+                    img(src='/images/EN_lang_active.png', class='active-image')
           div.steps
             a(href='#', class='image-wrapper')
-              img(src='images/Place_active.png', class='image')
+              img(src='/images/Place_active.png', class='image')
             a(href='/hike', class='image-wrapper')
-              img(src='images/Peshehod_passive.png', class='image')
-              img(src='images/Peshehod_active.png', class='active-image')
+              img(src='/images/Peshehod_passive.png', class='image')
+              img(src='/images/Peshehod_active.png', class='active-image')
             a(href='/bicycle', class='image-wrapper')
-              img(src='images/Velo_passive.png', class='image')
-              img(src='images/Velo_active.png', class='active-image')
+              img(src='/images/Velo_passive.png', class='image')
+              img(src='/images/Velo_active.png', class='active-image')
             a(href='/kayak', class='image-wrapper')
-              img(src='images/Kayak_passive_Big.png', class='image')
-              img(src='images/Kayak_active_Big.png', class='active-image')
-    script(src='./htmx.min.js')
+              img(src='/images/Kayak_passive_Big.png', class='image')
+              img(src='/images/Kayak_active_Big.png', class='active-image')
+    script(src='../htmx.min.js')
