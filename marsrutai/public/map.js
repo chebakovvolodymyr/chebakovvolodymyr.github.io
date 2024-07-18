@@ -82,10 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
       
         }
     
-    
         draw();
       }
     }
+
+    const icons = {};
   
     function addPoints(ctx) {
       const pointsForRender = Object.values(points);
@@ -96,13 +97,27 @@ document.addEventListener('DOMContentLoaded', function() {
   
       pointsForRender.forEach(point => {
         if (point.icon) {
-          const icon = new Image();
-          icon.src = point.icon;
-          icon.onload = () => {
-            if (icon.complete) {
-              ctx.drawImage(icon, point.x - icon.width / 2, point.y - icon.height / 2, '100', '100');
-            }
-          };
+          
+          if (icons[point.icon]) {
+            const aspectRatio = icons[point.icon].width / icons[point.icon].height;
+            const width = point.size || 50;
+            const height = width / aspectRatio;
+            ctx.drawImage(icons[point.icon], point.x, point.y, width, height);
+          } else {
+            const icon = new Image();
+            icon.src = point.icon;
+            icon.onload = () => {
+              const aspectRatio = icon.width / icon.height;
+              const width = point.size || 50;
+              const height = width / aspectRatio;
+              if (icon.complete) {
+                ctx.drawImage(icon, point.x, point.y, width, height);
+              }
+            };
+            icons[point.icon] = icon
+          } 
+
+
         } else {
           ctx.beginPath();
           ctx.arc(point.x, point.y, 5, 0, Math.PI * 2, true);

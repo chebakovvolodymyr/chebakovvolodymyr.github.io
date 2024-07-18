@@ -7,8 +7,10 @@
             "lng": 25.895169
         },
         "description": "Tauragnų apylinkėje prie Šeimaties kaimo stūkso akmuo, lankytojus stebinantis savo dydžiu. Šį akmenį žmonės vadina Moku. Šalimais guli mažesnis akmuo – Mokiukas. Legenda byloja, kad tai suakmenėjusi Mokų šeima. Iš tikrųjų šiuos akmenis į Lietuvą maždaug prieš 50 tūkst. metų iš Skandinavijos atitempė ledynas. Akmenys Mokas ir Mokiukas yra vienintelis Aukštaitijos nacionaliniame parke esantis geologinis gamtos paminklas, kartu ir valstybės saugomas mitologinis kultūros paveldo objektas.",
-        "x": 255,
-        "y": 235
+        "x": 220,
+        "y": 225,
+        "size": 90,
+        "icon":"./images/icons/4.png"
     },
     "2": {
         "id": 2,
@@ -18,8 +20,10 @@
             "lng": 25.984673
         },
         "description": "Šalia pailgos piliakalnį primenančios Kauprinių kalvos kaip kupeta guli didelis riedulys. Beveik 2 m aukščio, daugiau nei 3 m ilgio ir 2 m pločio akmuo – viena didžiausių ledynmečio dovanų Aukštaitijos nacionaliniame parke. Žmonės pasakoja, kad po žeme turėtų būti dar dvigubai tiek akmens. Kaip akmuo atkeliavo, juk kojų jis neturi? Nuolat ir ilgai zulinama didelė uolienos atplaiša su žemyniniais ledynais buvo atvilkta iš šiauriau, atokiau nuo Lietuvos esančių kraštų (daugiausia Skandinavijos) ir palikta tūnoti paslaptingai įstrigusi gūbrio viršuje. Savitas granito pavadinimas rapakivis (suomiškai rapa – sutrūnijęs, o kivi – akmuo) išduoda, jog šio riedulio gimtinė – Suomija.",
-        "x": 470,
-        "y": 350
+        "x": 430,
+        "y": 350,
+        "size": 70,
+        "icon":"./images/icons/12.png"
     },
     "3": {
         "id": 3,
@@ -40,8 +44,10 @@
             "lng": 25.954475
         },
         "description": "Masyvaus kamieno, buvusioje Žigų sodybos vietoje netoli Žiežulnio ežero auga įspūdingo dydžio mažalapė liepa (Tilia cordata) su didžiule dreve. Senolei 200 metų. Liepa apie 25 metrų aukščio, kamieno plotis – 4,2 metrai. Drevės aukštis apie 5, plotis – 0,7 metro.",
-        "x": 395,
-        "y": 220
+        "x": 385,
+        "y": 215,
+        "size": 35,
+        "icon":"./images/icons/3.png"
     },
     "5": {
         "id": 5,
@@ -51,8 +57,10 @@
             "lng": 26.098434
         },
         "description": "Paprastasis ąžuolas (Quercus robur). Kamieno apimtis – 5,7 m, aukštis – 22 m, amžius – daugiau kaip 400 m.",
-        "x": 400,
-        "y": 370
+        "x": 350,
+        "y": 350,
+        "size": 80,
+        "icon":"./images/icons/9.png"
     },
     "6": {
         "id": 6,
@@ -62,8 +70,10 @@
             "lng": 25.960331
         },
         "description": "Varniškių liepa yra valstybės saugomas botaninis gamtos paveldo objektas.Mažalapė liepa (Tilia cordata Mill.) auga Varniškių II kaimo pakraštyje, šalia sodybos. Jos apimtis - 3,1 m, aukštis - 25 m, amžius - apie 200 metų. Liepos būklė patenkinama, tačiau stambi kamieno rytinės dalies atšaka nulaužta.",
-        "x": 410,
-        "y": 405
+        "x": 378,
+        "y": 400,
+        "size": 45,
+        "icon": "./images/icons/11.png"
     },
     "7": {
         "id": 7,
@@ -183,8 +193,10 @@
             "lng": 25.952084
         },
         "description": "Varniškių (Aptiekos) šaltinis – savivaldybės saugomas hidrologinis gamtos paveldo objektas Utenos rajone, Tauragnų seniūnijoje, ties Varniškėmis III. Šaltinis trykšta miške netoli Pliaušės upelio, dešiniajame krante. Jis unikalus tuo, kad prasideda vandens išplautoje daubelėje, kurios dugne smėlis „verda“, kunkuliuoja, lyg dideliame puode. Šaltinis iki šiol gyvas: dar ir dabar išneša į paviršių mineralines daleles, todėl šaltinio kraštai įgriūna, pasitaiko įdubimų. Vanduo gėlas, turi mažai mineralinių medžiagų, neužterštas azoto junginiais. Pasakojama, kad šaltinis turėjęs gydomųjų savybių ir jame žmonės prausdavo akis, esą „labai sveika būdavo“, todėl ir vadino Aptiekos versme.",
-        "x": 400,
-        "y": 350
+        "x": 356,
+        "y": 351,
+        "size": 28,
+        "icon":"./images/icons/8.png"
     },
     "19": {
         "id": 19,
@@ -227,8 +239,10 @@
             "lng": 25.869502
         },
         "description": "Taurapilio piliakalnis stūkso ant pietinio Tauragnų ežero kranto. Prie jo šliejasi to paties vardo kaimelis. Iš trijų pusių piliakalnį saugo vandenys, o iš ketvirtosios pusės seniau saugojo specialūs gynybiniai įrenginiai. Seni žmonės pasakoja, kad kitados kalno viršūnėje augęs storas ąžuolas, jo šovoje gyvenęs vaidila, vaidilutės kūrenusios ugnį. Įvedus krikščionybę, jo viršūnėje buvusi pastatyta bažnyčia, tačiau po kiek laiko išnykusi ir dabar esanti kalno viduje. Legenda byloja, kad kartą vienas drąsuolis atidžiau pažvelgęs į tą duobę ir pamatęs kalno gelmėse apleistą bažnyčią su išgriuvusiais altoriais, o viduje groję apdulkėję vargonai. Tačiau šv. Jono naktį, lygiai 12 valandą, piliakalnis atsidengiąs, deja, tik vienai sekundei. Kas turi geras akis, galįs pamatyti bažnyčią ir grojančius vargonus.",
-        "x": 200,
-        "y": 300
+        "x": 155,
+        "y": 278,
+        "size": 90,
+        "icon":"./images/icons/6.png"
     },
     "23": {
         "id": 23,
@@ -326,8 +340,9 @@
             "lng": 25.949503
         },
         "description": "Istorija pasakoja, jog 82-ejų metų itin pamaldus kaimo ūkininkas Justinas Vitkauska būsimiems maldos namams dovanojo 39 hektarus žemės. 1933–1934 m. pastatyta medinė bažnyčia – liaudies architektūros formų, stačiakampio plano, vienabokštė, modernaus stiliaus. Bažnyčios vidus įrengtas 1935 m. Pagrindinis altorius – Lietuvoje retas art deco stilistikos su ankstyvosios kūrybos lietuvių skulptoriaus Bernardo Bučo skulptūra „Jėzaus širdis“. Šventoriuje stovi 2000 m. atidengtas dr. Romualdo Šimkūno stogastulpis, skirtas žuvusiems partizanams atminti.",
-        "x": 380,
-        "y": 310
+        "x": 325,
+        "y": 305,
+        "icon": "./images/icons/7.png"
     },
     "32": {
         "id": 32,
@@ -348,8 +363,9 @@
             "lng": 25.980271
         },
         "description": "Rašytiniai šaltiniai byloja, kad Minčios kaimelyje, ant Minčios upės kranto, vandens malūnas pastatytas 1792 m., grūdus pradėjo malti daugiau kaip prieš 200 metų. Dvare, naudojant vandenį, buvo pjaunami rąstai ir lentos, veikė netgi vario kalykla, kurioje vario gabalus išplodavo Minčios upelio vandens kilnojamas blokas – kūjis. Malūne buvo įrengtos 4 girnos ir vilnų vėlykla. Vietiniai gyventojai pasakoja, kad malūne kadaise netgi buvo spąstai velniams ir laumėms gaudyti. 1863 m. sukilėliai Minčios malūne sau ginklus kalė.",
-        "x": 450,
-        "y": 175
+        "x": 420,
+        "y": 170,
+        "icon": "./images/icons/1.png"
     },
     "34": {
         "id": 34,
@@ -390,8 +406,9 @@
             "lng": 25.959744
         },
         "description": "Kaimo pradžia siekia XVIII a. antrąją pusę. Kaime yra keletas žaliųjų galiūnų ąžuolų, liepų. 1971 m. kaimas įrašytas į architektūros paminklų sąrašą. Įdomus tvartų kompleksas yra buvusioje Juozo Šinkūno sodyboje. Karvidė su malkine, kiaulidė, arklidė sustatytos taip, kad sudarė nedidelį kiemelį – diendaržį. Kaime buvo filmuojamas lietuviškas meninis filmas „Velnio sėkla“.",
-        "x": 400,
-        "y": 395
+        "x": 395,
+        "y": 387,
+        "icon": "./images/icons/10.png"
     },
     "39": {
         "id": 39,
@@ -647,8 +664,9 @@
             "lng":25.956602
         },
         "description":"Sukilėlių, žuvusių mūšyje su caro kariuomene Minčios miške, kapinės Per 1863 metų sukilimą Minčios apylinkėse laikėsi K. Maleckio vadovaujamas 300 sukilėlių būrys. 1863 metų gegužės 4 dieną caro kariuomenės dalinys užpuolė ir išblaškė sukilėlių būrį. Žuvę šeši sukilėliai buvo palaidoti miške netoli Minčios kaimo esančiose kapinėse.",
-        "x": 400,
-        "y": 210
+        "x": 390,
+        "y": 204,
+        "icon": "./images/icons/2.png"
     },
     "64": {
         "id": 64,
